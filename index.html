@@ -4,21 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#070802" />
-    <meta name="description" content="The digital hustle is real — Fikey Ingenious is crafting bold tech behind the scenes. Stay tuned for the reveal!" />
-    <meta property="og:title" content="Fikey Ingenious — Under Construction" />
-    <meta property="og:description" content="We're working on something awesome. Digital hustle in progress!" />
+    <meta name="description" content="Fikey Ingenious: Bold tech innovation & digital solutions under construction. Innovative technology crafted with precision. Stay tuned for our reveal!" />
+    <meta name="keywords" content="fikey ingenious, tech innovation, digital solutions, technology development, bold tech, software development" />
+    <meta name="author" content="Fikey Ingenious Technologies" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <link rel="canonical" href="https://fikeyingenious.com" />
+    <meta property="og:site_name" content="Fikey Ingenious" />
+    <meta property="og:title" content="Fikey Ingenious - Innovation in Digital Technology" />
+    <meta property="og:description" content="Crafting bold tech solutions. We're building the future of digital innovation. Stay tuned for what's coming." />
     <meta property="og:image" content="https://fikeyingenious.com/fikey-ingenious-logo.png" />
+    <meta property="og:image:alt" content="Fikey Ingenious Logo" />
     <meta property="og:type" content="website" />
-    <link rel="icon" href="fikey-ingenious-logo.ico" type="image/x-icon" />
+    <meta property="og:url" content="https://fikeyingenious.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fikey Ingenious - Bold Tech Innovation" />
+    <meta name="twitter:description" content="Innovative digital solutions crafted with precision. Coming soon." />
+    <meta name="twitter:image" content="https://fikeyingenious.com/fikey-ingenious-logo.png" />
+    <link rel="icon" href="fikey-ingenious-logo-icon.png" type="image/x-icon" />
     <link rel="preload" as="image" href="fikey-ingenious-logo.png" />
-    <title>Site Under Construction</title>
+    <title>Fikey Ingenious - Innovation in Digital Technology | Under Construction</title>
 
     <style>
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%;
-            overflow: hidden;
         }
 
         body {
@@ -69,7 +80,7 @@
         }
 
         main {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -86,14 +97,19 @@
         }
 
         img {
-            max-width: 300px;
+            max-width: 700px;
+            width: 90vw;
             height: auto;
             margin-bottom: 1em;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+            border-radius: 20px;
+            cursor: pointer;
         }
 
         img:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
+            filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8));
         }
 
         h1 {
@@ -119,17 +135,82 @@
         }
 
         footer {
-            position: absolute;
-            bottom: 10px;
             width: 100%;
             text-align: center;
             font-size: 0.9em;
             color: #888;
+            padding: 2em 0 1em 0;
+            margin-top: 2em;
+        }
+
+        .contact-section {
+            margin-top: 3em;
+            margin-bottom: 3em;
+            padding: 2em;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2em;
+            flex-wrap: wrap;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .contact-section:hover {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: rgba(255, 215, 0, 0.4);
+        }
+
+        .contact-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .contact-section h2 {
+            font-size: 1.5em;
+            color: #FFD700;
+            margin-bottom: 0.5em;
+            margin-top: 0;
+        }
+
+        .contact-section p {
+            font-size: 1.1em;
+            margin: 0.5em 0;
+            color: #f5f5f5;
+        }
+
+        .contact-icon {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-link {
+            display: block;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: pointer;
+        }
+
+        .whatsapp-link img {
+            width: 60px;
+            height: 60px;
+            margin: 0;
+            filter: drop-shadow(0 0 10px rgba(34, 177, 76, 0.5));
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .whatsapp-link:hover img {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 20px rgba(34, 177, 76, 0.8));
         }
 
         @media (max-width: 480px) {
             img {
-                max-width: 200px;
+                max-width: 300px;
             }
 
             p {
@@ -156,10 +237,22 @@
     <img src="fikey-ingenious-logo.png" alt="Fikey Ingenious logo" />
     <h1>🚧 Under Construction 🚧</h1>
     <p id="typewriter"></p>
+
+    <div class="contact-section">
+        <div class="contact-text">
+            <h2>📞 Get In Touch</h2>
+            <p>Still building, but we're here! Have questions or opportunities? Let's connect.</p>
+        </div>
+        <div class="contact-icon">
+            <a href="https://wa.me/+60136801209" class="whatsapp-link" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+            </a>
+        </div>
+    </div>
 </main>
 
 <footer>
-    &copy; 2025 Fikey Ingenious Technologies. All rights reserved.
+    &copy; <span id="year"></span> Fikey Ingenious Technologies. All rights reserved.
 </footer>
 
 <!-- tsParticles -->
@@ -216,6 +309,11 @@
         }
     }
     type();
+</script>
+
+<!-- Dynamic copyright year -->
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
