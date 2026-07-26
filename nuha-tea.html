@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173c2d">
+  <meta name="description" content="Nuha Tea — a gentle herbal tea ritual, thoughtfully blended for calmer, brighter days.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fikeyingenious.com/nuha-tea">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nuha Tea — A gentle ritual for better days">
+  <meta property="og:description" content="A comforting herbal blend made for your everyday pause.">
+  <meta property="og:url" content="https://fikeyingenious.com/nuha-tea">
+  <meta property="og:image" content="https://fikeyingenious.com/nuha-tea-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nuha Tea — A gentle ritual for better days">
+  <meta name="twitter:description" content="A comforting herbal blend made for your everyday pause.">
+  <meta name="twitter:image" content="https://fikeyingenious.com/nuha-tea-og.png">
+  <title>Nuha Tea | A Gentle Ritual for Better Days</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #173c2d;
+      --forest-2: #0f2d21;
+      --sage: #829a80;
+      --leaf: #41664e;
+      --cream: #f7f1e5;
+      --paper: #fffaf0;
+      --gold: #b88a3d;
+      --ink: #203228;
+      --muted: #68766d;
+      --line: rgba(23, 60, 45, .15);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
+    }
+    body.menu-open { overflow: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .serif { font-family: "Italiana", Georgia, serif; font-weight: 400; }
+    .eyebrow {
+      display: flex; align-items: center; gap: 12px; margin: 0 0 18px;
+      color: var(--gold); font-size: .72rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 30px; height: 1px; background: currentColor; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 0 24px; border: 1px solid var(--forest); border-radius: 100px;
+      background: var(--forest); color: #fff; font-weight: 600; text-decoration: none;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--forest-2); }
+    .button.outline { background: transparent; color: var(--forest); }
+    .button.outline:hover { background: var(--forest); color: #fff; }
+
+    .nav {
+      position: fixed; z-index: 20; top: 0; width: 100%; border-bottom: 1px solid transparent;
+      background: rgba(255, 250, 240, .86); backdrop-filter: blur(16px); transition: .25s ease;
+    }
+    .nav.scrolled { border-color: var(--line); box-shadow: 0 8px 30px rgba(23, 60, 45, .06); }
+    .nav-inner { height: 78px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--forest); text-decoration: none; }
+    .brand-mark {
+      width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--gold);
+      border-radius: 50%; color: var(--gold); font: 1.2rem "Italiana", serif;
+    }
+    .brand-name { font: 1.45rem "Italiana", serif; letter-spacing: .05em; }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a { color: var(--forest); font-size: .86rem; font-weight: 600; text-decoration: none; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links .nav-order { padding: 10px 18px; border: 1px solid var(--forest); border-radius: 50px; }
+    .menu-button { display: none; width: 44px; height: 44px; border: 0; background: transparent; color: var(--forest); font-size: 1.5rem; }
+
+    .hero {
+      min-height: 100vh; display: grid; align-items: center; padding: 126px 0 62px;
+      overflow: hidden; background:
+        radial-gradient(circle at 82% 22%, rgba(130, 154, 128, .25), transparent 28rem),
+        linear-gradient(120deg, var(--paper), #f3ead9);
+    }
+    .hero-grid { display: grid; grid-template-columns: 46% 54%; align-items: center; gap: 42px; }
+    .hero h1 { margin: 0 0 22px; color: var(--forest); font-size: clamp(3.9rem, 7vw, 7.4rem); line-height: .9; letter-spacing: -.035em; }
+    .hero-copy { max-width: 540px; margin: 0; color: var(--muted); font-size: clamp(1.05rem, 1.8vw, 1.25rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .hero-note { display: flex; gap: 22px; margin-top: 28px; color: var(--muted); font-size: .78rem; }
+    .hero-note span { display: flex; align-items: center; gap: 7px; }
+    .hero-note span::before { content: "✓"; color: var(--gold); font-weight: 700; }
+    .hero-image {
+      position: relative; overflow: hidden; border-radius: 280px 280px 20px 20px;
+      box-shadow: 0 30px 90px rgba(23, 60, 45, .18);
+    }
+    .hero-image img { width: 100%; min-height: 590px; object-fit: cover; object-position: 68% center; }
+    .hero-image::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,.35); border-radius: inherit; pointer-events: none; }
+    .seal {
+      position: absolute; z-index: 2; left: -22px; bottom: 42px; width: 112px; height: 112px;
+      display: grid; place-items: center; border-radius: 50%; background: var(--gold); color: #fff;
+      text-align: center; font-size: .68rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase;
+      box-shadow: 0 15px 35px rgba(23, 60, 45, .2);
+    }
+
+    .marquee { overflow: hidden; background: var(--forest); color: #dfe7da; }
+    .marquee-track { display: flex; width: max-content; animation: travel 24s linear infinite; }
+    .marquee-group { display: flex; align-items: center; gap: 34px; padding: 16px 17px; white-space: nowrap; font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; }
+    .marquee-group span::after { content: "✦"; margin-left: 34px; color: #c8a66a; }
+    @keyframes travel { to { transform: translateX(-50%); } }
+
+    .section { padding: 110px 0; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
+    .section h2 { margin: 0; color: var(--forest); font-size: clamp(2.8rem, 5vw, 5rem); line-height: 1; letter-spacing: -.025em; }
+    .lead { margin: 24px 0 0; color: var(--muted); font-size: 1.08rem; }
+    .promise-card { position: relative; padding: 46px; border: 1px solid var(--line); background: #fffdf7; }
+    .promise-card::before { content: "“"; position: absolute; top: 22px; right: 34px; color: rgba(184, 138, 61, .2); font: 7rem/1 "Italiana", serif; }
+    .promise-card p { margin: 0; color: var(--forest); font: 2rem/1.35 "Italiana", serif; }
+    .promise-card small { display: block; margin-top: 24px; color: var(--gold); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+
+    .benefits { background: var(--cream); }
+    .center-head { max-width: 700px; margin: 0 auto 58px; text-align: center; }
+    .center-head .eyebrow { justify-content: center; }
+    .center-head .eyebrow::after { content: ""; width: 30px; height: 1px; background: currentColor; }
+    .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .benefit {
+      min-height: 300px; padding: 34px; border: 1px solid rgba(23,60,45,.13);
+      background: rgba(255,255,255,.52); transition: transform .25s ease, background .25s ease;
+    }
+    .benefit:hover { transform: translateY(-5px); background: #fff; }
+    .benefit-icon { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 50%; background: #dce5d7; color: var(--forest); font-size: 1.35rem; }
+    .benefit h3 { margin: 54px 0 12px; color: var(--forest); font: 1.75rem "Italiana", serif; }
+    .benefit p { margin: 0; color: var(--muted); font-size: .94rem; }
+
+    .ritual { background: var(--forest); color: #edf1e9; }
+    .ritual .eyebrow { color: #d6b677; }
+    .ritual h2 { color: #fff; }
+    .ritual-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 90px; align-items: start; }
+    .steps { border-top: 1px solid rgba(255,255,255,.18); }
+    .step { display: grid; grid-template-columns: 58px 1fr; gap: 20px; padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,.18); }
+    .step-number { color: #d6b677; font: 1.35rem "Italiana", serif; }
+    .step h3 { margin: 0 0 7px; font: 1.5rem "Italiana", serif; }
+    .step p { margin: 0; color: #b9c7bd; font-size: .92rem; }
+
+    .reviews { background: #fffdf7; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .review { padding: 32px; border: 1px solid var(--line); }
+    .stars { color: var(--gold); letter-spacing: .18em; }
+    .review blockquote { min-height: 120px; margin: 28px 0; color: var(--forest); font: 1.35rem/1.45 "Italiana", serif; }
+    .review cite { color: var(--muted); font-size: .78rem; font-style: normal; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+
+    .order { padding: 100px 0; background: var(--cream); }
+    .order-card {
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: 50px; align-items: center;
+      padding: clamp(36px, 7vw, 84px); background: var(--paper); border: 1px solid var(--line);
+    }
+    .order-card h2 { margin-bottom: 20px; }
+    .price-box { padding: 32px; background: var(--forest); color: #fff; text-align: center; }
+    .price-label { color: #c3d0c6; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; }
+    .price { margin: 5px 0 18px; font: 3.7rem "Italiana", serif; }
+    .price-box .button { width: 100%; background: #fff; color: var(--forest); border-color: #fff; }
+
+    footer { padding: 40px 0; background: var(--forest-2); color: #aebeb3; font-size: .82rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    footer a { color: #d8e0da; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .menu-button { display: block; }
+      .nav-links {
+        position: fixed; inset: 78px 0 auto; display: none; padding: 24px 20px 30px;
+        flex-direction: column; align-items: stretch; background: var(--paper); border-bottom: 1px solid var(--line);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 8px; text-align: center; }
+      .hero-grid, .intro-grid, .ritual-grid, .order-card { grid-template-columns: 1fr; }
+      .hero-grid { gap: 58px; }
+      .hero h1 { font-size: clamp(4.2rem, 14vw, 6rem); }
+      .hero-image { width: min(600px, 96%); margin: 0 auto; }
+      .hero-image img { min-height: 470px; }
+      .seal { left: -12px; }
+      .intro-grid, .ritual-grid { gap: 55px; }
+      .benefit-grid, .review-grid { grid-template-columns: 1fr; }
+      .benefit { min-height: 240px; }
+      .benefit h3 { margin-top: 38px; }
+      .review blockquote { min-height: 0; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .section { padding: 78px 0; }
+      .hero { padding-top: 116px; }
+      .hero-actions .button { width: 100%; }
+      .hero-note { flex-direction: column; gap: 8px; }
+      .hero-image img { min-height: 390px; }
+      .seal { width: 90px; height: 90px; bottom: 22px; font-size: .58rem; }
+      .promise-card { padding: 32px; }
+      .promise-card p { font-size: 1.55rem; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav" aria-label="Primary navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="Nuha Tea home"><span class="brand-mark">N</span><span class="brand-name">NUHA TEA</span></a>
+      <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#story">Our story</a>
+        <a href="#benefits">Why Nuha</a>
+        <a href="#ritual">The ritual</a>
+        <a class="nav-order" href="#order">Order now</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">A pause, poured gently</p>
+          <h1 class="serif">Better days<br>begin within.</h1>
+          <p class="hero-copy">A comforting herbal tea made for slow mornings, quiet evenings, and every little moment you choose yourself.</p>
+          <div class="hero-actions">
+            <a class="button" href="#order">Order Nuha Tea <span aria-hidden="true">→</span></a>
+            <a class="button outline" href="#story">Discover the blend</a>
+          </div>
+          <div class="hero-note"><span>Mindfully blended</span><span>Simple daily ritual</span></div>
+        </div>
+        <div class="hero-image reveal">
+          <img src="nuha-tea-og.png" alt="Nuha Tea pouch beside a warm cup of herbal tea">
+          <span class="seal">Brew<br>your calm</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group"><span>Comfort in every cup</span><span>Thoughtfully blended</span><span>Your daily pause</span><span>Made with care</span></div>
+        <div class="marquee-group"><span>Comfort in every cup</span><span>Thoughtfully blended</span><span>Your daily pause</span><span>Made with care</span></div>
+      </div>
+    </div>
+
+    <section class="section" id="story">
+      <div class="container intro-grid">
+        <div class="reveal">
+          <p class="eyebrow">The Nuha way</p>
+          <h2 class="serif">Wellness should feel simple.</h2>
+          <p class="lead">Nuha Tea began with one gentle idea: create a daily ritual that asks nothing more of you than to boil water, take a breath, and be present. No complicated routines. Just a warm, considered cup.</p>
+        </div>
+        <aside class="promise-card reveal">
+          <p>“A little softness in your day can change the way the whole day feels.”</p>
+          <small>Our promise to you</small>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section benefits" id="benefits">
+      <div class="container">
+        <div class="center-head reveal">
+          <p class="eyebrow">Why Nuha Tea</p>
+          <h2 class="serif">Made for the moments that matter.</h2>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit reveal"><span class="benefit-icon" aria-hidden="true">☼</span><h3>Begin gently</h3><p>Turn the first few minutes of your morning into a grounded, unrushed start.</p></article>
+          <article class="benefit reveal"><span class="benefit-icon" aria-hidden="true">♧</span><h3>Pause with purpose</h3><p>A simple cue to step away from the noise, reconnect, and continue with clarity.</p></article>
+          <article class="benefit reveal"><span class="benefit-icon" aria-hidden="true">☾</span><h3>Close the day</h3><p>Make space for a warm, comforting ritual when it is time to soften and slow down.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ritual" id="ritual">
+      <div class="container ritual-grid">
+        <div class="reveal">
+          <p class="eyebrow">Your three-step ritual</p>
+          <h2 class="serif">A beautiful cup, without the fuss.</h2>
+        </div>
+        <div class="steps reveal">
+          <div class="step"><span class="step-number">01</span><div><h3>Scoop</h3><p>Add your preferred serving of Nuha Tea to a cup or infuser.</p></div></div>
+          <div class="step"><span class="step-number">02</span><div><h3>Steep</h3><p>Pour over freshly boiled water and allow the blend time to unfold.</p></div></div>
+          <div class="step"><span class="step-number">03</span><div><h3>Savour</h3><p>Enjoy it warm, breathe deeply, and let this moment belong to you.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="center-head reveal">
+          <p class="eyebrow">Shared rituals</p>
+          <h2 class="serif" id="reviews-title">Loved in little everyday moments.</h2>
+        </div>
+        <div class="review-grid">
+          <article class="review reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“It has become the loveliest part of my evening routine.”</blockquote><cite>Aina · Kuala Lumpur</cite></article>
+          <article class="review reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“The packaging is beautiful, and making a cup feels like a small act of care.”</blockquote><cite>Mira · Shah Alam</cite></article>
+          <article class="review reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“A simple ritual I genuinely look forward to after a busy day.”</blockquote><cite>Sarah · Putrajaya</cite></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="order" id="order">
+      <div class="container">
+        <div class="order-card reveal">
+          <div>
+            <p class="eyebrow">Make time for you</p>
+            <h2 class="serif">Bring the Nuha ritual home.</h2>
+            <p class="lead">A considered tea blend, beautifully packed and ready to become part of your everyday rhythm.</p>
+          </div>
+          <div class="price-box">
+            <div class="price-label">Nuha Tea · One pouch</div>
+            <div class="price">RM 39</div>
+            <a class="button" href="https://wa.me/60136801209?text=Hi%2C%20I%27d%20like%20to%20order%20Nuha%20Tea." target="_blank" rel="noopener">Order via WhatsApp <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#home"><span class="brand-mark">N</span><span class="brand-name">NUHA TEA</span></a>
+      <span>© <span id="year"></span> Nuha Tea. Made for better days.</span>
+      <a href="mailto:fikeyingenious@gmail.com">Contact us</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById("nav");
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const updateNav = () => nav.classList.toggle("scrolled", window.scrollY > 12);
+    updateNav();
+    window.addEventListener("scroll", updateNav, { passive: true });
+
+    menuButton.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      document.body.classList.toggle("menu-open", open);
+      menuButton.setAttribute("aria-expanded", open);
+      menuButton.textContent = open ? "×" : "☰";
+    });
+    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      document.body.classList.remove("menu-open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.textContent = "☰";
+    }));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+  </script>
+</body>
+</html>
