@@ -20,6 +20,10 @@ const binaryFiles = {
   "/fikey-ingenious-logo-icon.png": ["image/png", "fikey-ingenious-logo-icon.png"],
   "/og.png": ["image/png", "og.png"],
   "/nuha-tea-og.png": ["image/png", "nuha-tea-og.png"],
+  "/nuha-kenduri.jpeg": ["image/jpeg", "nuha-kenduri.jpeg"],
+  "/nuha-menu.jpeg": ["image/jpeg", "nuha-menu.jpeg"],
+  "/nuha-banner.jpeg": ["image/jpeg", "nuha-banner.jpeg"],
+  "/nuha-signature.jpeg": ["image/jpeg", "nuha-signature.jpeg"],
 };
 
 const binaryAssets = {};
