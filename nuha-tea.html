@@ -102,7 +102,7 @@
       position: absolute; inset: 0; display: grid; place-items: center; overflow: hidden;
       background: transparent;
     }
-    .hero-photo img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 32px 34px rgba(0,0,0,.52)); }
+    .hero-photo img { width: 74%; height: 86%; object-fit: contain; filter: drop-shadow(0 32px 34px rgba(0,0,0,.52)); }
 
     .ticker { overflow: hidden; border-block: 1px solid var(--line); color: var(--gold-light); background: #0b0b0b; }
     .ticker-track { display: flex; width: max-content; animation: ticker 24s linear infinite; }
@@ -120,13 +120,19 @@
     .signature { background: linear-gradient(115deg, #f4e7d1, #e8cfa8); color: #241a12; }
     .signature-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
     .signature-image {
-      position: relative; height: 600px; display: flex; align-items: flex-end; justify-content: center; gap: 0;
+      position: relative; height: 600px; display: flex; align-items: stretch; justify-content: center; gap: 0;
       overflow: hidden; border: 1px solid rgba(70,43,22,.18);
       background: radial-gradient(circle at 50% 75%, rgba(126,76,35,.17), transparent 48%), rgba(255,250,240,.34);
       box-shadow: 0 25px 70px rgba(57,34,16,.14);
     }
-    .signature-image img { width: 52%; height: 88%; object-fit: contain; filter: drop-shadow(0 24px 20px rgba(74,44,23,.2)); }
-    .signature-image img + img { margin-left: -10%; height: 82%; }
+    .drink-figure { position: relative; width: 50%; margin: 0; padding: 58px 0 74px; display: grid; place-items: center; }
+    .drink-figure + .drink-figure { border-left: 1px solid rgba(70,43,22,.16); }
+    .drink-figure img { width: 88%; height: 100%; object-fit: contain; filter: drop-shadow(0 24px 20px rgba(74,44,23,.2)); }
+    .drink-name {
+      position: absolute; left: 50%; bottom: 22px; translate: -50% 0; min-width: max-content; padding: 8px 14px;
+      border: 1px solid rgba(70,43,22,.24); border-radius: 100px; background: rgba(255,250,240,.82);
+      color: #3b2517; font-size: .68rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase;
+    }
     .signature .eyebrow { color: #8e5628; }
     .signature-copy h2 { margin-bottom: 26px; color: #2b1c12; }
     .signature .section-intro { color: #6c5748; }
@@ -165,7 +171,7 @@
       height: 590px; display: grid; place-items: center; overflow: hidden;
       background: radial-gradient(circle at 52% 70%, rgba(213,154,74,.14), transparent 48%);
     }
-    .kenduri-image img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 30px 32px rgba(0,0,0,.48)); }
+    .kenduri-image img { width: 86%; height: 88%; object-fit: contain; filter: drop-shadow(0 30px 32px rgba(0,0,0,.48)); }
 
     .about { border-block: 1px solid rgba(213,154,74,.18); background: #0e0e0e; }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
@@ -179,9 +185,10 @@
     .contact-link { display: flex; align-items: center; gap: 12px; margin-top: 16px; color: var(--cream); text-decoration: none; }
     .contact-link span { color: var(--gold); }
     .whatsapp-only {
-      width: 50px; height: 50px; justify-content: center; border: 1px solid var(--line); border-radius: 50%;
-      color: #55cf75; font-size: 1.35rem; transition: .2s ease;
+      width: fit-content; min-height: 50px; padding: 0 18px; justify-content: center; border: 1px solid var(--line); border-radius: 100px;
+      color: #e8e1d8; font-size: .88rem; font-weight: 600; transition: .2s ease;
     }
+    .whatsapp-only i { color: #55cf75; font-size: 1.25rem; }
     .whatsapp-only:hover { transform: translateY(-2px); border-color: #55cf75; background: rgba(85,207,117,.08); }
     .order-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .field { width: 100%; min-height: 52px; padding: 14px 16px; border: 1px solid #39332c; border-radius: 3px; background: #151515; color: #fff; outline: none; }
@@ -194,7 +201,11 @@
 
     footer { padding: 42px 0; border-top: 1px solid var(--line); background: #050505; color: #817b74; font-size: .78rem; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .footer-social { color: var(--gold); }
+    .footer-socials { display: flex; align-items: center; gap: 9px; }
+    .social-placeholder {
+      width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid #39342d; border-radius: 50%;
+      color: var(--gold); font-size: 1rem; cursor: not-allowed; opacity: .76;
+    }
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
@@ -216,7 +227,9 @@
       .hero-actions .button { width: 100%; }
       .proof { justify-content: space-between; gap: 10px; }
       .hero-visual { min-height: 460px; }
+      .hero-photo img { width: 78%; height: 84%; }
       .signature-image, .kenduri-image { height: 470px; }
+      .drink-figure { padding-top: 44px; }
       .menu-list, .package-grid, .service-list, .about-grid, .order-form { grid-template-columns: 1fr; }
       .location-card { padding: 30px 0 0; border-left: 0; border-top: 1px solid var(--line); }
       .full { grid-column: 1; }
@@ -272,8 +285,8 @@
     <section class="section signature" id="menu">
       <div class="container signature-grid">
         <div class="signature-image reveal">
-          <img src="nuha-cup.webp" alt="Nuha Tea Peng Premium">
-          <img src="nuha-vanilla.webp" alt="Nuha Tea Peng Vanilla">
+          <figure class="drink-figure"><img src="nuha-cup.webp" alt="Nuha Tea Peng Premium"><figcaption class="drink-name">Tea Peng Premium</figcaption></figure>
+          <figure class="drink-figure"><img src="nuha-vanilla.webp" alt="Nuha Tea Peng Vanilla"><figcaption class="drink-name">Tea Peng Vanilla</figcaption></figure>
         </div>
         <div class="signature-copy reveal">
           <p class="eyebrow">Signature collection</p>
@@ -337,7 +350,7 @@
           <p class="eyebrow">Hubungi & tempah</p>
           <h2 class="serif">Jom buat tempahan.</h2>
           <p class="section-intro">Beritahu kami tarikh, kuantiti dan lokasi. Butiran tempahan akan terus dibuka dalam WhatsApp untuk pengesahan.</p>
-          <a class="contact-link whatsapp-only" href="https://wa.me/60138530816" target="_blank" rel="noopener" aria-label="Hubungi Nuha Tea melalui WhatsApp" title="WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
+          <a class="contact-link whatsapp-only" href="https://wa.me/60138530816" target="_blank" rel="noopener" aria-label="Hubungi Nuha Tea melalui WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i> Hubungi kami</a>
           <a class="contact-link" href="https://instagram.com/nuhateaco" target="_blank" rel="noopener"><span>◎</span> @nuhateaco</a>
         </div>
         <form class="order-form reveal" id="orderForm">
@@ -357,7 +370,10 @@
   <footer><div class="container footer-inner">
     <a class="brand" href="#home"><img class="brand-logo" src="nuha-logo.png" alt="Nuha Tea Co."></a>
     <span>© <span id="year"></span> Nuha Tea Co. Hak cipta terpelihara.</span>
-    <span class="footer-social">@nuhateaco</span>
+    <div class="footer-socials" aria-label="Media sosial akan datang">
+      <span class="social-placeholder" role="img" aria-label="Instagram — pautan akan datang" title="Instagram — akan datang"><i class="bi bi-instagram" aria-hidden="true"></i></span>
+      <span class="social-placeholder" role="img" aria-label="TikTok — pautan akan datang" title="TikTok — akan datang"><i class="bi bi-tiktok" aria-hidden="true"></i></span>
+    </div>
   </div></footer>
 
   <script>
