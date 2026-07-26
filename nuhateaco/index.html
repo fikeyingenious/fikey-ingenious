@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Nuha Tea Co. — teh peng premium yang rich, smooth dan perfect. Tempahan minuman untuk harian dan majlis anda.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fikeyingenious.com/nuhateaco">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nuha Tea Co. | Crafted Tea Experience">
+  <meta property="og:description" content="Teh peng premium, dibuat segar untuk harian dan majlis anda.">
+  <meta property="og:url" content="https://fikeyingenious.com/nuhateaco">
+  <meta property="og:image" content="https://fikeyingenious.com/nuha-banner.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nuha Tea Co. | Crafted Tea Experience">
+  <meta name="twitter:description" content="Simple ingredients. Extraordinary taste.">
+  <meta name="twitter:image" content="https://fikeyingenious.com/nuha-banner.jpeg">
+  <title>Nuha Tea Co. | Premium Tea Peng</title>
+  <link rel="icon" type="image/png" href="/nuha-favicon.png">
+  <link rel="apple-touch-icon" href="/nuha-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --black: #080808;
+      --black-2: #0e0e0e;
+      --panel: #131313;
+      --gold: #d59a4a;
+      --gold-light: #f0c37d;
+      --cream: #ead4ad;
+      --white: #f7f1e8;
+      --muted: #aaa39a;
+      --line: rgba(213,154,74,.38);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+    body { margin: 0; background: var(--black); color: var(--white); font: 400 1rem/1.65 "DM Sans", sans-serif; }
+    body.menu-open { overflow: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .serif { font-family: "Italiana", Georgia, serif; font-weight: 400; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 12px; margin: 0 0 17px;
+      color: var(--gold); font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 32px; height: 1px; background: currentColor; }
+    .button {
+      min-height: 52px; padding: 0 25px; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      border: 1px solid var(--gold); border-radius: 100px; background: linear-gradient(135deg, var(--gold-light), #bb762f);
+      color: #12100d; font-size: .82rem; font-weight: 700; letter-spacing: .05em; text-decoration: none; text-transform: uppercase;
+      transition: .22s ease;
+    }
+    .button:hover { transform: translateY(-2px); filter: brightness(1.08); }
+    .button.outline { background: transparent; color: var(--white); }
+    .button.outline:hover { background: var(--gold); color: #111; }
+
+    .nav {
+      position: fixed; z-index: 20; top: 0; width: 100%; background: rgba(7,7,7,.88);
+      border-bottom: 1px solid transparent; backdrop-filter: blur(18px); transition: .25s ease;
+    }
+    .nav.scrolled { border-color: rgba(213,154,74,.2); box-shadow: 0 12px 36px rgba(0,0,0,.35); }
+    .nav-inner { height: 88px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; color: var(--gold-light); text-decoration: none; }
+    .brand-logo { width: auto; height: 74px; object-fit: contain; }
+    .brand-mark {
+      width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--gold); border-radius: 50%;
+      font: 1.45rem "Italiana", serif;
+    }
+    .brand-copy { line-height: 1; }
+    .brand-name { display: block; font: 1.25rem "Italiana", serif; letter-spacing: .22em; }
+    .brand-tag { display: block; margin-top: 5px; color: #b58c57; font-size: .45rem; letter-spacing: .2em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 29px; }
+    .nav-links a { color: #d8d2ca; font-size: .78rem; font-weight: 600; text-decoration: none; text-transform: uppercase; }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-links .nav-order { padding: 9px 17px; border: 1px solid var(--gold); border-radius: 50px; color: var(--gold-light); }
+    .menu-button { display: none; width: 44px; height: 44px; border: 0; background: transparent; color: var(--gold-light); font-size: 1.5rem; }
+
+    .hero {
+      position: relative; min-height: 100vh; padding: 132px 0 66px; display: grid; align-items: center; overflow: hidden;
+      background: radial-gradient(circle at 75% 30%, rgba(188,116,43,.16), transparent 28rem), #080808;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; opacity: .2; pointer-events: none;
+      background-image: linear-gradient(rgba(213,154,74,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(213,154,74,.05) 1px, transparent 1px);
+      background-size: 68px 68px; mask-image: linear-gradient(to bottom, #000, transparent 88%);
+    }
+    .hero-grid { position: relative; display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
+    .hero h1 { margin: 0 0 20px; color: var(--cream); font-size: clamp(3.7rem, 6.5vw, 7rem); line-height: .9; letter-spacing: -.025em; text-transform: uppercase; }
+    .hero h1 span { display: block; color: var(--white); }
+    .hero-copy { max-width: 490px; margin: 0; color: #b8b1a8; font-size: 1.08rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .proof { display: flex; gap: 25px; margin-top: 32px; }
+    .proof-item { max-width: 105px; color: #bbb2a8; font-size: .7rem; line-height: 1.4; text-transform: uppercase; }
+    .proof-icon { display: block; margin-bottom: 8px; color: var(--gold); font-size: 1.4rem; }
+    .hero-visual { position: relative; height: clamp(460px, 70vh, 590px); min-height: 0; display: grid; place-items: center; }
+    .hero-photo {
+      position: relative; width: 100%; height: 100%; min-width: 0; min-height: 0; display: grid; place-items: center; overflow: hidden;
+      padding: clamp(8px, 1.5vw, 20px); background: transparent;
+    }
+    .hero-photo img { width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; filter: drop-shadow(0 32px 34px rgba(0,0,0,.52)); }
+
+    .ticker { overflow: hidden; border-block: 1px solid var(--line); color: var(--gold-light); background: #0b0b0b; }
+    .ticker-track { display: flex; width: max-content; animation: ticker 24s linear infinite; }
+    .ticker-group { display: flex; gap: 34px; padding: 15px 17px; white-space: nowrap; font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; }
+    .ticker-group span::after { content: "✦"; margin-left: 34px; color: #8b582b; }
+    @keyframes ticker { to { transform: translateX(-50%); } }
+
+    .section { padding: 108px 0; }
+    .section-head { max-width: 710px; margin-bottom: 50px; }
+    .section-head.center { margin-inline: auto; text-align: center; }
+    .section-head.center .eyebrow::after { content: ""; width: 32px; height: 1px; background: currentColor; }
+    h2 { margin: 0; color: var(--cream); font-size: clamp(2.8rem, 5vw, 5rem); line-height: 1; }
+    .section-intro { margin: 19px 0 0; color: var(--muted); }
+
+    .signature { background: linear-gradient(115deg, #f4e7d1, #e8cfa8); color: #241a12; }
+    .signature-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
+    .signature-image {
+      position: relative; height: 600px; display: flex; align-items: stretch; justify-content: center; gap: 0;
+      overflow: hidden; border: 1px solid rgba(70,43,22,.18);
+      background: radial-gradient(circle at 50% 75%, rgba(126,76,35,.17), transparent 48%), rgba(255,250,240,.34);
+      box-shadow: 0 25px 70px rgba(57,34,16,.14);
+    }
+    .drink-figure { position: relative; width: 50%; margin: 0; padding: 58px 0 74px; display: grid; place-items: center; }
+    .drink-figure + .drink-figure { border-left: 1px solid rgba(70,43,22,.16); }
+    .drink-figure img { width: 88%; height: 100%; object-fit: contain; filter: drop-shadow(0 24px 20px rgba(74,44,23,.2)); }
+    .drink-name {
+      position: absolute; left: 50%; bottom: 22px; translate: -50% 0; min-width: max-content; padding: 8px 14px;
+      border: 1px solid rgba(70,43,22,.24); border-radius: 100px; background: rgba(255,250,240,.82);
+      color: #3b2517; font-size: .68rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase;
+    }
+    .signature .eyebrow { color: #8e5628; }
+    .signature-copy h2 { margin-bottom: 26px; color: #2b1c12; }
+    .signature .section-intro { color: #6c5748; }
+    .check-list { display: grid; gap: 17px; margin: 28px 0 34px; padding: 0; list-style: none; }
+    .check-list li { display: flex; gap: 12px; color: #594638; }
+    .check-list li::before { content: "✓"; color: #8e5628; font-weight: 700; }
+    .menu-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .menu-card { padding: 22px; border: 1px solid rgba(70,43,22,.2); background: rgba(255,250,240,.64); }
+    .menu-card h3 { margin: 0; color: #2d1e14; font: 1.55rem "Italiana", serif; }
+    .menu-card p { margin: 7px 0 18px; color: #705d4e; font-size: .82rem; }
+    .menu-prices { display: flex; justify-content: space-between; padding-top: 15px; border-top: 1px solid rgba(70,43,22,.16); color: #6c3c1d; font-size: .8rem; font-weight: 700; }
+
+    .packages { background: #0c0c0c; }
+    .package-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 960px; margin: 0 auto; }
+    .package {
+      position: relative; min-height: 320px; padding: 30px; display: flex; flex-direction: column; border: 1px solid var(--line);
+      background: linear-gradient(145deg, #171717, #0d0d0d); transition: .25s ease;
+    }
+    .package:hover { transform: translateY(-5px); border-color: var(--gold); }
+    .package.featured { background: linear-gradient(145deg, #e1b274, #bb762f); color: #111; }
+    .package-label { color: var(--gold); font-size: .69rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .featured .package-label { color: #392515; }
+    .package h3 { margin: 22px 0 0; font: 3rem/1 "Italiana", serif; }
+    .package h3 small { display: block; margin-top: 9px; font: .7rem "DM Sans", sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+    .package-price { margin-top: auto; font: 2.7rem "Italiana", serif; color: var(--cream); }
+    .featured .package-price { color: #111; }
+    .package-price span { font: .8rem "DM Sans", sans-serif; }
+    .unit { color: var(--muted); font-size: .75rem; }
+    .featured .unit { color: #422f20; }
+
+    .kenduri-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .kenduri-copy h2 { margin-bottom: 22px; }
+    .service-list { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin: 28px 0 34px; }
+    .service-item { padding: 16px; border-left: 1px solid var(--gold); color: #c6bfb6; font-size: .83rem; }
+    .kenduri-image {
+      height: 590px; display: grid; place-items: center; overflow: hidden;
+      background: radial-gradient(circle at 52% 70%, rgba(213,154,74,.14), transparent 48%);
+    }
+    .kenduri-image img { width: 86%; height: 88%; object-fit: contain; filter: drop-shadow(0 30px 32px rgba(0,0,0,.48)); }
+
+    .about { border-block: 1px solid rgba(213,154,74,.18); background: #0e0e0e; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    .about p { color: var(--muted); }
+    .location-card { padding-left: 40px; border-left: 1px solid var(--line); }
+    .location-row { display: flex; gap: 14px; margin-top: 22px; color: #c8c0b7; }
+    .location-row span:first-child { color: var(--gold); }
+
+    .order { background: radial-gradient(circle at 12% 70%, rgba(188,116,43,.15), transparent 25rem), #090909; }
+    .order-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: 75px; align-items: start; }
+    .contact-link { display: flex; align-items: center; gap: 12px; margin-top: 16px; color: var(--cream); text-decoration: none; }
+    .contact-link span { color: var(--gold); }
+    .whatsapp-only {
+      width: fit-content; min-height: 50px; padding: 0 18px; justify-content: center; border: 1px solid var(--line); border-radius: 100px;
+      color: #e8e1d8; font-size: .88rem; font-weight: 600; transition: .2s ease;
+    }
+    .whatsapp-only i { color: #55cf75; font-size: 1.25rem; }
+    .whatsapp-only:hover { transform: translateY(-2px); border-color: #55cf75; background: rgba(85,207,117,.08); }
+    .order-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .field { width: 100%; min-height: 52px; padding: 14px 16px; border: 1px solid #39332c; border-radius: 3px; background: #151515; color: #fff; outline: none; }
+    .field:focus { border-color: var(--gold); }
+    .field::placeholder { color: #77716b; }
+    select.field { color: #aaa39a; }
+    textarea.field { min-height: 105px; resize: vertical; }
+    .full { grid-column: 1 / -1; }
+    .order-form .button { width: 100%; border-radius: 3px; cursor: pointer; }
+
+    footer { padding: 42px 0; border-top: 1px solid var(--line); background: #050505; color: #817b74; font-size: .78rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-socials { display: flex; align-items: center; gap: 9px; }
+    .social-link {
+      width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid #39342d; border-radius: 50%;
+      color: var(--gold); font-size: 1rem; text-decoration: none; transition: .2s ease;
+    }
+    .social-link:hover { transform: translateY(-2px); border-color: var(--gold); color: var(--gold-light); }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 960px) {
+      .menu-button { display: block; }
+      .nav-links { position: fixed; inset: 88px 0 auto; display: none; padding: 25px; flex-direction: column; background: #090909; border-bottom: 1px solid var(--line); }
+      .nav-links.open { display: flex; }
+      .hero-grid, .signature-grid, .kenduri-grid, .order-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 50px; }
+      .hero-visual { width: min(650px, 100%); height: 540px; min-height: 0; margin: 0 auto; }
+      .package-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid { gap: 50px; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .section { padding: 78px 0; }
+      .hero { padding-top: 118px; }
+      .hero h1 { font-size: clamp(3.7rem, 18vw, 5rem); }
+      .hero-actions .button { width: 100%; }
+      .proof { justify-content: space-between; gap: 10px; }
+      .hero-visual { height: 440px; min-height: 0; }
+      .hero-photo { padding: 10px; }
+      .signature-image, .kenduri-image { height: 470px; }
+      .drink-figure { padding-top: 44px; }
+      .menu-list, .package-grid, .service-list, .about-grid, .order-form { grid-template-columns: 1fr; }
+      .location-card { padding: 30px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+      .full { grid-column: 1; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav" aria-label="Navigasi utama">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="Nuha Tea Co."><img class="brand-logo" src="/nuha-logo.png" alt="Nuha Tea Co."></a>
+      <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="navLinks" aria-label="Buka menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Utama</a><a href="#menu">Menu</a><a href="#packages">Pakej</a><a href="#about">Tentang</a><a href="#location">Lokasi</a>
+        <a class="nav-order" href="#order">Tempah sekarang</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">Premium iced tea</p>
+          <h1 class="serif">Rich taste,<span>Real moments.</span></h1>
+          <p class="hero-copy">Dibancuh dengan daun teh premium dan diseimbangkan sempurna untuk rasa yang licin, berkrim dan menyegarkan dalam setiap teguk.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://wa.me/60138530816?text=Hi%20Nuha%20Tea%2C%20saya%20ingin%20membuat%20tempahan." target="_blank" rel="noopener">Tempah sekarang <span aria-hidden="true">↗</span></a>
+            <a class="button outline" href="#packages">Lihat pakej</a>
+          </div>
+          <div class="proof">
+            <div class="proof-item"><span class="proof-icon">♧</span>Teh berkualiti premium</div>
+            <div class="proof-item"><span class="proof-icon">♨</span>Dibuat segar setiap hari</div>
+            <div class="proof-item"><span class="proof-icon">♡</span>Licin & menyegarkan</div>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="hero-photo"><img src="/nuha-hero.png" alt="Signature Nuha Tea Peng di atas pelapik marmar hitam"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="ticker-track">
+      <div class="ticker-group"><span>Rich</span><span>Smooth</span><span>Perfect</span><span>Dibancuh segar</span><span>Simple ingredients</span></div>
+      <div class="ticker-group"><span>Rich</span><span>Smooth</span><span>Perfect</span><span>Dibancuh segar</span><span>Simple ingredients</span></div>
+    </div></div>
+
+    <section class="section signature" id="menu">
+      <div class="container signature-grid">
+        <div class="signature-image reveal">
+          <figure class="drink-figure"><img src="/nuha-cup.webp" alt="Nuha Tea Peng Premium"><figcaption class="drink-name">Tea Peng Premium</figcaption></figure>
+          <figure class="drink-figure"><img src="/nuha-vanilla.webp" alt="Nuha Tea Peng Vanilla"><figcaption class="drink-name">Tea Peng Vanilla</figcaption></figure>
+        </div>
+        <div class="signature-copy reveal">
+          <p class="eyebrow">Signature collection</p>
+          <h2 class="serif">Original Tea Peng</h2>
+          <p class="section-intro">Rasa teh asli yang kaw dan memikat. Seimbang, berkrim dan sentiasa menyegarkan.</p>
+          <ul class="check-list"><li>Aroma teh yang kaya</li><li>Rasa licin dan berkrim</li><li>Sesuai untuk setiap acara</li><li>Disediakan segar dan bersih</li></ul>
+          <div class="menu-list">
+            <article class="menu-card"><h3>Tea Peng Premium</h3><p>Rasa asli teh yang kaw & memikat.</p><div class="menu-prices"><span>Kecil · RM4</span><span>Besar · RM5</span></div></article>
+            <article class="menu-card"><h3>Tea Peng Vanilla</h3><p>Harum, lembut & manis.</p><div class="menu-prices"><span>Kecil · RM5</span><span>Besar · RM6</span></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section packages" id="packages">
+      <div class="container">
+        <div class="section-head center reveal"><p class="eyebrow">Pakej kenduri</p><h2 class="serif">Pilih kuantiti anda.</h2><p class="section-intro">Untuk majlis kecil, sambutan keluarga atau acara besar — kami uruskan yang terbaik.</p></div>
+        <div class="package-grid">
+          <article class="package reveal"><span class="package-label">Majlis kecil</span><h3>100<small>Cawan</small></h3><div class="package-price"><span>RM</span> 300</div><div class="unit">RM3.00 / cawan</div></article>
+          <article class="package featured reveal"><span class="package-label">Pilihan popular</span><h3>300<small>Cawan</small></h3><div class="package-price"><span>RM</span> 880</div><div class="unit">RM2.93 / cawan</div></article>
+          <article class="package reveal"><span class="package-label">Majlis besar</span><h3>500<small>Cawan</small></h3><div class="package-price"><span>RM</span> 1,450</div><div class="unit">RM2.90 / cawan</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container kenduri-grid">
+        <div class="kenduri-copy reveal">
+          <p class="eyebrow">Pakej kenduri</p>
+          <h2 class="serif">Minuman teh peng premium untuk majlis anda.</h2>
+          <p class="section-intro">Sesuai untuk semua majlis — perkahwinan, acara pejabat, hari keluarga, acara sekolah, rumah terbuka dan banyak lagi.</p>
+          <div class="service-list">
+            <div class="service-item">Tempahan awal digalakkan</div><div class="service-item">Penghantaran boleh diuruskan</div>
+            <div class="service-item">Kualiti rasa konsisten</div><div class="service-item">Perkhidmatan mesra & profesional</div>
+          </div>
+          <a class="button" href="#order">Minta sebut harga</a>
+        </div>
+        <div class="kenduri-image reveal"><img src="/nuha-kenduri.webp" alt="Pakej kenduri Nuha Tea Co. dengan dispenser dan cawan"></div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <p class="eyebrow">Tentang Nuha Tea</p>
+          <h2 class="serif">Simple ingredients. Extraordinary taste.</h2>
+          <p>Nuha Tea ialah jenama teh tempatan yang memberi fokus kepada teh peng premium — dihidangkan sejuk pada harga berpatutan. Kami mahu membawa teh yang licin dan menyegarkan untuk pelanggan harian dan setiap jenis acara.</p>
+        </div>
+        <div class="location-card reveal" id="location">
+          <p class="eyebrow">Lokasi kami</p>
+          <h2 class="serif">Labu, Negeri Sembilan</h2>
+          <div class="location-row"><span>⌖</span><div>Di hadapan Wash Studio Dobi,<br>Labu, Negeri Sembilan</div></div>
+          <div class="location-row"><span>◷</span><div><strong>Waktu operasi</strong><br>Setiap hujung minggu<br><small>Waktu tepat akan dikemas kini melalui media sosial.</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section order" id="order">
+      <div class="container order-grid">
+        <div class="reveal">
+          <p class="eyebrow">Hubungi & tempah</p>
+          <h2 class="serif">Jom buat tempahan.</h2>
+          <p class="section-intro">Beritahu kami tarikh, kuantiti dan lokasi. Butiran tempahan akan terus dibuka dalam WhatsApp untuk pengesahan.</p>
+          <a class="contact-link whatsapp-only" href="https://wa.me/60138530816" target="_blank" rel="noopener" aria-label="Hubungi Nuha Tea melalui WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i> Hubungi kami</a>
+        </div>
+        <form class="order-form reveal" id="orderForm">
+          <input class="field" id="name" required placeholder="Nama anda" aria-label="Nama anda">
+          <input class="field" id="phone" required inputmode="tel" placeholder="Nombor telefon" aria-label="Nombor telefon">
+          <input class="field" id="date" required type="date" aria-label="Tarikh tempahan">
+          <input class="field" id="quantity" required type="number" min="1" placeholder="Kuantiti cawan" aria-label="Kuantiti cawan">
+          <select class="field" id="method" required aria-label="Kaedah pesanan"><option value="">Ambil / penghantaran</option><option>Ambil sendiri</option><option>Penghantaran</option></select>
+          <input class="field" id="place" placeholder="Lokasi" aria-label="Lokasi">
+          <textarea class="field full" id="notes" placeholder="Nota (pilihan)" aria-label="Nota tambahan"></textarea>
+          <button class="button full" type="submit">Hantar tempahan melalui WhatsApp ↗</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner">
+    <a class="brand" href="#home"><img class="brand-logo" src="/nuha-logo.png" alt="Nuha Tea Co."></a>
+    <span>© <span id="year"></span> Nuha Tea Co. Hak cipta terpelihara.</span>
+    <div class="footer-socials" aria-label="Media sosial Nuha Tea">
+      <a class="social-link" href="https://instagram.com/nuhateaco" target="_blank" rel="noopener" aria-label="Instagram Nuha Tea"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+      <a class="social-link" href="https://www.tiktok.com/@nuhateaco" target="_blank" rel="noopener" aria-label="TikTok Nuha Tea"><i class="bi bi-tiktok" aria-hidden="true"></i></a>
+    </div>
+  </div></footer>
+
+  <script>
+    const nav = document.getElementById("nav");
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const updateNav = () => nav.classList.toggle("scrolled", window.scrollY > 12);
+    updateNav();
+    window.addEventListener("scroll", updateNav, { passive: true });
+    menuButton.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      document.body.classList.toggle("menu-open", open);
+      menuButton.setAttribute("aria-expanded", open);
+      menuButton.textContent = open ? "×" : "☰";
+    });
+    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      navLinks.classList.remove("open"); document.body.classList.remove("menu-open");
+      menuButton.setAttribute("aria-expanded", "false"); menuButton.textContent = "☰";
+    }));
+    document.getElementById("orderForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const value = id => document.getElementById(id).value.trim();
+      const message = [
+        "Hi Nuha Tea, saya ingin membuat tempahan:",
+        "", "Nama: " + value("name"), "Telefon: " + value("phone"),
+        "Tarikh: " + value("date"), "Kuantiti: " + value("quantity") + " cawan",
+        "Kaedah: " + value("method"), "Lokasi: " + (value("place") || "-"),
+        "Nota: " + (value("notes") || "-")
+      ].join("\n");
+      window.open("https://wa.me/60138530816?text=" + encodeURIComponent(message), "_blank", "noopener");
+    });
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+    }), { threshold: .1 });
+    document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+  </script>
+</body>
+</html>
