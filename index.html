@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11110f">
+  <meta name="description" content="Fikey Ingenious Technologies builds clean websites, automates repetitive work, simplifies data management, and shares practical technology insights.">
+  <meta name="author" content="Fikey Ingenious Technologies">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fikeyingenious.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Fikey Ingenious Technologies">
+  <meta property="og:title" content="Smart Digital Solutions for Modern Businesses">
+  <meta property="og:description" content="Practical websites, automation, data support and technology guidance for small businesses and independent professionals.">
+  <meta property="og:url" content="https://fikeyingenious.com/">
+  <meta property="og:image" content="https://fikeyingenious.com/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fikey Ingenious Technologies">
+  <meta name="twitter:description" content="Smart digital solutions, built with clarity.">
+  <meta name="twitter:image" content="https://fikeyingenious.com/og.png">
+  <title>Fikey Ingenious Technologies | Smart Digital Solutions</title>
+  <link rel="icon" href="fikey-ingenious-logo-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #151513;
+      --muted: #696963;
+      --paper: #fbfaf7;
+      --surface: #f2f0ea;
+      --line: #dedbd2;
+      --gold: #aa8136;
+      --gold-dark: #79581d;
+      --dark: #11110f;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    h1, h2, h3, h4, .navbar-brand { font-family: "Outfit", sans-serif; }
+    a { color: inherit; }
+    .text-muted-custom { color: var(--muted); }
+    .section-space { padding: 110px 0; }
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      margin-bottom: 1rem;
+      color: var(--gold-dark);
+      font-size: .77rem;
+      font-weight: 700;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    .section-kicker::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
+    .section-title { max-width: 740px; margin-bottom: 1.1rem; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.08; letter-spacing: -.035em; }
+    .section-intro { max-width: 660px; color: var(--muted); font-size: 1.08rem; }
+
+    .navbar {
+      padding: 1rem 0;
+      background: rgba(251,250,247,.88);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(18px);
+      transition: .3s ease;
+    }
+    .navbar.scrolled { padding: .65rem 0; border-color: var(--line); box-shadow: 0 8px 30px rgba(17,17,15,.04); }
+    .navbar-brand { display: flex; align-items: center; gap: .75rem; font-weight: 700; letter-spacing: -.02em; }
+    .brand-mark { width: 38px; height: 38px; object-fit: contain; }
+    .brand-name small { display: block; color: var(--muted); font: 500 .58rem/1 "DM Sans", sans-serif; letter-spacing: .15em; text-transform: uppercase; }
+    .nav-link { margin: 0 .25rem; color: #464640; font-size: .91rem; font-weight: 600; }
+    .nav-link:hover, .nav-link.active { color: var(--gold-dark); }
+    .btn { padding: .82rem 1.25rem; border-radius: 4px; font-weight: 600; }
+    .btn-dark-custom { background: var(--dark); border: 1px solid var(--dark); color: #fff; }
+    .btn-dark-custom:hover { background: #2d2d29; border-color: #2d2d29; color: #fff; transform: translateY(-2px); }
+    .btn-outline-custom { border: 1px solid #bbb8af; color: var(--ink); }
+    .btn-outline-custom:hover { background: #fff; border-color: var(--ink); transform: translateY(-2px); }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding: 160px 0 80px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(21,21,19,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(21,21,19,.035) 1px, transparent 1px);
+      background-size: 58px 58px;
+      mask-image: linear-gradient(to bottom, #000, transparent 88%);
+    }
+    .hero-badge { display: inline-flex; gap: .6rem; align-items: center; margin-bottom: 1.5rem; padding: .48rem .78rem; border: 1px solid var(--line); border-radius: 100px; background: rgba(255,255,255,.6); color: #4c4c47; font-size: .82rem; font-weight: 600; }
+    .hero-badge span { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 5px rgba(170,129,54,.12); }
+    .hero h1 { max-width: 780px; margin-bottom: 1.5rem; font-size: clamp(3.3rem, 7vw, 6.9rem); line-height: .95; letter-spacing: -.058em; }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-copy { max-width: 620px; color: var(--muted); font-size: clamp(1.08rem, 2vw, 1.3rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.1rem; }
+    .hero-note { display: flex; align-items: center; gap: .7rem; margin-top: 2.2rem; color: var(--muted); font-size: .86rem; }
+    .hero-note i { color: var(--gold-dark); }
+    .system-visual { position: relative; min-height: 500px; margin-left: 1.5rem; }
+    .orbit { position: absolute; border: 1px solid rgba(170,129,54,.27); border-radius: 50%; animation: rotate 28s linear infinite; }
+    .orbit.one { inset: 6% 2% 6% 2%; }
+    .orbit.two { inset: 20% 15%; animation-direction: reverse; animation-duration: 20s; }
+    .orbit-dot { position: absolute; top: -6px; left: 50%; width: 11px; height: 11px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 7px rgba(170,129,54,.12); }
+    .visual-core {
+      position: absolute;
+      inset: 31% 26%;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 35px 90px rgba(45,42,33,.13);
+      backdrop-filter: blur(10px);
+    }
+    .visual-core img { width: 76%; height: auto; }
+    .mini-card { position: absolute; display: flex; align-items: center; gap: .8rem; min-width: 170px; padding: .9rem 1rem; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.92); box-shadow: 0 18px 50px rgba(45,42,33,.1); font-size: .84rem; font-weight: 600; }
+    .mini-card i { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 7px; background: #f0e9da; color: var(--gold-dark); font-size: 1.05rem; }
+    .mini-card.a { top: 11%; left: -2%; }
+    .mini-card.b { top: 25%; right: -3%; }
+    .mini-card.c { bottom: 12%; left: 4%; }
+    @keyframes rotate { to { transform: rotate(360deg); } }
+
+    .trust-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; }
+    .trust-label { color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .tech-list { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; padding: 1.6rem 0; }
+    .tech-item { display: flex; align-items: center; gap: .5rem; color: #55554f; font-weight: 600; }
+    .tech-item i { color: var(--gold-dark); font-size: 1.2rem; }
+
+    .about-panel { padding: clamp(2rem, 6vw, 5rem); border: 1px solid var(--line); background: #fff; box-shadow: 0 30px 100px rgba(27,26,21,.05); }
+    .statement { margin: 0; font: 500 clamp(1.55rem, 3vw, 2.5rem)/1.3 "Outfit", sans-serif; letter-spacing: -.025em; }
+    .value-list { margin: 0; padding: 0; list-style: none; }
+    .value-list li { display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--line); font-weight: 600; }
+    .value-list li:last-child { border: 0; }
+    .value-list span { color: #aaa69c; font: 500 .78rem "DM Sans", sans-serif; }
+
+    .services { background: var(--dark); color: #f8f7f3; }
+    .services .section-kicker { color: #d4ad63; }
+    .services .section-intro { color: #a8a79f; }
+    .service-card { height: 100%; padding: 2rem; border: 1px solid #33332e; background: #181816; transition: transform .3s ease, border-color .3s ease, background .3s ease; }
+    .service-card:hover { transform: translateY(-7px); border-color: #725927; background: #1c1c19; }
+    .service-number { margin-bottom: 2.5rem; color: #6e6e66; font-size: .75rem; letter-spacing: .12em; }
+    .service-icon { display: grid; place-items: center; width: 54px; height: 54px; margin-bottom: 1.4rem; border: 1px solid #51452e; border-radius: 8px; color: #d4ad63; font-size: 1.4rem; }
+    .service-card h3 { margin-bottom: .85rem; font-size: 1.35rem; }
+    .service-card p { color: #aaa9a1; font-size: .94rem; }
+    .service-card ul { margin: 1.35rem 0 0; padding: 0; list-style: none; color: #dad8d0; font-size: .88rem; }
+    .service-card li { margin-top: .55rem; }
+    .service-card li::before { content: "—"; margin-right: .6rem; color: #a8823b; }
+
+    .work-card { height: 100%; overflow: hidden; border: 1px solid var(--line); background: #fff; transition: transform .3s ease, box-shadow .3s ease; }
+    .work-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(30,29,25,.09); }
+    .work-visual { position: relative; min-height: 220px; padding: 1.5rem; overflow: hidden; background: #eeece5; }
+    .work-visual.dark { background: #1a1a18; }
+    .browser-frame { height: 170px; padding: 28px 12px 12px; border-radius: 7px; background: #fff; box-shadow: 0 18px 40px rgba(25,24,20,.13); }
+    .browser-frame::before { content: "●  ●  ●"; position: absolute; top: 34px; left: 42px; color: #c4bfb4; font-size: .55rem; letter-spacing: .25rem; }
+    .fake-row { height: 9px; margin-bottom: 8px; border-radius: 10px; background: #e8e5dc; }
+    .fake-row.gold { width: 44%; background: #b99148; }
+    .fake-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 18px; }
+    .fake-grid span { height: 62px; border-radius: 3px; background: #f0eee8; }
+    .code-window { height: 170px; padding: 1.2rem; border: 1px solid #393934; border-radius: 8px; background: #11110f; color: #c9a65f; font: .71rem/1.8 monospace; }
+    .sheet-window { display: grid; grid-template-columns: repeat(5, 1fr); height: 170px; border: 1px solid #d6d2c8; background: #fff; box-shadow: 0 18px 40px rgba(25,24,20,.1); }
+    .sheet-window span { border-right: 1px solid #e9e6df; border-bottom: 1px solid #e9e6df; }
+    .sheet-window span:nth-child(7n) { background: #eee4cf; }
+    .work-body { padding: 1.6rem; }
+    .demo-badge { display: inline-block; margin-bottom: .8rem; padding: .28rem .55rem; border: 1px solid #d4c7a9; border-radius: 3px; color: var(--gold-dark); font-size: .67rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .work-body h3 { font-size: 1.25rem; }
+    .work-body p { margin: 0; color: var(--muted); font-size: .91rem; }
+
+    .insights { background: #f0eee8; }
+    .insight-card { display: block; height: 100%; padding: 1.6rem; border: 1px solid #d7d3ca; background: rgba(255,255,255,.45); text-decoration: none; transition: .25s ease; }
+    .insight-card:hover { background: #fff; border-color: #bab5a9; transform: translateY(-4px); }
+    .insight-meta { display: flex; justify-content: space-between; margin-bottom: 2.8rem; color: var(--muted); font-size: .75rem; }
+    .insight-card h3 { max-width: 320px; font-size: 1.3rem; line-height: 1.25; }
+    .insight-card .arrow { display: inline-flex; margin-top: 1.3rem; color: var(--gold-dark); }
+    .coming-panel { position: relative; padding: clamp(2.5rem, 7vw, 6rem); overflow: hidden; background: var(--dark); color: #fff; }
+    .coming-panel::after { content: "SOON"; position: absolute; right: -1rem; bottom: -3.2rem; color: rgba(255,255,255,.035); font: 700 clamp(8rem, 22vw, 18rem)/1 "Outfit", sans-serif; }
+    .coming-panel p { max-width: 540px; color: #aaa9a1; }
+    .coming-chip { display: inline-flex; align-items: center; gap: .6rem; margin-top: 1.2rem; padding: .55rem .75rem; border: 1px solid #4b4434; color: #d4ad63; font-size: .78rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
+
+    .contact-card { padding: clamp(2rem, 5vw, 4rem); border: 1px solid var(--line); background: #fff; }
+    .contact-link { display: inline-flex; align-items: center; gap: .7rem; margin-top: .5rem; color: var(--ink); font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 600; text-decoration: none; }
+    .contact-link:hover { color: var(--gold-dark); }
+    .form-control { padding: .9rem 1rem; border-color: #d1cec5; border-radius: 3px; background: var(--paper); }
+    .form-control:focus { border-color: var(--gold); box-shadow: 0 0 0 .2rem rgba(170,129,54,.1); }
+    .form-label { font-size: .82rem; font-weight: 600; }
+    .form-note { margin-top: .7rem; color: var(--muted); font-size: .76rem; }
+
+    footer { padding: 3rem 0; background: var(--dark); color: #aaa9a1; }
+    .footer-brand { color: #fff; font: 600 1.05rem "Outfit", sans-serif; }
+    .footer-quote { color: #d1b06d; font-size: .88rem; }
+    .socials { display: flex; gap: .6rem; justify-content: flex-end; }
+    .socials span { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid #34342f; border-radius: 50%; color: #797871; cursor: not-allowed; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 991px) {
+      .navbar-collapse { margin-top: .8rem; padding: 1rem; border: 1px solid var(--line); background: #fff; }
+      .hero { padding-top: 135px; }
+      .system-visual { min-height: 430px; margin: 2rem 0 0; }
+      .hero h1 { max-width: 900px; }
+      .socials { justify-content: flex-start; margin-top: 1rem; }
+    }
+    @media (max-width: 575px) {
+      .section-space { padding: 78px 0; }
+      .hero h1 { font-size: 3.4rem; }
+      .system-visual { min-height: 340px; }
+      .mini-card { min-width: 136px; padding: .65rem; font-size: .72rem; }
+      .mini-card i { width: 29px; height: 29px; }
+      .visual-core { inset: 30% 24%; }
+      .tech-list { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#home" aria-label="Fikey Ingenious home">
+        <img class="brand-mark" src="fikey-ingenious-logo-icon.png" alt="">
+        <span class="brand-name">Fikey Ingenious <small>Technologies</small></span>
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#insights">Insights</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-dark-custom btn-sm px-3" href="#contact">Start a conversation</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container position-relative">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="hero-badge"><span></span> Practical technology, thoughtfully built</div>
+            <h1>Smart digital solutions for <em>modern businesses.</em></h1>
+            <p class="hero-copy">We build clean websites, automate repetitive work, simplify data management, and share practical technology insights.</p>
+            <div class="hero-actions">
+              <a class="btn btn-dark-custom" href="#services">Explore services <i class="bi bi-arrow-down-right ms-2"></i></a>
+              <a class="btn btn-outline-custom" href="#portfolio">View portfolio</a>
+            </div>
+            <div class="hero-note"><i class="bi bi-geo-alt"></i> Malaysia-based · Supporting businesses and independent professionals</div>
+          </div>
+          <div class="col-lg-5">
+            <div class="system-visual" aria-label="A visual system representing connected digital services">
+              <div class="orbit one"><span class="orbit-dot"></span></div>
+              <div class="orbit two"><span class="orbit-dot"></span></div>
+              <div class="visual-core"><img src="fikey-ingenious-logo-icon.png" alt="Fikey Ingenious symbol"></div>
+              <div class="mini-card a"><i class="bi bi-window"></i> Clean websites</div>
+              <div class="mini-card b"><i class="bi bi-stars"></i> AI workflows</div>
+              <div class="mini-card c"><i class="bi bi-table"></i> Better data</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container">
+        <div class="tech-list">
+          <span class="trust-label align-self-center">Tools we work with</span>
+          <span class="tech-item"><i class="bi bi-filetype-html"></i> HTML5</span>
+          <span class="tech-item"><i class="bi bi-bootstrap"></i> Bootstrap</span>
+          <span class="tech-item"><i class="bi bi-filetype-js"></i> JavaScript</span>
+          <span class="tech-item"><i class="bi bi-filetype-py"></i> Python</span>
+          <span class="tech-item"><i class="bi bi-git"></i> Git</span>
+          <span class="tech-item"><i class="bi bi-stars"></i> OpenAI</span>
+          <span class="tech-item"><i class="bi bi-table"></i> Sheets & Excel</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section-space" id="about">
+      <div class="container">
+        <div class="about-panel reveal">
+          <div class="row g-5 align-items-start">
+            <div class="col-lg-7">
+              <span class="section-kicker">About us</span>
+              <p class="statement">Fikey Ingenious Technologies is a digital studio helping individuals and small businesses simplify how they work through modern, efficient solutions.</p>
+              <p class="text-muted-custom mt-4 mb-0">Our philosophy is straightforward: technology should remove friction, not create more of it. We focus on useful outcomes, clean execution, and solutions that are easy to understand and maintain.</p>
+            </div>
+            <div class="col-lg-4 offset-lg-1">
+              <h2 class="h6 text-uppercase mb-3" style="letter-spacing:.13em;">What guides our work</h2>
+              <ul class="value-list">
+                <li>Simplicity <span>01</span></li>
+                <li>Innovation <span>02</span></li>
+                <li>Automation <span>03</span></li>
+                <li>Continuous learning <span>04</span></li>
+                <li>Quiet progress <span>05</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section-space" id="services">
+      <div class="container">
+        <span class="section-kicker">What we do</span>
+        <h2 class="section-title">Practical expertise for everyday digital challenges.</h2>
+        <p class="section-intro mb-5">From your first professional website to a workflow that saves hours every week, we shape the right-sized solution around how you actually work.</p>
+        <div class="row g-3">
+          <div class="col-md-6 col-xl-3 reveal">
+            <article class="service-card">
+              <div class="service-number">SERVICE 01</div>
+              <div class="service-icon"><i class="bi bi-layout-text-window-reverse"></i></div>
+              <h3>Web Development</h3>
+              <p>Responsive, focused websites that present your business clearly and work beautifully on every screen.</p>
+              <ul><li>Business websites</li><li>Landing pages</li><li>Portfolio sites</li><li>Bootstrap builds</li></ul>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3 reveal">
+            <article class="service-card">
+              <div class="service-number">SERVICE 02</div>
+              <div class="service-icon"><i class="bi bi-cpu"></i></div>
+              <h3>Automation & AI</h3>
+              <p>Smarter workflows that reduce manual effort, connect tools, and turn repetitive work into reliable processes.</p>
+              <ul><li>Python automation</li><li>AI-assisted workflows</li><li>PDF generation</li><li>OpenAI integration</li></ul>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3 reveal">
+            <article class="service-card">
+              <div class="service-number">SERVICE 03</div>
+              <div class="service-icon"><i class="bi bi-database-check"></i></div>
+              <h3>Data Services</h3>
+              <p>Accurate, structured data support that makes your spreadsheets and administrative work easier to manage.</p>
+              <ul><li>Data entry</li><li>Spreadsheet cleanup</li><li>Excel & Google Sheets</li><li>CSV processing</li></ul>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3 reveal">
+            <article class="service-card">
+              <div class="service-number">SERVICE 04</div>
+              <div class="service-icon"><i class="bi bi-compass"></i></div>
+              <h3>Tech Consultation</h3>
+              <p>Plain-language guidance to help you choose tools, improve workflows, and take the next digital step.</p>
+              <ul><li>Technology guidance</li><li>Digital setup</li><li>Workflow improvement</li><li>Small-business transformation</li></ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space" id="portfolio">
+      <div class="container">
+        <div class="d-lg-flex justify-content-between align-items-end mb-5">
+          <div>
+            <span class="section-kicker">Selected concepts</span>
+            <h2 class="section-title mb-lg-0">A glimpse of what we can build.</h2>
+          </div>
+          <p class="section-intro mb-1">These demonstration concepts show the type of thoughtful, practical work available while our client case studies are being prepared.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 reveal">
+            <article class="work-card">
+              <div class="work-visual">
+                <div class="browser-frame">
+                  <div class="fake-row gold"></div><div class="fake-row" style="width:72%"></div>
+                  <div class="fake-grid"><span></span><span></span><span></span></div>
+                </div>
+              </div>
+              <div class="work-body"><span class="demo-badge">Demonstration</span><h3>Modern Business Website</h3><p>A responsive, conversion-focused web presence for a growing service business.</p></div>
+            </article>
+          </div>
+          <div class="col-lg-4 reveal">
+            <article class="work-card">
+              <div class="work-visual dark">
+                <div class="code-window">generate_report(data)<br>&nbsp;&nbsp;→ validate records<br>&nbsp;&nbsp;→ calculate totals<br>&nbsp;&nbsp;→ build branded PDF<br>&nbsp;&nbsp;→ deliver automatically<br><br><span style="color:#7c9b76">✓ 42 reports completed</span></div>
+              </div>
+              <div class="work-body"><span class="demo-badge">Demonstration</span><h3>Automated PDF Workflow</h3><p>A repeatable process that turns structured data into consistent, branded documents.</p></div>
+            </article>
+          </div>
+          <div class="col-lg-4 reveal">
+            <article class="work-card">
+              <div class="work-visual">
+                <div class="sheet-window" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="work-body"><span class="demo-badge">Demonstration</span><h3>Spreadsheet Cleanup System</h3><p>A cleaner data structure with validation, summaries, and less repetitive admin work.</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="insights section-space" id="insights">
+      <div class="container">
+        <span class="section-kicker">Tech insights</span>
+        <h2 class="section-title">Learning in public, one useful idea at a time.</h2>
+        <p class="section-intro mb-5">Our technical journal will share practical notes on automation, development, AI, and building a more productive digital workflow.</p>
+        <div class="row g-3">
+          <div class="col-md-4 reveal"><article class="insight-card"><div class="insight-meta"><span>AUTOMATION</span><span>COMING SOON</span></div><h3>Where small automations create the biggest time savings</h3><span class="arrow"><i class="bi bi-arrow-up-right"></i></span></article></div>
+          <div class="col-md-4 reveal"><article class="insight-card"><div class="insight-meta"><span>WEB</span><span>COMING SOON</span></div><h3>What a useful small-business website really needs</h3><span class="arrow"><i class="bi bi-arrow-up-right"></i></span></article></div>
+          <div class="col-md-4 reveal"><article class="insight-card"><div class="insight-meta"><span>AI</span><span>COMING SOON</span></div><h3>Using AI as a practical assistant, not a distraction</h3><span class="arrow"><i class="bi bi-arrow-up-right"></i></span></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space" id="products">
+      <div class="container">
+        <div class="coming-panel reveal">
+          <div class="position-relative" style="z-index:1">
+            <span class="section-kicker">Digital products</span>
+            <h2 class="section-title">Useful resources are on the way.</h2>
+            <p>We’re preparing practical templates, eBooks, automation tools, and downloadable resources designed to simplify everyday digital work.</p>
+            <span class="coming-chip"><i class="bi bi-hourglass-split"></i> Coming soon</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space pt-0" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="row g-5">
+            <div class="col-lg-5">
+              <span class="section-kicker">Let’s talk</span>
+              <h2 class="section-title">Have a digital challenge in mind?</h2>
+              <p class="text-muted-custom">Tell us what is taking too much time, feels unnecessarily complicated, or needs a more professional digital presence.</p>
+              <a class="contact-link" href="mailto:fikeyingenious@gmail.com"><i class="bi bi-envelope"></i> fikeyingenious@gmail.com</a>
+            </div>
+            <div class="col-lg-6 offset-lg-1">
+              <form id="contactForm">
+                <div class="row g-3">
+                  <div class="col-md-6"><label class="form-label" for="name">Your name</label><input class="form-control" id="name" name="name" autocomplete="name" required></div>
+                  <div class="col-md-6"><label class="form-label" for="email">Email address</label><input class="form-control" id="email" name="email" type="email" autocomplete="email" required></div>
+                  <div class="col-12"><label class="form-label" for="subject">What can we help with?</label><select class="form-control" id="subject" name="subject"><option>Website development</option><option>Automation & AI</option><option>Data services</option><option>Technical consultation</option><option>Something else</option></select></div>
+                  <div class="col-12"><label class="form-label" for="message">Tell us a little about your project</label><textarea class="form-control" id="message" name="message" rows="5" required></textarea></div>
+                  <div class="col-12"><button class="btn btn-dark-custom" type="submit">Prepare email <i class="bi bi-arrow-up-right ms-2"></i></button><p class="form-note">This opens your email app with the message ready to send.</p></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-lg-4"><div class="footer-brand">Fikey Ingenious Technologies</div><small>© <span id="year"></span> All rights reserved.</small></div>
+        <div class="col-lg-4 text-lg-center"><span class="footer-quote">“Quiet progress is still progress.”</span></div>
+        <div class="col-lg-4"><div class="socials" aria-label="Social channels coming soon"><span title="Facebook coming soon"><i class="bi bi-facebook"></i></span><span title="Instagram coming soon"><i class="bi bi-instagram"></i></span><span title="LinkedIn coming soon"><i class="bi bi-linkedin"></i></span><span title="GitHub coming soon"><i class="bi bi-github"></i></span><span title="YouTube coming soon"><i class="bi bi-youtube"></i></span></div></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const nav = document.getElementById("mainNav");
+    const menu = document.getElementById("navMenu");
+    const collapse = bootstrap.Collapse.getOrCreateInstance(menu, { toggle: false });
+    window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 24), { passive: true });
+    document.querySelectorAll("#navMenu a").forEach(link => link.addEventListener("click", () => {
+      if (window.innerWidth < 992) collapse.hide();
+    }));
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+    }), { threshold: .12 });
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    document.getElementById("contactForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const form = new FormData(event.currentTarget);
+      const subject = encodeURIComponent(`Website enquiry: ${form.get("subject")}`);
+      const body = encodeURIComponent(`Name: ${form.get("name")}\nEmail: ${form.get("email")}\n\n${form.get("message")}`);
+      window.location.href = `mailto:fikeyingenious@gmail.com?subject=${subject}&body=${body}`;
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
