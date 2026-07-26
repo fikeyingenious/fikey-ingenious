@@ -1,34 +1,34 @@
-# 🚧 Fikey Ingenious — Under Construction
+# Fikey Ingenious Technologies
 
-Welcome to the source for the **Fikey Ingenious** under construction landing page. This site is a sleek, animated, single-page HTML experience built to let visitors know that something bold and innovative is on the way.
+The official static portfolio website for **Fikey Ingenious Technologies**.
 
-![screenshot](fikey-ingenious-logo.png)
+## Overview
 
-## 💡 Overview
+This responsive, single-page company website presents:
 
-This page includes:
+- AI solutions and workflow automation
+- Business applications and API-driven systems
+- Data analytics, BI dashboards, and automated reporting
+- Database, integration, and technical guidance
+- Demonstration portfolio concepts
+- Upcoming technical insights and digital products
+- A simple email-based enquiry form
+- The company’s black, charcoal, and gold identity
 
-- A custom logo and favicon
-- A subtle loading animation
-- Particle background using [tsParticles](https://particles.js.org)
-- A typewriter text effect
-- Fully responsive layout
-- Open Graph meta tags for rich sharing
+## Technology
 
-## 🔧 Usage
+- HTML5
+- CSS3
+- Bootstrap 5
+- Bootstrap Icons
+- Vanilla JavaScript
 
-To use or customize this project:
+The public website remains static and requires no backend, database, or CMS.
 
-1. Clone or download the repository.
-2. Replace the logo image `fikey-ingenious-logo.png` and favicon `fikey-ingenious-logo.ico` with your own assets.
-3. Edit the content, colors, and styles in `index.html` as needed.
-4. Deploy it on any static host (e.g., GitHub Pages, Vercel, Netlify).
+## Local preview
 
-## 📁 File Structure
+Open `index.html` in a browser or serve the directory using any static web server.
 
-```bash
-.
-├── index.html              # Main HTML page
-├── fikey-ingenious-logo.png   # Logo image
-├── fikey-ingenious-logo.ico   # Favicon
-└── README.md               # This file
+## Deployment
+
+The repository includes a `CNAME` file for `fikeyingenious.com` and is suitable for GitHub Pages or another static host.
