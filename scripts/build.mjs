@@ -18,16 +18,14 @@ const textAssets = {
 const binaryFiles = {
   "/fikey-ingenious-logo.png": ["image/png", "fikey-ingenious-logo.png"],
   "/fikey-ingenious-logo-icon.png": ["image/png", "fikey-ingenious-logo-icon.png"],
-  "/og.png": ["image/png", "og.png"],
-  "/nuha-tea-og.png": ["image/png", "nuha-tea-og.png"],
   "/nuha-kenduri.jpeg": ["image/jpeg", "nuha-kenduri.jpeg"],
   "/nuha-menu.jpeg": ["image/jpeg", "nuha-menu.jpeg"],
   "/nuha-banner.jpeg": ["image/jpeg", "nuha-banner.jpeg"],
   "/nuha-signature.jpeg": ["image/jpeg", "nuha-signature.jpeg"],
   "/nuha-logo.png": ["image/png", "nuha-logo.png"],
-  "/nuha-cup.png": ["image/png", "nuha-cup.png"],
-  "/nuha-vanilla.png": ["image/png", "nuha-vanilla.png"],
-  "/nuha-kenduri.png": ["image/png", "nuha-kenduri.png"],
+  "/nuha-cup.webp": ["image/webp", "nuha-cup.webp"],
+  "/nuha-vanilla.webp": ["image/webp", "nuha-vanilla.webp"],
+  "/nuha-kenduri.webp": ["image/webp", "nuha-kenduri.webp"],
   "/nuha-favicon.png": ["image/png", "nuha-favicon.png"],
 };
 
