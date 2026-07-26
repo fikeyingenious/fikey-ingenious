@@ -25,6 +25,10 @@ const binaryFiles = {
   "/nuha-banner.jpeg": ["image/jpeg", "nuha-banner.jpeg"],
   "/nuha-signature.jpeg": ["image/jpeg", "nuha-signature.jpeg"],
   "/nuha-logo.png": ["image/png", "nuha-logo.png"],
+  "/nuha-cup.png": ["image/png", "nuha-cup.png"],
+  "/nuha-vanilla.png": ["image/png", "nuha-vanilla.png"],
+  "/nuha-kenduri.png": ["image/png", "nuha-kenduri.png"],
+  "/nuha-favicon.png": ["image/png", "nuha-favicon.png"],
 };
 
 const binaryAssets = {};

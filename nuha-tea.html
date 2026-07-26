@@ -17,6 +17,8 @@
   <meta name="twitter:description" content="Simple ingredients. Extraordinary taste.">
   <meta name="twitter:image" content="https://fikeyingenious.com/nuha-banner.jpeg">
   <title>Nuha Tea Co. | Premium Tea Peng</title>
+  <link rel="icon" type="image/png" href="nuha-favicon.png">
+  <link rel="apple-touch-icon" href="nuha-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
@@ -100,7 +102,7 @@
       position: absolute; inset: 0; display: grid; place-items: center; overflow: hidden;
       background: transparent;
     }
-    .hero-photo img { width: 100%; height: 100%; object-fit: contain; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 32px 34px rgba(0,0,0,.52)); }
 
     .ticker { overflow: hidden; border-block: 1px solid var(--line); color: var(--gold-light); background: #0b0b0b; }
     .ticker-track { display: flex; width: max-content; animation: ticker 24s linear infinite; }
@@ -117,8 +119,14 @@
 
     .signature { background: linear-gradient(115deg, #f4e7d1, #e8cfa8); color: #241a12; }
     .signature-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
-    .signature-image { position: relative; height: 600px; overflow: hidden; border: 1px solid rgba(70,43,22,.25); box-shadow: 0 25px 70px rgba(57,34,16,.18); }
-    .signature-image img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
+    .signature-image {
+      position: relative; height: 600px; display: flex; align-items: flex-end; justify-content: center; gap: 0;
+      overflow: hidden; border: 1px solid rgba(70,43,22,.18);
+      background: radial-gradient(circle at 50% 75%, rgba(126,76,35,.17), transparent 48%), rgba(255,250,240,.34);
+      box-shadow: 0 25px 70px rgba(57,34,16,.14);
+    }
+    .signature-image img { width: 52%; height: 88%; object-fit: contain; filter: drop-shadow(0 24px 20px rgba(74,44,23,.2)); }
+    .signature-image img + img { margin-left: -10%; height: 82%; }
     .signature .eyebrow { color: #8e5628; }
     .signature-copy h2 { margin-bottom: 26px; color: #2b1c12; }
     .signature .section-intro { color: #6c5748; }
@@ -153,8 +161,11 @@
     .kenduri-copy h2 { margin-bottom: 22px; }
     .service-list { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin: 28px 0 34px; }
     .service-item { padding: 16px; border-left: 1px solid var(--gold); color: #c6bfb6; font-size: .83rem; }
-    .kenduri-image { height: 590px; overflow: hidden; border: 1px solid var(--line); }
-    .kenduri-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; }
+    .kenduri-image {
+      height: 590px; display: grid; place-items: center; overflow: hidden;
+      background: radial-gradient(circle at 52% 70%, rgba(213,154,74,.14), transparent 48%);
+    }
+    .kenduri-image img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 30px 32px rgba(0,0,0,.48)); }
 
     .about { border-block: 1px solid rgba(213,154,74,.18); background: #0e0e0e; }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
@@ -248,7 +259,7 @@
           </div>
         </div>
         <div class="hero-visual reveal">
-          <div class="hero-photo"><img src="nuha-signature.jpeg" alt="Signature Nuha Tea Peng dengan ais"></div>
+          <div class="hero-photo"><img src="nuha-cup.png" alt="Signature Nuha Tea Peng dengan ais"></div>
         </div>
       </div>
     </section>
@@ -260,7 +271,10 @@
 
     <section class="section signature" id="menu">
       <div class="container signature-grid">
-        <div class="signature-image reveal"><img src="nuha-menu.jpeg" alt="Pilihan Nuha Tea Peng Premium dan Vanilla"></div>
+        <div class="signature-image reveal">
+          <img src="nuha-cup.png" alt="Nuha Tea Peng Premium">
+          <img src="nuha-vanilla.png" alt="Nuha Tea Peng Vanilla">
+        </div>
         <div class="signature-copy reveal">
           <p class="eyebrow">Signature collection</p>
           <h2 class="serif">Original Tea Peng</h2>
@@ -297,7 +311,7 @@
           </div>
           <a class="button" href="#order">Minta sebut harga</a>
         </div>
-        <div class="kenduri-image reveal"><img src="nuha-kenduri.jpeg" alt="Pakej kenduri Nuha Tea Co."></div>
+        <div class="kenduri-image reveal"><img src="nuha-kenduri.png" alt="Pakej kenduri Nuha Tea Co. dengan dispenser dan cawan"></div>
       </div>
     </section>
 
