@@ -13,6 +13,7 @@ const textAssets = {
   "/index.html": await readFile(resolve(root, "index.html"), "utf8"),
   "/nuha-tea": await readFile(resolve(root, "nuha-tea.html"), "utf8"),
   "/nuha-tea.html": await readFile(resolve(root, "nuha-tea.html"), "utf8"),
+  "/nuhateaco": await readFile(resolve(root, "nuha-tea.html"), "utf8"),
 };
 
 const binaryFiles = {
@@ -27,6 +28,7 @@ const binaryFiles = {
   "/nuha-vanilla.webp": ["image/webp", "nuha-vanilla.webp"],
   "/nuha-kenduri.webp": ["image/webp", "nuha-kenduri.webp"],
   "/nuha-favicon.png": ["image/png", "nuha-favicon.png"],
+  "/nuha-hero.webp": ["image/webp", "nuha-hero.webp"],
 };
 
 const binaryAssets = {};
