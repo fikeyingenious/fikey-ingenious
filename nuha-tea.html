@@ -202,10 +202,11 @@
     footer { padding: 42px 0; border-top: 1px solid var(--line); background: #050505; color: #817b74; font-size: .78rem; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
     .footer-socials { display: flex; align-items: center; gap: 9px; }
-    .social-placeholder {
+    .social-link {
       width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid #39342d; border-radius: 50%;
-      color: var(--gold); font-size: 1rem; cursor: not-allowed; opacity: .76;
+      color: var(--gold); font-size: 1rem; text-decoration: none; transition: .2s ease;
     }
+    .social-link:hover { transform: translateY(-2px); border-color: var(--gold); color: var(--gold-light); }
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
@@ -272,7 +273,7 @@
           </div>
         </div>
         <div class="hero-visual reveal">
-          <div class="hero-photo"><img src="nuha-hero.webp" alt="Signature Nuha Tea Peng di atas pelapik marmar hitam"></div>
+          <div class="hero-photo"><img src="nuha-hero.png" alt="Signature Nuha Tea Peng di atas pelapik marmar hitam"></div>
         </div>
       </div>
     </section>
@@ -351,7 +352,6 @@
           <h2 class="serif">Jom buat tempahan.</h2>
           <p class="section-intro">Beritahu kami tarikh, kuantiti dan lokasi. Butiran tempahan akan terus dibuka dalam WhatsApp untuk pengesahan.</p>
           <a class="contact-link whatsapp-only" href="https://wa.me/60138530816" target="_blank" rel="noopener" aria-label="Hubungi Nuha Tea melalui WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i> Hubungi kami</a>
-          <a class="contact-link" href="https://instagram.com/nuhateaco" target="_blank" rel="noopener"><span>◎</span> @nuhateaco</a>
         </div>
         <form class="order-form reveal" id="orderForm">
           <input class="field" id="name" required placeholder="Nama anda" aria-label="Nama anda">
@@ -370,9 +370,9 @@
   <footer><div class="container footer-inner">
     <a class="brand" href="#home"><img class="brand-logo" src="nuha-logo.png" alt="Nuha Tea Co."></a>
     <span>© <span id="year"></span> Nuha Tea Co. Hak cipta terpelihara.</span>
-    <div class="footer-socials" aria-label="Media sosial akan datang">
-      <span class="social-placeholder" role="img" aria-label="Instagram — pautan akan datang" title="Instagram — akan datang"><i class="bi bi-instagram" aria-hidden="true"></i></span>
-      <span class="social-placeholder" role="img" aria-label="TikTok — pautan akan datang" title="TikTok — akan datang"><i class="bi bi-tiktok" aria-hidden="true"></i></span>
+    <div class="footer-socials" aria-label="Media sosial Nuha Tea">
+      <a class="social-link" href="https://instagram.com/nuhateaco" target="_blank" rel="noopener" aria-label="Instagram Nuha Tea"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+      <a class="social-link" href="https://www.tiktok.com/@nuhateaco" target="_blank" rel="noopener" aria-label="TikTok Nuha Tea"><i class="bi bi-tiktok" aria-hidden="true"></i></a>
     </div>
   </div></footer>
 

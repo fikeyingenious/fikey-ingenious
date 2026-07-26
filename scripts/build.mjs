@@ -28,7 +28,7 @@ const binaryFiles = {
   "/nuha-vanilla.webp": ["image/webp", "nuha-vanilla.webp"],
   "/nuha-kenduri.webp": ["image/webp", "nuha-kenduri.webp"],
   "/nuha-favicon.png": ["image/png", "nuha-favicon.png"],
-  "/nuha-hero.webp": ["image/webp", "nuha-hero.webp"],
+  "/nuha-hero.png": ["image/png", "nuha-hero.png"],
 };
 
 const binaryAssets = {};
