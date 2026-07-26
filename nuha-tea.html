@@ -61,8 +61,9 @@
       border-bottom: 1px solid transparent; backdrop-filter: blur(18px); transition: .25s ease;
     }
     .nav.scrolled { border-color: rgba(213,154,74,.2); box-shadow: 0 12px 36px rgba(0,0,0,.35); }
-    .nav-inner { height: 78px; display: flex; align-items: center; justify-content: space-between; }
-    .brand { display: flex; align-items: center; gap: 11px; color: var(--gold-light); text-decoration: none; }
+    .nav-inner { height: 88px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; color: var(--gold-light); text-decoration: none; }
+    .brand-logo { width: auto; height: 74px; object-fit: contain; }
     .brand-mark {
       width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--gold); border-radius: 50%;
       font: 1.45rem "Italiana", serif;
@@ -186,7 +187,7 @@
 
     @media (max-width: 960px) {
       .menu-button { display: block; }
-      .nav-links { position: fixed; inset: 78px 0 auto; display: none; padding: 25px; flex-direction: column; background: #090909; border-bottom: 1px solid var(--line); }
+      .nav-links { position: fixed; inset: 88px 0 auto; display: none; padding: 25px; flex-direction: column; background: #090909; border-bottom: 1px solid var(--line); }
       .nav-links.open { display: flex; }
       .hero-grid, .signature-grid, .kenduri-grid, .order-grid { grid-template-columns: 1fr; }
       .hero-grid { gap: 50px; }
@@ -220,10 +221,7 @@
 <body>
   <nav class="nav" id="nav" aria-label="Navigasi utama">
     <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="Nuha Tea Co.">
-        <span class="brand-mark">N</span>
-        <span class="brand-copy"><span class="brand-name">NUHA</span><span class="brand-tag">Tea Co. · Crafted Tea Experience</span></span>
-      </a>
+      <a class="brand" href="#home" aria-label="Nuha Tea Co."><img class="brand-logo" src="nuha-logo.png" alt="Nuha Tea Co."></a>
       <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="navLinks" aria-label="Buka menu">☰</button>
       <div class="nav-links" id="navLinks">
         <a href="#home">Utama</a><a href="#menu">Menu</a><a href="#packages">Pakej</a><a href="#about">Tentang</a><a href="#location">Lokasi</a>
@@ -345,7 +343,7 @@
   </main>
 
   <footer><div class="container footer-inner">
-    <a class="brand" href="#home"><span class="brand-mark">N</span><span class="brand-copy"><span class="brand-name">NUHA</span><span class="brand-tag">Tea Co.</span></span></a>
+    <a class="brand" href="#home"><img class="brand-logo" src="nuha-logo.png" alt="Nuha Tea Co."></a>
     <span>© <span id="year"></span> Nuha Tea Co. Hak cipta terpelihara.</span>
     <span class="footer-social">@nuhateaco</span>
   </div></footer>
