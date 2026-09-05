@@ -11,6 +11,10 @@ await mkdir(server, { recursive: true });
 const textAssets = {
   "/": await readFile(resolve(root, "index.html"), "utf8"),
   "/index.html": await readFile(resolve(root, "index.html"), "utf8"),
+  "/profile": await readFile(resolve(root, "profile.html"), "utf8"),
+  "/profile.html": await readFile(resolve(root, "profile.html"), "utf8"),
+  "/sayed-fikri-profile": await readFile(resolve(root, "sayed-fikri-profile/index.html"), "utf8"),
+  "/sayed-fikri-profile/index.html": await readFile(resolve(root, "sayed-fikri-profile/index.html"), "utf8"),
   "/nuha-tea": await readFile(resolve(root, "nuha-tea.html"), "utf8"),
   "/nuha-tea.html": await readFile(resolve(root, "nuha-tea.html"), "utf8"),
   "/nuhateaco": await readFile(resolve(root, "nuhateaco/index.html"), "utf8"),
@@ -55,7 +59,7 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname.length > 1 ? url.pathname.replace(/\\/$/, "") : url.pathname;
     const headers = {
-      "Cache-Control": path === "/" || path === "/index.html"
+      "Cache-Control": path === "/" || path === "/index.html" || path.startsWith("/sayed-fikri-profile") || path === "/profile" || path === "/profile.html"
         ? "public, max-age=300"
         : "public, max-age=31536000, immutable",
       "X-Content-Type-Options": "nosniff",
