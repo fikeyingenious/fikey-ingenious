@@ -22,6 +22,10 @@ const textAssets = {
 };
 
 const binaryFiles = {
+  "/assets/nuha-mobile-cart.webp": ["image/webp", "assets/nuha-mobile-cart.webp"],
+  "/assets/nuha-luxury.css": ["text/css; charset=utf-8", "assets/nuha-luxury.css"],
+  "/assets/nuha-hero-luxury.webp": ["image/webp", "assets/nuha-hero-luxury.webp"],
+  "/assets/nuha-tea-ingredients.webp": ["image/webp", "assets/nuha-tea-ingredients.webp"],
   "/assets/arif-workbench-v2.webp": ["image/webp", "assets/arif-workbench-v2.webp"],
   "/assets/arif-profile.css": ["text/css; charset=utf-8", "assets/arif-profile.css"],
   "/assets/arif-profile.js": ["text/javascript; charset=utf-8", "assets/arif-profile.js"],

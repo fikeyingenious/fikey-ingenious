@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" href="/nuha-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <style>
     :root {
@@ -43,7 +43,7 @@
     a { color: inherit; }
     button, input, select, textarea { font: inherit; }
     .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
-    .serif { font-family: "Italiana", Georgia, serif; font-weight: 400; }
+    .serif { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; }
     .eyebrow {
       display: inline-flex; align-items: center; gap: 12px; margin: 0 0 17px;
       color: var(--gold); font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
@@ -70,10 +70,10 @@
     .brand-logo { width: auto; height: 74px; object-fit: contain; }
     .brand-mark {
       width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--gold); border-radius: 50%;
-      font: 1.45rem "Italiana", serif;
+      font: 1.45rem "Cormorant Garamond", serif;
     }
     .brand-copy { line-height: 1; }
-    .brand-name { display: block; font: 1.25rem "Italiana", serif; letter-spacing: .22em; }
+    .brand-name { display: block; font: 1.25rem "Cormorant Garamond", serif; letter-spacing: .22em; }
     .brand-tag { display: block; margin-top: 5px; color: #b58c57; font-size: .45rem; letter-spacing: .2em; text-transform: uppercase; }
     .nav-links { display: flex; align-items: center; gap: 29px; }
     .nav-links a { color: #d8d2ca; font-size: .78rem; font-weight: 600; text-decoration: none; text-transform: uppercase; }
@@ -106,8 +106,7 @@
       position: relative; width: 100%; height: 100%; min-width: 0; min-height: 0; display: grid; place-items: center; overflow: hidden;
       padding: clamp(8px, 1.5vw, 20px); background: transparent;
     }
-    .hero-photo img { width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; filter: drop-shadow(0 32px 34px rgba(0,0,0,.52)); }
-    .hero-photo::after { content: ""; position: absolute; inset: 15% 8% 4%; z-index: -1; border-radius: 50%; background: radial-gradient(circle, rgba(213,154,74,.22), transparent 68%); filter: blur(16px); }
+    .hero-photo img { width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; filter: none; }
     .scroll-cue { position: absolute; left: 50%; bottom: 21px; display: flex; align-items: center; gap: 10px; color: #8f887f; font-size: .64rem; letter-spacing: .16em; text-transform: uppercase; transform: translateX(-50%); }
     .scroll-cue::before { content: ""; width: 34px; height: 1px; background: var(--gold); animation: breathe 1.8s ease-in-out infinite; }
     @keyframes breathe { 50% { width: 54px; opacity: .55; } }
@@ -131,13 +130,13 @@
       position: relative; height: 600px; display: grid; place-items: center;
       overflow: hidden; border-radius: 16px; border: 1px solid rgba(70,43,22,.18);
       background: radial-gradient(circle at 50% 75%, rgba(126,76,35,.17), transparent 48%), rgba(255,250,240,.34);
-      box-shadow: 0 25px 70px rgba(57,34,16,.14);
+      box-shadow: none;
     }
     .drink-figure { position: relative; width: 100%; height: 100%; margin: 0; overflow: hidden; }
     .drink-figure img {
       position: absolute; inset: 76px 30px 62px; width: calc(100% - 60px); height: calc(100% - 138px);
       max-width: none; max-height: none; object-fit: contain; object-position: center;
-      filter: drop-shadow(0 24px 20px rgba(74,44,23,.2)); transition: opacity .25s ease, transform .45s cubic-bezier(.2,.75,.25,1);
+      filter: none; transition: opacity .25s ease, transform .45s cubic-bezier(.2,.75,.25,1);
     }
     .drink-figure.changing img { opacity: 0; transform: translateY(8px) scale(.97); }
     .drink-name {
@@ -157,7 +156,7 @@
     .menu-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
     .menu-card { padding: 22px; border: 1px solid rgba(70,43,22,.2); border-radius: 14px; background: rgba(255,250,240,.64); text-align: left; cursor: pointer; transition: transform .22s ease, border-color .22s ease, background .22s ease; }
     .menu-card:hover, .menu-card.active { transform: translateY(-3px); border-color: #8e5628; background: rgba(255,250,240,.92); }
-    .menu-card h3 { margin: 0; color: #2d1e14; font: 1.55rem "Italiana", serif; }
+    .menu-card h3 { margin: 0; color: #2d1e14; font: 1.55rem "Cormorant Garamond", serif; }
     .menu-card p { margin: 7px 0 18px; color: #705d4e; font-size: .82rem; }
     .menu-prices { display: flex; justify-content: space-between; padding-top: 15px; border-top: 1px solid rgba(70,43,22,.16); color: #6c3c1d; font-size: .8rem; font-weight: 700; }
 
@@ -173,9 +172,9 @@
     .package.featured { background: linear-gradient(145deg, #e1b274, #bb762f); color: #111; }
     .package-label { color: var(--gold); font-size: .69rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
     .featured .package-label { color: #392515; }
-    .package h3 { margin: 22px 0 0; font: 3rem/1 "Italiana", serif; }
+    .package h3 { margin: 22px 0 0; font: 3rem/1 "Cormorant Garamond", serif; }
     .package h3 small { display: block; margin-top: 9px; font: .7rem "DM Sans", sans-serif; letter-spacing: .14em; text-transform: uppercase; }
-    .package-price { margin-top: auto; font: 2.7rem "Italiana", serif; color: var(--cream); }
+    .package-price { margin-top: auto; font: 2.7rem "Cormorant Garamond", serif; color: var(--cream); }
     .featured .package-price { color: #111; }
     .package-price span { font: .8rem "DM Sans", sans-serif; }
     .unit { color: var(--muted); font-size: .75rem; }
@@ -189,7 +188,7 @@
       height: 590px; display: grid; place-items: center; overflow: hidden;
       background: radial-gradient(circle at 52% 70%, rgba(213,154,74,.14), transparent 48%);
     }
-    .kenduri-image img { width: 86%; height: 88%; object-fit: contain; filter: drop-shadow(0 30px 32px rgba(0,0,0,.48)); }
+    .kenduri-image img { width: 86%; height: 88%; object-fit: contain; filter: none; }
 
     .about { border-block: 1px solid rgba(213,154,74,.18); background: #0e0e0e; }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
@@ -265,12 +264,15 @@
       .reveal { opacity: 1; transform: none; }
     }
   </style>
+  <link rel="preload" href="/assets/nuha-hero-luxury.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="/assets/nuha-luxury.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Langkau ke kandungan</a>
   <nav class="nav" id="nav" aria-label="Navigasi utama">
     <div class="container nav-inner">
       <a class="brand" href="#home" aria-label="Nuha Tea Co."><img class="brand-logo" src="/nuha-logo.png" alt="Nuha Tea Co."></a>
-      <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="navLinks" aria-label="Buka menu">☰</button>
+      <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="navLinks" aria-label="Buka menu"><i class="bi bi-list" aria-hidden="true"></i></button>
       <div class="nav-links" id="navLinks">
         <a href="#home">Utama</a><a href="#menu">Menu</a><a href="#packages">Pakej</a><a href="#about">Tentang</a><a href="#location">Lokasi</a>
         <a class="nav-order" href="#order">Tempah sekarang</a>
@@ -278,25 +280,25 @@
     </div>
   </nav>
 
-  <main>
-    <section class="hero" id="home">
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="nuhaHeroTitle">
       <div class="container hero-grid">
         <div class="reveal">
           <p class="eyebrow">Premium iced tea</p>
-          <h1 class="serif">Rich taste,<span>Real moments.</span></h1>
+          <h1 class="serif" id="nuhaHeroTitle">Rich taste,<span>Real moments.</span></h1>
           <p class="hero-copy">Dibancuh dengan daun teh premium dan diseimbangkan sempurna untuk rasa yang licin, berkrim dan menyegarkan dalam setiap teguk.</p>
           <div class="hero-actions">
             <a class="button" href="https://wa.me/60138530816?text=Hi%20Nuha%20Tea%2C%20saya%20ingin%20membuat%20tempahan." target="_blank" rel="noopener">Tempah sekarang <span aria-hidden="true">↗</span></a>
             <a class="button outline" href="#packages">Lihat pakej</a>
           </div>
           <div class="proof">
-            <div class="proof-item"><span class="proof-icon">♧</span>Teh berkualiti premium</div>
-            <div class="proof-item"><span class="proof-icon">♨</span>Dibuat segar setiap hari</div>
-            <div class="proof-item"><span class="proof-icon">♡</span>Licin & menyegarkan</div>
+            <div class="proof-item"><i class="proof-icon bi bi-flower2" aria-hidden="true"></i>Teh berkualiti premium</div>
+            <div class="proof-item"><i class="proof-icon bi bi-cup-hot" aria-hidden="true"></i>Dibuat segar setiap hari</div>
+            <div class="proof-item"><i class="proof-icon bi bi-heart" aria-hidden="true"></i>Licin & menyegarkan</div>
           </div>
         </div>
         <div class="hero-visual reveal">
-          <div class="hero-photo"><img src="/nuha-hero.png" alt="Signature Nuha Tea Peng di atas pelapik marmar hitam"></div>
+          <div class="hero-photo"><img src="/assets/nuha-hero-luxury.webp" width="1672" height="941" fetchpriority="high" alt="Signature Nuha Tea Peng di atas pelapik marmar hitam"></div>
         </div>
       </div>
       <a class="scroll-cue" href="#menu">Terokai rasa</a>
@@ -304,7 +306,7 @@
 
     <div class="ticker" aria-hidden="true"><div class="ticker-track">
       <div class="ticker-group"><span>Rich</span><span>Smooth</span><span>Perfect</span><span>Dibancuh segar</span><span>Simple ingredients</span></div>
-      <div class="ticker-group"><span>Rich</span><span>Smooth</span><span>Perfect</span><span>Dibancuh segar</span><span>Simple ingredients</span></div>
+      <div class="ticker-group" aria-hidden="true"><span>Rich</span><span>Smooth</span><span>Perfect</span><span>Dibancuh segar</span><span>Simple ingredients</span></div>
     </div></div>
 
     <section class="section signature" id="menu">
@@ -322,8 +324,8 @@
           <p class="section-intro" id="drinkDescription">Rasa teh asli yang kaw dan memikat. Seimbang, berkrim dan sentiasa menyegarkan.</p>
           <ul class="check-list" id="drinkBenefits"><li>Aroma teh yang kaya</li><li>Rasa licin dan berkrim</li><li>Sesuai untuk setiap acara</li><li>Disediakan segar dan bersih</li></ul>
           <div class="menu-list">
-            <button class="menu-card active" type="button" data-drink="premium"><h3>Tea Peng Premium</h3><p>Rasa asli teh yang kaw & memikat.</p><span class="menu-prices"><span>Kecil · RM4</span><span>Besar · RM5</span></span></button>
-            <button class="menu-card" type="button" data-drink="vanilla"><h3>Tea Peng Vanilla</h3><p>Harum, lembut & manis.</p><span class="menu-prices"><span>Kecil · RM5</span><span>Besar · RM6</span></span></button>
+            <button class="menu-card active" type="button" data-drink="premium" aria-pressed="true"><img src="/nuha-cup.webp" width="677" height="1100" loading="lazy" alt=""><h3>Tea Peng Premium</h3><p>Rasa asli teh yang kaw & memikat.</p><span class="menu-prices"><span>Kecil · RM4</span><span>Besar · RM5</span></span></button>
+            <button class="menu-card" type="button" data-drink="vanilla" aria-pressed="false"><img src="/nuha-vanilla.webp" width="677" height="1100" loading="lazy" alt=""><h3>Tea Peng Vanilla</h3><p>Harum, lembut & manis.</p><span class="menu-prices"><span>Kecil · RM5</span><span>Besar · RM6</span></span></button>
           </div>
         </div>
       </div>
@@ -340,11 +342,11 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section kenduri-section" id="kenduri" aria-labelledby="kenduriTitle">
       <div class="container kenduri-grid">
         <div class="kenduri-copy reveal">
           <p class="eyebrow">Pakej kenduri</p>
-          <h2 class="serif">Minuman teh peng premium untuk majlis anda.</h2>
+          <h2 class="serif" id="kenduriTitle">Minuman teh peng premium untuk majlis anda.</h2>
           <p class="section-intro">Sesuai untuk semua majlis — perkahwinan, acara pejabat, hari keluarga, acara sekolah, rumah terbuka dan banyak lagi.</p>
           <div class="service-list">
             <div class="service-item">Tempahan awal digalakkan</div><div class="service-item">Penghantaran boleh diuruskan</div>
@@ -352,11 +354,12 @@
           </div>
           <a class="button" href="#order">Minta sebut harga</a>
         </div>
-        <div class="kenduri-image reveal"><img src="/nuha-kenduri.webp" alt="Pakej kenduri Nuha Tea Co. dengan dispenser dan cawan"></div>
+        <div class="kenduri-image reveal"><img src="/nuha-kenduri.webp" width="859" height="1100" loading="lazy" alt="Pakej kenduri Nuha Tea Co. dengan dispenser dan cawan"></div>
       </div>
     </section>
 
     <section class="section about" id="about">
+      <img class="about-art" src="/assets/nuha-tea-ingredients.webp" width="1672" height="941" loading="lazy" alt="">
       <div class="container about-grid">
         <div class="reveal">
           <p class="eyebrow">Tentang Nuha Tea</p>
@@ -364,10 +367,13 @@
           <p>Nuha Tea ialah jenama teh tempatan yang memberi fokus kepada teh peng premium — dihidangkan sejuk pada harga berpatutan. Kami mahu membawa teh yang licin dan menyegarkan untuk pelanggan harian dan setiap jenis acara.</p>
         </div>
         <div class="location-card reveal" id="location">
+          <figure class="location-cart"><img src="/assets/nuha-mobile-cart.webp" width="1672" height="941" loading="lazy" alt="Ilustrasi konsep gerai bergerak Nuha Tea dengan kaunter kayu, panel hitam dan pencahayaan keemasan."><figcaption>Ilustrasi konsep gerai bergerak Nuha Tea</figcaption></figure>
+          <div class="location-copy">
           <p class="eyebrow">Lokasi kami</p>
           <h2 class="serif">Labu, Negeri Sembilan</h2>
-          <div class="location-row"><span>⌖</span><div>Di hadapan Wash Studio Dobi,<br>Labu, Negeri Sembilan</div></div>
-          <div class="location-row"><span>◷</span><div><strong>Waktu operasi</strong><br>Setiap hujung minggu<br><small>Waktu tepat akan dikemas kini melalui media sosial.</small></div></div>
+          <div class="location-row"><i class="bi bi-geo-alt" aria-hidden="true"></i><div>Di hadapan Wash Studio Dobi,<br>Labu, Negeri Sembilan</div></div>
+          <div class="location-row"><i class="bi bi-clock" aria-hidden="true"></i><div><strong>Waktu operasi</strong><br>Setiap hujung minggu<br><small>Waktu tepat akan dikemas kini melalui media sosial.</small></div></div>
+          </div>
         </div>
       </div>
     </section>
@@ -382,13 +388,13 @@
         </div>
         <form class="order-form reveal" id="orderForm">
           <div class="order-summary" id="orderSummary" aria-live="polite"></div>
-          <input class="field" id="name" required placeholder="Nama anda" aria-label="Nama anda">
-          <input class="field" id="phone" required inputmode="tel" placeholder="Nombor telefon" aria-label="Nombor telefon">
-          <input class="field" id="date" required type="date" aria-label="Tarikh tempahan">
-          <input class="field" id="quantity" required type="number" min="1" placeholder="Kuantiti cawan" aria-label="Kuantiti cawan">
-          <select class="field" id="method" required aria-label="Kaedah pesanan"><option value="">Ambil / penghantaran</option><option>Ambil sendiri</option><option>Penghantaran</option></select>
-          <input class="field" id="place" placeholder="Lokasi" aria-label="Lokasi">
-          <textarea class="field full" id="notes" placeholder="Nota (pilihan)" aria-label="Nota tambahan"></textarea>
+          <div class="field-group"><label for="name">Nama anda</label><input class="field" id="name" autocomplete="name" required placeholder="Nama anda" aria-label="Nama anda"></div>
+          <div class="field-group"><label for="phone">Nombor telefon</label><input class="field" id="phone" autocomplete="tel" type="tel" required inputmode="tel" placeholder="Nombor telefon" aria-label="Nombor telefon"></div>
+          <div class="field-group"><label for="date">Tarikh tempahan</label><input class="field" id="date" required type="date" aria-label="Tarikh tempahan"></div>
+          <div class="field-group"><label for="quantity">Kuantiti cawan</label><input class="field" id="quantity" required type="number" min="1" placeholder="Kuantiti cawan" aria-label="Kuantiti cawan"></div>
+          <div class="field-group"><label for="method">Kaedah pesanan</label><select class="field" id="method" required aria-label="Kaedah pesanan"><option value="">Ambil / penghantaran</option><option>Ambil sendiri</option><option>Penghantaran</option></select></div>
+          <div class="field-group"><label for="place">Lokasi</label><input class="field" id="place" placeholder="Lokasi" aria-label="Lokasi"></div>
+          <div class="field-group full"><label for="notes">Nota (pilihan)</label><textarea class="field full" id="notes" placeholder="Nota (pilihan)" aria-label="Nota tambahan"></textarea></div>
           <button class="button full" type="submit">Hantar tempahan melalui WhatsApp ↗</button>
         </form>
       </div>
@@ -418,12 +424,19 @@
       const open = navLinks.classList.toggle("open");
       document.body.classList.toggle("menu-open", open);
       menuButton.setAttribute("aria-expanded", open);
-      menuButton.textContent = open ? "×" : "☰";
+      menuButton.innerHTML = `<i class="bi ${open ? 'bi-x-lg' : 'bi-list'}" aria-hidden="true"></i>`;
+      menuButton.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
     });
     navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
       navLinks.classList.remove("open"); document.body.classList.remove("menu-open");
-      menuButton.setAttribute("aria-expanded", "false"); menuButton.textContent = "☰";
+      menuButton.setAttribute("aria-expanded", "false"); menuButton.innerHTML = '<i class="bi bi-list" aria-hidden="true"></i>'; menuButton.setAttribute("aria-label", "Buka menu");
     }));
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && navLinks.classList.contains("open")) {
+        menuButton.click(); menuButton.focus();
+      }
+    });
 
     const drinks = {
       premium: {
@@ -465,7 +478,7 @@
       quantityField.value = card.dataset.quantity;
       orderSummary.textContent = `Pakej dipilih: ${card.dataset.quantity} cawan · ${card.dataset.price}. Lengkapkan butiran untuk pengesahan.`;
       orderSummary.classList.add("show");
-      document.getElementById("order").scrollIntoView({ behavior: "smooth" });
+      document.getElementById("order").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
       window.setTimeout(() => document.getElementById("name").focus({ preventScroll: true }), 500);
     };
     document.querySelectorAll(".package").forEach(card => {
@@ -479,7 +492,11 @@
     const navAnchors = [...navLinks.querySelectorAll('a[href^="#"]')];
     const sectionObserver = new IntersectionObserver(entries => entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      navAnchors.forEach(link => link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`));
+      navAnchors.forEach(link => {
+        const active = link.getAttribute("href") === `#${entry.target.id}`;
+        link.classList.toggle("active", active);
+        if (active) link.setAttribute("aria-current", "location"); else link.removeAttribute("aria-current");
+      });
     }), { rootMargin: "-35% 0px -58%", threshold: 0 });
     observedSections.forEach(section => sectionObserver.observe(section));
     document.getElementById("orderForm").addEventListener("submit", event => {
