@@ -22,6 +22,9 @@ const textAssets = {
 };
 
 const binaryFiles = {
+  "/assets/arif-workbench-v2.webp": ["image/webp", "assets/arif-workbench-v2.webp"],
+  "/assets/arif-profile.css": ["text/css; charset=utf-8", "assets/arif-profile.css"],
+  "/assets/arif-profile.js": ["text/javascript; charset=utf-8", "assets/arif-profile.js"],
   "/fikey-ingenious-logo.png": ["image/png", "fikey-ingenious-logo.png"],
   "/fikey-ingenious-logo-icon.png": ["image/png", "fikey-ingenious-logo-icon.png"],
   "/nuha-kenduri.jpeg": ["image/jpeg", "nuha-kenduri.jpeg"],

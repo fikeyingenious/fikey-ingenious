@@ -1,0 +1,68 @@
+:root { --bg: #050809; --panel: #10161b; --gold: #e3ad63; --ink: #f5f5f4; --muted: #bdc0c3; }
+body { font-family: 'DM Sans', sans-serif; }
+h1,h2,h3,.brand { font-family: 'Manrope', sans-serif; }
+header { position: absolute; inset: 0 0 auto; z-index: 10; background: rgba(5,8,9,.9); border-color: #202629; }
+header nav { width: 88%; min-height: 82px; }
+.brand { letter-spacing: .09em; }
+.brand small { font-family: 'DM Sans', sans-serif; font-size: .65rem; letter-spacing: .14em; }
+.brand img { width: 48px; height: 48px; }
+.navlinks { gap: 38px; }
+.navlinks a { display: inline-flex; align-items: center; min-height: 44px; }
+.navlinks a:last-child { padding: 0 23px; border-radius: 99px; border: 1px solid #b58549; }
+.hero.hero-workbench { position: relative; isolation: isolate; display: block; width: 100vw; max-width: none; height: max(760px,56.28vw); min-height: 760px; max-height: 1100px; margin-left: calc(50% - 50vw); padding: 0; overflow: hidden; background: #050809; }
+.workbench-scene { position: absolute; inset: 0; z-index: -1; transform: translate3d(var(--art-x,0px),var(--art-y,0px),0) scale(1.012); }
+.workbench-scene img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.workbench-copy { position: absolute; left: 6.15%; top: 21%; width: 39%; }
+.hero-workbench .eyebrow { margin-bottom: 32px; color: #d1d3d4; font-size: clamp(.62rem,.8vw,.88rem); letter-spacing: .24em; }
+.hero-workbench h1 { font-size: clamp(3.15rem,4.42vw,5.65rem); font-weight: 700; line-height: 1.06; letter-spacing: -.04em; }
+.hero-workbench h1 span { display: block; }
+.hero-workbench h1 .plain { color: var(--ink); }
+.hero-workbench h1 .impact { color: var(--gold); font-size: .9em; white-space: nowrap; }
+.hero-workbench .lead { max-width: 33ch; font-size: clamp(1rem,1.24vw,1.3rem); line-height: 1.5; }
+.hero-workbench .actions { gap: 18px; margin-top: 34px; }
+.hero-workbench .button { min-height: 54px; padding: 10px 25px; border-radius: 99px; }
+.hero-workbench .button.primary { background: linear-gradient(135deg,#eabf7d,#d79c50); }
+.hero-workbench .button.primary:hover { background: #f1ce98; color: #171717; }
+.hero-focus { position: absolute; left: 5%; bottom: 6%; display: flex; flex-wrap: wrap; gap: 38px; margin: 0; padding: 0; list-style: none; }
+.hero-focus li { padding: 10px 25px; border-left: 1px solid #b58549; color: #dbdcda; font-size: .95rem; }
+.metrics { margin-top: 0; }
+.hero-workbench a:focus-visible { outline: 2px solid #f1ce98; outline-offset: 5px; }
+@media (max-width: 1180px) and (min-width: 851px) {
+  .workbench-copy { width: 42%; top: 23%; }
+  .hero-workbench h1 { font-size: 5vw; }
+  .hero-workbench .lead { max-width: 28ch; }
+  .hero-workbench .button { font-size: .82rem; padding-inline: 18px; }
+  .hero-focus { gap: 12px; }
+  .hero-focus li { padding-inline: 18px; font-size: .8rem; }
+}
+@media (max-width: 850px) {
+  header { position: relative; }
+  header nav { width: calc(100% - 40px); flex-wrap: wrap; padding-block: 16px; gap: 18px; }
+  .navlinks { gap: 20px; font-size: .8rem; }
+  .navlinks a:last-child { padding-inline: 14px; }
+  .hero.hero-workbench { height: auto; min-height: 0; max-height: none; }
+  .workbench-copy { position: relative; left: auto; top: auto; width: auto; padding: 48px 22px 0; }
+  .hero-workbench h1 { font-size: clamp(2.6rem,10.2vw,5rem); }
+  .hero-workbench h1 .impact { font-size: .84em; }
+  .hero-workbench .eyebrow { font-size: .65rem; letter-spacing: .14em; margin-bottom: 25px; }
+  .hero-workbench .lead { font-size: 1rem; max-width: 42ch; }
+  .hero-workbench .actions { gap: 12px; margin-top: 26px; }
+  .hero-workbench .button { min-height: 48px; font-size: .87rem; padding: 10px 19px; gap: 12px; }
+  .workbench-scene { position: relative; inset: auto; width: 160%; margin: 0 0 0 -60%; transform: none; }
+  .workbench-scene img { height: auto; width: 100%; }
+  .hero-focus { position: relative; left: auto; bottom: auto; gap: 10px; padding: 8px 22px 32px; }
+  .hero-focus li { padding: 7px 12px; font-size: .75rem; }
+}
+@media (max-width: 520px) {
+  .navlinks { gap: 10px; justify-content: space-between; width: 100%; }
+  header nav { flex-direction: row; align-items: center; }
+}
+@media (prefers-reduced-motion: reduce) { .workbench-scene { transform: none; } }
+@media print {
+  :root { --bg: #fff; --ink: #111; --muted: #333; --gold: #704b14; }
+  header { position: static; background: #fff; }
+  .hero.hero-workbench { width: 100%; min-height: 0; height: auto; margin-left: 0; background: #fff; }
+  .workbench-copy { position: static; width: 100%; padding: 24px 0; }
+  .workbench-scene,.hero-focus { display: none; }
+  .hero-workbench .eyebrow { color: #333; }
+}
