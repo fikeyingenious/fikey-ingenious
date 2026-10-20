@@ -26,9 +26,20 @@ const binaryFiles = {
   "/assets/nuha-luxury.css": ["text/css; charset=utf-8", "assets/nuha-luxury.css"],
   "/assets/nuha-hero-luxury.webp": ["image/webp", "assets/nuha-hero-luxury.webp"],
   "/assets/nuha-tea-ingredients.webp": ["image/webp", "assets/nuha-tea-ingredients.webp"],
+  "/assets/hero-system-lossless.webp": ["image/webp", "assets/hero-system-lossless.webp"],
+  "/assets/hero-lights.css": ["text/css; charset=utf-8", "assets/hero-lights.css"],
+  "/assets/hero-lights.js": ["text/javascript; charset=utf-8", "assets/hero-lights.js"],
+  "/assets/stack-and-contact.css": ["text/css; charset=utf-8", "assets/stack-and-contact.css"],
+  "/assets/contact-motion.js": ["text/javascript; charset=utf-8", "assets/contact-motion.js"],
+  "/assets/arif-profile-preview-v2.webp": ["image/webp", "assets/arif-profile-preview-v2.webp"],
   "/assets/arif-workbench-v2.webp": ["image/webp", "assets/arif-workbench-v2.webp"],
   "/assets/arif-profile.css": ["text/css; charset=utf-8", "assets/arif-profile.css"],
   "/assets/arif-profile.js": ["text/javascript; charset=utf-8", "assets/arif-profile.js"],
+  "/assets/nuha-project-v2.webp": ["image/webp", "assets/nuha-project-v2.webp"],
+  "/assets/services-system-v2.webp": ["image/webp", "assets/services-system-v2.webp"],
+  "/assets/process-system-v2.webp": ["image/webp", "assets/process-system-v2.webp"],
+  "/assets/reference-layout.css": ["text/css; charset=utf-8", "assets/reference-layout.css"],
+  "/assets/site.js": ["text/javascript; charset=utf-8", "assets/site.js"],
   "/fikey-ingenious-logo.png": ["image/png", "fikey-ingenious-logo.png"],
   "/fikey-ingenious-logo-icon.png": ["image/png", "fikey-ingenious-logo-icon.png"],
   "/nuha-kenduri.jpeg": ["image/jpeg", "nuha-kenduri.jpeg"],
@@ -42,6 +53,10 @@ const binaryFiles = {
   "/nuha-favicon.png": ["image/png", "nuha-favicon.png"],
   "/nuha-hero.png": ["image/png", "nuha-hero.png"],
 };
+
+for (const icon of ["openai", "python", "typescript", "angular", "django", "laravel", "spring", "bootstrap", "powerbi", "microsoftexcel", "postgresql", "mysql"]) {
+  binaryFiles[`/assets/tech/${icon}.svg`] = ["image/svg+xml", `assets/tech/${icon}.svg`];
+}
 
 const binaryAssets = {};
 for (const [route, [type, file]] of Object.entries(binaryFiles)) {

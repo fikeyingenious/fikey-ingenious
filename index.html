@@ -3,737 +3,109 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#11110f">
+  <meta name="theme-color" content="#090a0c">
   <meta name="description" content="Fikey Ingenious Technologies delivers AI-powered solutions, business applications, data analytics, automated reporting, and practical digital transformation.">
-  <meta name="author" content="Fikey Ingenious Technologies">
-  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://fikeyingenious.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Fikey Ingenious Technologies">
   <meta property="og:title" content="Smart Digital Solutions for Modern Businesses">
   <meta property="og:description" content="AI-powered solutions, business applications, data intelligence, and practical digital transformation for modern businesses.">
-  <meta property="og:url" content="https://fikeyingenious.com/">
   <meta property="og:image" content="https://fikeyingenious.com/fikey-ingenious-logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Fikey Ingenious Technologies">
-  <meta name="twitter:description" content="AI-powered solutions, business applications, and data intelligence.">
-  <meta name="twitter:image" content="https://fikeyingenious.com/fikey-ingenious-logo.png">
   <title>Fikey Ingenious Technologies | Smart Digital Solutions</title>
   <link rel="icon" href="fikey-ingenious-logo-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preload" href="assets/hero-system-lossless.webp" as="image" fetchpriority="high">
   <style>
-    :root {
-      --ink: #f7f3e9;
-      --muted: #aaa79f;
-      --paper: #0d0d0f;
-      --surface: #151517;
-      --line: #2d2b27;
-      --gold: #d5a83f;
-      --gold-dark: #edc769;
-      --dark: #09090b;
-    }
-
-    html { scroll-behavior: smooth; scroll-padding-top: 88px; scrollbar-color: #8f6d2f #0d0d0f; }
-    ::selection { background: var(--gold); color: #11110f; }
-    ::-webkit-scrollbar { width: 11px; }
-    ::-webkit-scrollbar-track { background: #0d0d0f; }
-    ::-webkit-scrollbar-thumb { border: 3px solid #0d0d0f; border-radius: 10px; background: #8f6d2f; }
-    body {
-      background:
-        radial-gradient(circle at 85% 4%, rgba(213,168,63,.08), transparent 26rem),
-        var(--paper);
-      color: var(--ink);
-      font-family: "DM Sans", sans-serif;
-      font-size: 1rem;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    h1, h2, h3, h4, .navbar-brand { font-family: "Outfit", sans-serif; }
-    img { max-width: 100%; }
-    a { color: inherit; }
-    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-    .section-space { padding: clamp(78px, 8vw, 104px) 0; }
-
-    .navbar {
-      padding: 1rem 0;
-      background: rgba(9,9,11,.88);
-      border-bottom: 1px solid transparent;
-      backdrop-filter: blur(18px);
-      transition: .3s ease;
-    }
-    .navbar.scrolled { padding: .65rem 0; border-color: var(--line); box-shadow: 0 8px 30px rgba(0,0,0,.22); }
-    .navbar-brand { display: flex; align-items: center; gap: .75rem; font-weight: 700; letter-spacing: -.02em; }
-    .brand-mark { width: 38px; height: 38px; object-fit: contain; }
-    .brand-name { color: var(--gold); }
-    .brand-name small { display: block; color: var(--muted); font: 500 .7rem/1 "DM Sans", sans-serif; letter-spacing: .12em; text-transform: uppercase; }
-    .nav-link { margin: 0 .25rem; color: #c3c0b8; font-size: .91rem; font-weight: 600; }
-    .nav-link:hover, .nav-link.active { color: var(--gold); }
-    .navbar-toggler { display: grid; place-items: center; width: 44px; height: 44px; color: var(--gold); }
-    .btn { padding: .82rem 1.25rem; border-radius: 4px; font-weight: 600; }
-    .btn-dark-custom { background: linear-gradient(135deg, #f0d177, #bd8525); border: 1px solid #d5a83f; color: #111; }
-    .btn-dark-custom:hover { background: linear-gradient(135deg, #f7de92, #cc9631); border-color: #edc769; color: #111; transform: translateY(-2px); }
-    .btn-outline-custom { border: 1px solid #57534a; color: var(--ink); }
-    .btn-outline-custom:hover { background: #1b1b1d; border-color: var(--gold); color: #fff; transform: translateY(-2px); }
-
-    .hero {
-      position: relative;
-      padding: 86px 0 0;
-      overflow: hidden;
-      background: var(--paper);
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 86px 0 0;
-      pointer-events: none;
-      background: radial-gradient(circle at 54% 12%, rgba(213,168,63,.1), transparent 27rem);
-    }
-    .hero-shell {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(360px, .65fr);
-      min-height: calc(100vh - 86px);
-      border-right: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-    .hero-copy-panel {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 3rem;
-      min-width: 0;
-      padding: clamp(3rem, 5vw, 5rem) clamp(2rem, 5vw, 4.5rem) 2rem;
-      overflow: hidden;
-    }
-    .hero-copy-panel::after {
-      content: "";
-      position: absolute;
-      right: -90px;
-      bottom: -150px;
-      width: 330px;
-      height: 330px;
-      border: 1px solid rgba(213,168,63,.18);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .hero h1 { max-width: 760px; margin-bottom: 1.5rem; font-size: clamp(3.3rem, 6vw, 5.8rem); line-height: .94; letter-spacing: -.04em; }
-    .hero h1 em { color: var(--gold); font-style: normal; }
-    .hero-copy { max-width: 620px; color: var(--muted); font-size: clamp(1.05rem, 1.5vw, 1.2rem); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
-    .hero-note { position: relative; z-index: 1; display: flex; align-items: center; gap: .7rem; margin-bottom: 1rem; color: var(--muted); font-size: .86rem; }
-    .hero-note i, .hero-capability i { color: var(--gold-dark); }
-    .hero-capabilities {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--line);
-    }
-    .hero-capability { display: flex; align-items: center; gap: .65rem; min-width: 0; padding: 1.1rem 1rem 0 0; color: #c9c5bb; font-size: .86rem; }
-    .hero-capability + .hero-capability { padding-left: 1rem; border-left: 1px solid var(--line); }
-    .hero-proof {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-width: 0;
-      padding: clamp(2rem, 3.5vw, 3.25rem);
-      overflow: hidden;
-      color: #11110f;
-      background: var(--gold);
-    }
-    .hero-proof::before {
-      content: "FI";
-      position: absolute;
-      right: -1.4rem;
-      bottom: -4.5rem;
-      color: rgba(17,17,15,.07);
-      font: 500 clamp(10rem, 18vw, 15rem)/1 "Outfit", sans-serif;
-      letter-spacing: -.04em;
-      pointer-events: none;
-    }
-    .proof-heading, .proof-flow, .proof-footer { position: relative; z-index: 1; }
-    .hero-proof h2 { max-width: 12ch; margin: 0; font-size: clamp(2rem, 3.4vw, 3.25rem); line-height: 1.02; letter-spacing: -.03em; }
-    .proof-tabs { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
-    .proof-tab { min-height: 44px; padding: .5rem 0; border: 0; border-bottom: 2px solid transparent; background: transparent; color: rgba(17,17,15,.64); font-weight: 600; }
-    .proof-tab:hover, .proof-tab[aria-pressed="true"] { color: #11110f; border-bottom-color: #11110f; }
-    .proof-flow { display: grid; margin: 2.25rem 0; border-top: 1px solid rgba(17,17,15,.28); }
-    .proof-row { display: grid; grid-template-columns: minmax(0, 1fr) 2rem minmax(0, 1fr); align-items: center; gap: .75rem; padding: 1.15rem 0; border-bottom: 1px solid rgba(17,17,15,.28); transition: opacity .25s ease, background-color .25s ease; }
-    .proof-row > span:first-child, .proof-row strong { transition: opacity .25s ease, transform .35s cubic-bezier(.16,1,.3,1), color .25s ease; }
-    .proof-row strong { font-size: .9rem; }
-    .proof-arrow { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: #11110f; color: var(--gold); transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease; }
-    .proof-flow.is-playing .proof-row:not(.is-current):not(.is-complete) { opacity: .42; }
-    .proof-row.is-current { background: rgba(255,255,255,.13); }
-    .proof-row.is-current > span:first-child { opacity: .58; transform: translateX(3px); }
-    .proof-row.is-current .proof-arrow { transform: translateX(6px); box-shadow: 0 8px 18px rgba(17,17,15,.24); }
-    .proof-row.is-current strong { transform: translateX(3px); }
-    .proof-row.is-complete .proof-arrow { background: rgba(17,17,15,.72); }
-    .proof-row.is-complete strong { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .22em; }
-    .proof-footer { position: relative; z-index: 1; padding-top: 1.5rem; border-top: 1px solid rgba(17,17,15,.28); }
-    .proof-note { max-width: 27ch; margin: 0; color: rgba(17,17,15,.72); font-size: .9rem; }
-
-    .trust-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #0f0f11; }
-    .stack-wrap { padding: clamp(2.25rem, 4vw, 3.5rem) 0; }
-    .stack-heading { margin-bottom: 1.3rem; }
-    .stack-title { margin: 0; color: #f1eee6; font-size: clamp(1.05rem, 1.5vw, 1.3rem); letter-spacing: -.01em; }
-    .stack-title span { color: var(--gold); }
-    .stack-groups { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid #39372f; border-bottom: 1px solid #39372f; }
-    .stack-group { min-width: 0; padding: 1.55rem clamp(1rem, 2vw, 1.5rem) 1.65rem; }
-    .stack-group + .stack-group { border-left: 1px solid #39372f; }
-    .stack-group h3 { display: flex; align-items: center; gap: .65rem; margin-bottom: .9rem; color: #f4f1e9; font-size: .9rem; letter-spacing: .04em; text-transform: uppercase; }
-    .stack-group h3 i { color: var(--gold); font-size: 1.05rem; }
-    .stack-group p { max-width: 31ch; margin: 0; color: #aaa79e; font-size: .8rem; line-height: 1.7; }
-
-    .about-section { background: #121214; }
-    .about-section.section-space { padding: clamp(72px, 8vw, 96px) 0; }
-    .about-editorial { border-top: 1px solid #3a3832; border-bottom: 1px solid #3a3832; }
-    .about-lead { display: grid; grid-template-columns: minmax(150px, .35fr) minmax(0, 1.65fr); gap: clamp(2rem, 6vw, 7rem); padding: clamp(2rem, 4vw, 3.25rem) 0; }
-    .about-title { margin: .35rem 0 0; color: var(--gold); font-size: clamp(1rem, 1.5vw, 1.2rem); letter-spacing: -.01em; }
-    .statement { max-width: 31ch; margin: 0; font: 500 clamp(1.8rem, 3.2vw, 3.25rem)/1.16 "Outfit", sans-serif; letter-spacing: -.03em; text-wrap: balance; }
-    .about-detail { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr); border-top: 1px solid #3a3832; }
-    .about-philosophy { max-width: 62ch; margin: 0; padding: clamp(1.8rem, 3vw, 2.6rem) clamp(2rem, 5vw, 5rem) clamp(1.8rem, 3vw, 2.6rem) 0; color: #c5c1b8; font-size: 1rem; }
-    .about-values { padding: clamp(1.8rem, 3vw, 2.6rem) 0 clamp(1.8rem, 3vw, 2.6rem) clamp(2rem, 4vw, 4rem); border-left: 1px solid #3a3832; }
-    .about-values h3 { margin-bottom: 1.1rem; color: #f3efe6; font-size: .82rem; letter-spacing: .11em; text-transform: uppercase; }
-    .value-list { margin: 0; padding: 0; list-style: none; }
-    .value-list li { padding: .8rem 0; border-top: 1px solid #34322d; color: #d9d5cc; font-weight: 600; }
-    .value-list li:last-child { padding-bottom: 0; }
-
-    .services { background: #0d0d0f; color: #f8f7f3; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .services-header { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr); align-items: end; gap: clamp(2rem, 7vw, 7rem); margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
-    .services-title { max-width: 760px; margin: 0; font-size: clamp(2.35rem, 4.7vw, 4.8rem); line-height: 1.04; letter-spacing: -.035em; text-wrap: balance; }
-    .services-title span { color: var(--gold); }
-    .services-intro { max-width: 55ch; margin: 0; color: #aaa79f; font-size: 1rem; }
-    .service-list { border-top: 1px solid #39372f; border-bottom: 1px solid #39372f; }
-    .service-row { display: grid; grid-template-columns: minmax(220px, .8fr) minmax(280px, 1.1fr) minmax(250px, .8fr); align-items: start; gap: clamp(1.5rem, 4vw, 4rem); padding: 1.75rem 1.25rem; transition: background-color .2s ease; }
-    .service-row + .service-row { border-top: 1px solid #39372f; }
-    .service-row:hover { background: rgba(213,168,63,.035); }
-    .service-name { display: grid; grid-template-columns: 1.8rem minmax(0, 1fr); align-items: start; gap: .7rem; }
-    .service-name i { margin-top: .2rem; color: var(--gold); font-size: 1rem; }
-    .service-name h3 { margin: 0; font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.25; }
-    .service-description { margin: 0; color: #aaa9a1; font-size: .91rem; }
-    .service-items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem 1rem; margin: 0; padding: 0; list-style: none; color: #d7d3ca; font-size: .8rem; }
-    .service-items li { display: flex; align-items: flex-start; gap: .5rem; }
-    .service-items li::before { content: ""; flex: 0 0 10px; height: 1px; margin-top: .72em; background: #a8823b; }
-
-    .portfolio-section { background: #141416; }
-    .portfolio-header { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr); align-items: end; gap: clamp(2rem, 7vw, 7rem); margin-bottom: clamp(2.5rem, 5vw, 4rem); }
-    .portfolio-title { max-width: 14ch; margin: 0; font-size: clamp(2.25rem, 4vw, 4rem); line-height: 1.06; letter-spacing: -.035em; }
-    .portfolio-title span { color: var(--gold); }
-    .portfolio-intro { max-width: 54ch; margin: 0; color: var(--muted); }
-    .featured-projects { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); border: 1px solid #39372f; background: #39372f; gap: 1px; }
-    .project-link { display: block; min-width: 0; color: inherit; text-decoration: none; }
-    .project-feature { height: 100%; background: #101012; transition: background-color .25s ease; }
-    .project-link:hover .project-feature { background: #171719; }
-    .project-link:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
-    .project-visual { position: relative; min-height: 280px; padding: 1.75rem; overflow: hidden; }
-    .nuha-visual { display: grid; place-items: center; background: radial-gradient(circle at 50% 55%, rgba(213,168,63,.18), transparent 13rem), #080808; }
-    .nuha-visual img { width: 132px; height: 170px; object-fit: contain; filter: drop-shadow(0 16px 25px rgba(0,0,0,.45)); transition: transform .35s cubic-bezier(.16,1,.3,1); }
-    .project-link:hover .nuha-visual img { transform: scale(1.035); }
-    .profile-project-visual { display: flex; flex-direction: column; justify-content: center; gap: 12px; border-top: 1px solid var(--gold); background: #1a1a18; }
-    .profile-project-name { color: var(--gold); font: 600 clamp(2rem, 4vw, 3.5rem)/1.1 "Outfit", sans-serif; letter-spacing: -.04em; }
-    .profile-project-label { color: #c3c0b8; font-size: .875rem; }
-    .project-body { padding: 1.55rem; border-top: 1px solid #39372f; }
-    .project-meta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .75rem; }
-    .project-type { color: var(--gold-dark); font-size: .69rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-    .project-open { color: #8f8b82; font-size: .78rem; }
-    .project-body h3 { margin-bottom: .5rem; font-size: 1.35rem; }
-    .project-body p { max-width: 54ch; margin: 0; color: var(--muted); font-size: .9rem; }
-    .demo-projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1.25rem; border: 1px solid #39372f; }
-    .demo-project { display: grid; grid-template-columns: minmax(160px, .72fr) minmax(0, 1.28fr); min-width: 0; background: #101012; }
-    .demo-project + .demo-project { border-left: 1px solid #39372f; }
-    .demo-visual { display: grid; align-items: center; min-height: 190px; padding: 1rem; overflow: hidden; background: #1a1a18; }
-    .demo-project .project-body { display: flex; flex-direction: column; justify-content: center; border-top: 0; border-left: 1px solid #39372f; }
-    .code-window { height: 142px; padding: .85rem; border: 1px solid #393934; border-radius: 6px; background: #11110f; color: #c9a65f; font: .61rem/1.65 monospace; }
-    .sheet-window { display: grid; grid-template-columns: repeat(5, 1fr); height: 142px; border: 1px solid #d6d2c8; background: #fff; box-shadow: 0 18px 40px rgba(25,24,20,.1); }
-    .sheet-window span { border-right: 1px solid #e9e6df; border-bottom: 1px solid #e9e6df; }
-    .sheet-window span:nth-child(7n) { background: #eee4cf; }
-
-    .insights { background: #0d0d0f; }
-    .insights-header { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr); align-items: end; gap: clamp(2rem, 7vw, 7rem); margin-bottom: clamp(2.5rem, 5vw, 4rem); }
-    .insights-title { max-width: 15ch; margin: 0; font-size: clamp(2.25rem, 4vw, 4rem); line-height: 1.06; letter-spacing: -.035em; }
-    .insights-title span { color: var(--gold); }
-    .insights-intro { max-width: 56ch; margin: 0; color: var(--muted); }
-    .insights-list { border-top: 1px solid #39372f; border-bottom: 1px solid #39372f; }
-    .insight-row { display: grid; grid-template-columns: minmax(130px, .28fr) minmax(0, 1fr) auto; align-items: center; gap: clamp(1.5rem, 4vw, 4rem); padding: 1.45rem 1.25rem; }
-    .insight-row + .insight-row { border-top: 1px solid #39372f; }
-    .insight-category, .insight-status { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-    .insight-category { color: var(--gold-dark); }
-    .insight-status { color: #77736b; }
-    .insight-row h3 { max-width: 720px; margin: 0; font-size: clamp(1.05rem, 1.8vw, 1.35rem); line-height: 1.3; }
-    .products-section { background: #141416; }
-    .products-layout { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: clamp(2rem, 8vw, 8rem); padding: clamp(2.5rem, 5vw, 4.25rem) 0; border-top: 1px solid #3a3832; border-bottom: 1px solid #3a3832; }
-    .products-title { max-width: 18ch; margin: 0 0 1rem; font-size: clamp(2.15rem, 3.8vw, 3.8rem); line-height: 1.08; letter-spacing: -.035em; }
-    .products-title span { color: var(--gold); }
-    .products-copy { max-width: 62ch; margin: 0; color: var(--muted); }
-    .products-status { display: inline-flex; align-items: center; gap: .65rem; min-height: 44px; padding: .7rem 1rem; border: 1px solid #51452e; color: var(--gold-dark); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
-
-    .contact-section { background: #141416; }
-    .contact-layout { display: grid; grid-template-columns: minmax(320px, .85fr) minmax(0, 1.15fr); border: 1px solid #39372f; }
-    .contact-intro { display: flex; flex-direction: column; justify-content: space-between; gap: 3rem; min-width: 0; padding: clamp(2rem, 5vw, 4rem); background: var(--gold); color: #11110f; }
-    .contact-title { max-width: 13ch; margin: 0 0 1.25rem; font-size: clamp(2.3rem, 4.2vw, 4.25rem); line-height: 1.04; letter-spacing: -.035em; }
-    .contact-title span { display: block; color: rgba(17,17,15,.64); }
-    .contact-copy { max-width: 45ch; margin: 0; color: rgba(17,17,15,.72); }
-    .contact-methods { display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; padding-top: 1.5rem; border-top: 1px solid rgba(17,17,15,.28); }
-    .contact-link { display: inline-flex; align-items: center; gap: .7rem; color: #11110f; font-size: clamp(.95rem, 1.6vw, 1.15rem); font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
-    .contact-link:hover { color: #403410; }
-    .contact-form-wrap { padding: clamp(2rem, 5vw, 4rem); background: #101012; }
-    .form-control { padding: .9rem 1rem; border-color: #3a3833; border-radius: 3px; background: #0d0d0f; color: #f7f3e9; }
-    .form-control::placeholder { color: #77736b; }
-    .form-control option { background: #111113; color: #f7f3e9; }
-    .form-control:focus { border-color: var(--gold); box-shadow: 0 0 0 .2rem rgba(170,129,54,.1); }
-    .form-label { font-size: .82rem; font-weight: 600; }
-    .form-note { margin-top: .7rem; color: var(--muted); font-size: .76rem; }
-
-    footer { padding: 2.25rem 0; border-top: 1px solid #2d2b27; background: var(--dark); color: #aaa9a1; }
-    .footer-layout { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 2rem; }
-    .footer-brand { color: #fff; font: 600 1.05rem "Outfit", sans-serif; }
-    .footer-quote { color: #d1b06d; font-size: .88rem; text-align: center; }
-    .footer-top { display: inline-flex; align-items: center; justify-self: end; gap: .55rem; color: #d7d3ca; font-size: .82rem; font-weight: 600; text-decoration: none; }
-    .footer-top:hover { color: var(--gold); }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-    }
-    @media (max-width: 991px) {
-      .navbar-collapse { margin-top: .8rem; padding: 1rem; border: 1px solid var(--line); background: #111113; }
-      .hero { padding-top: 86px; }
-      .hero-shell { grid-template-columns: 1fr; }
-      .hero-copy-panel { min-height: 590px; }
-      .hero-proof { min-height: 520px; }
-      .hero h1 { max-width: 900px; }
-      .footer-layout { grid-template-columns: 1fr; gap: 1rem; }
-      .footer-quote { text-align: left; }
-      .footer-top { justify-self: start; }
-      .stack-groups { grid-template-columns: repeat(2, 1fr); }
-      .stack-group:nth-child(odd) { border-left: 0; }
-      .stack-group:nth-child(n+3) { border-top: 1px solid #39372f; }
-      .about-lead { grid-template-columns: 1fr; gap: 1.25rem; }
-      .statement { max-width: 28ch; }
-      .about-detail { grid-template-columns: 1fr; }
-      .about-philosophy { padding-right: 0; }
-      .about-values { padding-left: 0; border-top: 1px solid #3a3832; border-left: 0; }
-      .value-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.25rem; }
-      .services-header { grid-template-columns: 1fr; gap: 1.25rem; }
-      .services-title { max-width: 18ch; }
-      .service-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .service-name { grid-column: 1 / -1; }
-      .portfolio-header { grid-template-columns: 1fr; gap: 1.25rem; }
-      .featured-projects { grid-template-columns: 1fr; }
-      .demo-projects { grid-template-columns: 1fr; }
-      .demo-project + .demo-project { border-top: 1px solid #39372f; border-left: 0; }
-      .insights-header { grid-template-columns: 1fr; gap: 1.25rem; }
-      .products-layout { grid-template-columns: 1fr; gap: 1.75rem; }
-      .products-status { justify-self: start; }
-      .contact-layout { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 575px) {
-      .section-space { padding: 78px 0; }
-      .hero-copy-panel { min-height: auto; padding: 3rem 1.25rem 1.5rem; }
-      .hero h1 { font-size: clamp(3rem, 14vw, 4rem); }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .hero-actions .btn { width: 100%; }
-      .hero-note { align-items: flex-start; margin-top: .5rem; }
-      .hero-capabilities { grid-template-columns: 1fr; margin-top: .75rem; }
-      .hero-capability { padding: .9rem 0; border-bottom: 1px solid var(--line); }
-      .hero-capability + .hero-capability { padding-left: 0; border-left: 0; }
-      .hero-proof { min-height: 540px; padding: 2rem 1.25rem; }
-      .statement { font-size: clamp(1.75rem, 8vw, 2.35rem); }
-      .stack-groups { grid-template-columns: 1fr; }
-      .stack-group + .stack-group { border-top: 1px solid #39372f; border-left: 0; }
-      .services-title { font-size: clamp(2.25rem, 11vw, 3.25rem); }
-      .service-row { grid-template-columns: 1fr; gap: 1.15rem; padding: 1.6rem 0; }
-      .service-name { grid-column: auto; }
-      .portfolio-title { font-size: clamp(2.2rem, 10vw, 3rem); }
-      .project-visual { min-height: 230px; }
-      .demo-project { grid-template-columns: 1fr; }
-      .demo-visual { min-height: 170px; }
-      .demo-project .project-body { border-top: 1px solid #39372f; border-left: 0; }
-      .insights-title { font-size: clamp(2.2rem, 10vw, 3rem); }
-      .insight-row { grid-template-columns: 1fr auto; gap: .55rem 1rem; padding: 1.35rem 0; }
-      .insight-row h3 { grid-column: 1 / -1; }
-      .products-title { font-size: clamp(2.1rem, 10vw, 2.9rem); }
-      .contact-title { font-size: clamp(2.2rem, 10vw, 3rem); }
-    }
+    :root{color-scheme:dark;--bg:#090a0c;--soft:#0d0f12;--surface:#121419;--ink:#f4f0e6;--muted:#aaa9a4;--muted2:#cac7be;--line:#2b2d31;--line2:#46433a;--gold:#d7ad51;--gold2:#efd98d;--gold3:#9d7428;--danger:#ff8b7b;--radius:14px;--ease:cubic-bezier(.16,1,.3,1);--container:1180px}
+    *,*:before,*:after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px;scrollbar-color:var(--gold3) var(--bg)}body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font:16px/1.65 "DM Sans",sans-serif}body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(circle at 72% 8%,rgba(215,173,81,.08),transparent 25rem),linear-gradient(180deg,#0b0c0f,var(--bg) 36%,#0b0c0f)}::selection{background:var(--gold);color:#111}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{border:3px solid var(--bg);border-radius:10px;background:var(--gold3)}img{display:block;max-width:100%}a{color:inherit}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}:focus-visible{outline:2px solid var(--gold2);outline-offset:4px}h1,h2,h3,p{margin-top:0}h1,h2,h3,.brand-wordmark{font-family:"Manrope",sans-serif}.container{width:min(calc(100% - 40px),var(--container));margin-inline:auto}.section{position:relative;padding-block:clamp(84px,10vw,144px)}.section-title{max-width:13ch;margin-bottom:24px;font-size:clamp(2.35rem,5vw,4.75rem);line-height:1.02;letter-spacing:-.04em;text-wrap:balance}.section-title span{color:var(--gold)}.section-copy{max-width:66ch;margin-bottom:0;color:var(--muted);font-size:clamp(1rem,1.4vw,1.15rem)}.section-head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);align-items:end;gap:clamp(40px,8vw,110px);margin-bottom:clamp(48px,7vw,88px)}.section-head>*{margin-bottom:0}.skip-link{position:fixed;top:12px;left:12px;z-index:1000;padding:10px 14px;transform:translateY(-150%);border-radius:8px;background:var(--gold);color:#111;font-weight:700;text-decoration:none;transition:.2s}.skip-link:focus{transform:none}
+    .site-nav{position:fixed;inset:0 0 auto;z-index:100;border-bottom:1px solid transparent;background:rgba(9,10,12,.78);backdrop-filter:blur(18px);transition:.25s}.site-nav.is-scrolled{border-color:rgba(215,173,81,.16);background:rgba(9,10,12,.94)}.nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:28px}.brand{display:inline-flex;align-items:center;gap:12px;min-height:48px;text-decoration:none}.brand img{width:39px;height:39px;object-fit:contain}.brand-wordmark{color:var(--gold2);font-size:.98rem;font-weight:800;line-height:1.05;letter-spacing:-.02em}.brand-wordmark small{display:block;margin-top:5px;color:var(--muted);font:600 .59rem/1 "DM Sans";letter-spacing:.14em;text-transform:uppercase}.nav-links{display:flex;align-items:center;gap:4px;margin:0;padding:0;list-style:none}.nav-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 13px;color:var(--muted2);font-size:.86rem;font-weight:600;text-decoration:none;transition:.2s}.nav-links a:hover,.nav-links a[aria-current=true]{color:var(--gold2)}.nav-cta{margin-left:10px;border:1px solid var(--gold3);border-radius:10px;color:var(--gold2)!important}.nav-cta:hover{background:var(--gold);color:#111!important}.nav-toggle{display:none;place-items:center;width:46px;height:46px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--gold2);cursor:pointer}
+    .hero{min-height:100svh;padding-top:76px;border-bottom:1px solid var(--line)}.hero-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(520px,1.1fr);min-height:calc(100svh - 76px)}.hero-copy-panel{display:flex;flex-direction:column;justify-content:center;padding:clamp(70px,8vw,112px) clamp(36px,6vw,84px) clamp(54px,6vw,82px) max(20px,calc((100vw - var(--container))/2))}.hero-status{display:inline-flex;align-items:center;gap:9px;width:max-content;margin-bottom:28px;color:var(--muted2);font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}.status-light{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(215,173,81,.11)}.hero h1{max-width:9.2ch;margin-bottom:28px;font-size:clamp(3.45rem,6vw,6rem);font-weight:700;line-height:.93;letter-spacing:-.04em;text-wrap:balance}.hero h1 span{color:var(--gold)}.hero-copy{max-width:59ch;margin:0;color:var(--muted);font-size:clamp(1.05rem,1.55vw,1.24rem)}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 20px;border:1px solid var(--line2);border-radius:10px;color:var(--ink);font-weight:700;text-decoration:none;transition:transform .25s var(--ease),background .2s,border-color .2s,color .2s}.button-primary{border-color:var(--gold);background:var(--gold);color:#111}.button:hover{transform:translateY(-2px);border-color:var(--gold)}.button-primary:hover{background:var(--gold2)}.hero-foot{display:flex;align-items:center;gap:11px;margin-top:clamp(48px,9vh,96px);color:var(--muted);font-size:.84rem}.hero-foot i{color:var(--gold)}
+    .continuity{position:absolute;top:0;bottom:0;left:50%;width:1px;pointer-events:none;background:linear-gradient(var(--gold),rgba(215,173,81,.12),transparent)}.services{background:var(--soft);border-bottom:1px solid var(--line)}.service-system{position:relative;border-top:1px solid var(--line)}.service-row{position:relative;display:grid;grid-template-columns:90px minmax(200px,.75fr) minmax(280px,1.15fr) minmax(250px,.85fr);gap:clamp(20px,4vw,56px);align-items:start;padding:30px 18px;border-bottom:1px solid var(--line);transition:.25s}.service-row:after{content:"";position:absolute;inset:auto 0 -1px;height:1px;transform:scaleX(0);transform-origin:left;background:var(--gold);transition:transform .55s var(--ease)}.service-row:hover,.service-row.is-current{background:rgba(215,173,81,.035)}.service-row:hover:after,.service-row.is-current:after{transform:scaleX(1)}.service-signal{display:flex;align-items:center;gap:10px;color:var(--gold);font-size:.72rem;font-weight:600;letter-spacing:.08em}.service-signal:before{content:"";width:9px;height:9px;border:1px solid var(--gold);border-radius:50%;background:var(--soft);transition:.2s}.service-row.is-current .service-signal:before{background:var(--gold);box-shadow:0 0 0 6px rgba(215,173,81,.1)}.service-row h3{margin:0;font-size:clamp(1.18rem,2vw,1.55rem);line-height:1.25;letter-spacing:-.02em}.service-row p{margin:0;color:var(--muted);font-size:.93rem}.service-row ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 18px;margin:0;padding:0;color:var(--muted2);font-size:.79rem;list-style:none}.service-row li{display:flex;gap:8px}.service-row li:before{content:"";width:12px;height:1px;flex:0 0 12px;margin-top:.72em;background:var(--gold3)}
+    .process{overflow:hidden;background:#0b0c0f}.process-layout{display:grid;grid-template-columns:minmax(280px,.62fr) minmax(0,1.38fr);gap:clamp(60px,10vw,150px)}.process-intro{align-self:start;position:sticky;top:120px}.process-intro .section-title{max-width:8ch}.process-note{display:flex;align-items:center;gap:12px;margin-top:30px;color:var(--muted);font-size:.82rem}.process-note i{color:var(--gold)}.process-steps{position:relative;padding-left:48px}.process-track{position:absolute;top:18px;bottom:18px;left:12px;width:1px;background:var(--line)}.process-progress{width:100%;height:var(--process-progress,0);background:var(--gold);transition:height .15s linear}.process-step{position:relative;min-height:180px;padding:0 0 66px 20px;opacity:.5;transition:opacity .35s}.process-step:last-child{min-height:90px;padding-bottom:0}.process-step:before{content:"";position:absolute;top:8px;left:-40px;width:11px;height:11px;border:1px solid #5f5b50;border-radius:50%;background:var(--bg);transition:.25s}.process-step.is-active{opacity:1}.process-step.is-active:before{border-color:var(--gold);background:var(--gold);box-shadow:0 0 0 7px rgba(215,173,81,.1)}.process-step h3{margin-bottom:10px;font-size:clamp(1.5rem,3vw,2.4rem);letter-spacing:-.03em}.process-step p{max-width:52ch;margin:0;color:var(--muted)}
+    .projects{border-block:1px solid var(--line);background:var(--surface)}.project-list{display:grid;gap:24px}.project{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(320px,.84fr);min-height:480px;overflow:hidden;border:1px solid var(--line2);border-radius:var(--radius);background:var(--bg);color:inherit;text-decoration:none}.project:nth-child(even){grid-template-columns:minmax(320px,.84fr) minmax(0,1.16fr)}.project:nth-child(even) .project-visual{order:2}.project-visual{position:relative;min-height:430px;overflow:hidden;background:#0a0b0d}.project-visual:after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(transparent,rgba(0,0,0,.35));pointer-events:none}.project-art{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;transform:translate3d(0,var(--project-shift,0),0) scale(1.02)}.project-data{display:grid;place-items:center;background:radial-gradient(circle at 50% 42%,rgba(215,173,81,.16),transparent 18rem),#0d0f12}.dashboard{width:min(78%,560px);border:1px solid #3a3c41;border-radius:10px;background:#111318;box-shadow:0 28px 70px rgba(0,0,0,.35);transform:translate3d(0,var(--project-shift,0),0)}.dashboard-bar{display:flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-bottom:1px solid #303239}.dashboard-bar i{width:6px;height:6px;border-radius:50%;background:#5a5b5f}.dashboard-body{display:grid;grid-template-columns:1fr 2fr;min-height:260px}.dashboard-side{padding:18px;border-right:1px solid #303239}.dashboard-side span{display:block;width:70%;height:5px;margin-bottom:16px;border-radius:4px;background:#3d3e42}.dashboard-main{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:18px}.dash-stat{padding:14px;border:1px solid #2f3136;border-radius:8px}.dash-stat strong{display:block;color:var(--gold2);font:700 1.4rem/1 "Manrope"}.dash-stat small{color:#8f8f8b}.dash-chart{grid-column:1/-1;display:flex;align-items:end;gap:8px;min-height:120px;padding:16px;border:1px solid #2f3136;border-radius:8px}.dash-chart span{flex:1;height:var(--bar);background:linear-gradient(to top,var(--gold3),var(--gold2));opacity:.85}.project-content{display:flex;flex-direction:column;justify-content:space-between;padding:clamp(34px,5vw,64px)}.project-type{color:var(--gold);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.project-content h3{max-width:12ch;margin:auto 0 16px;font-size:clamp(2rem,4vw,3.55rem);line-height:1.02;letter-spacing:-.04em}.project-content p{max-width:47ch;margin-bottom:28px;color:var(--muted)}.project-link-label{display:inline-flex;align-items:center;gap:10px;color:var(--gold2);font-weight:700}.project:hover .project-link-label i{transform:translate(3px,-3px)}.project-link-label i{transition:.25s var(--ease)}
+    .stack{overflow:hidden}.stack-band{border-block:1px solid var(--line)}.stack-row{display:grid;grid-template-columns:minmax(160px,.28fr) minmax(0,.72fr)}.stack-row+*{border-top:1px solid var(--line)}.stack-label{display:flex;align-items:center;min-height:116px;padding:24px;border-right:1px solid var(--line);color:var(--gold);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.stack-items{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;min-height:116px;padding:24px clamp(24px,4vw,52px);color:var(--muted2)}.stack-items span{position:relative;white-space:nowrap}.stack-items span:not(:last-child):after{content:"";position:absolute;top:50%;right:-14px;width:3px;height:3px;border-radius:50%;background:var(--gold3)}.about{background:var(--soft);border-top:1px solid var(--line)}.about-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:clamp(70px,10vw,150px)}.about-statement{max-width:21ch;margin-bottom:30px;font:600 clamp(2rem,4.3vw,4rem)/1.12 "Manrope";letter-spacing:-.04em;text-wrap:balance}.about-statement span{color:var(--gold)}.about-detail{max-width:62ch;color:var(--muted)}.values{align-self:end;margin:0;padding:0;border-top:1px solid var(--line2);list-style:none}.values li{display:flex;align-items:center;justify-content:space-between;min-height:66px;border-bottom:1px solid var(--line);color:var(--muted2);font-weight:600}.values li:after{content:"";width:18px;height:1px;background:var(--gold3)}
+    .contact{overflow:hidden;padding-bottom:0;background:#0b0c0f}.contact-network{position:absolute;top:0;left:50%;width:min(900px,90vw);height:270px;transform:translateX(-50%);opacity:.7;pointer-events:none}.contact-network path{fill:none;stroke:rgba(215,173,81,.26);stroke-width:1}.contact-inner{position:relative;z-index:1;text-align:center}.contact .section-title{max-width:14ch;margin-inline:auto}.contact .section-copy{margin-inline:auto}.contact-actions,.contact-methods{display:flex;justify-content:center;flex-wrap:wrap}.contact-actions{gap:12px;margin-top:34px}.contact-methods{gap:18px 30px;margin-top:30px;color:var(--muted);font-size:.88rem}.contact-methods a{text-underline-offset:4px}.contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:850px;margin:62px auto 0;padding:clamp(24px,5vw,54px);border:1px solid var(--line2);border-radius:var(--radius) var(--radius) 0 0;background:var(--surface);text-align:left}.field{display:grid;gap:8px}.field-wide{grid-column:1/-1}label{color:var(--muted2);font-size:.82rem;font-weight:600}input,select,textarea{width:100%;border:1px solid #3a3c41;border-radius:9px;background:#0d0f12;color:var(--ink)}input,select{min-height:48px;padding:0 14px}textarea{min-height:132px;padding:13px 14px;resize:vertical}textarea::placeholder{color:#777873}input:focus,select:focus,textarea:focus{border-color:var(--gold);outline:0;box-shadow:0 0 0 3px rgba(215,173,81,.11)}.form-footer{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:4px}.form-note,.form-error{margin:0;font-size:.78rem}.form-note{color:var(--muted)}.form-error{min-height:1.2em;color:var(--danger)}button.button{cursor:pointer}footer{border-top:1px solid var(--line);background:#07080a}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:116px;color:var(--muted);font-size:.8rem}.footer-brand{margin-bottom:4px;color:var(--gold2);font-family:"Manrope";font-weight:700}.footer-links{display:flex;align-items:center;gap:24px}.footer-links a{display:inline-flex;align-items:center;min-height:44px;text-underline-offset:4px}
+    .reveal{opacity:1;transform:none}.js .reveal{opacity:.001;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.js .reveal.is-visible{opacity:1;transform:none}
+    @media(max-width:1020px){.nav-toggle{display:grid}.nav-links{position:absolute;top:69px;right:20px;display:none;width:min(320px,calc(100vw - 40px));padding:14px;border:1px solid var(--line2);border-radius:12px;background:#111318;box-shadow:0 24px 70px rgba(0,0,0,.48)}.nav-links.is-open{display:grid}.nav-links a{width:100%}.nav-cta{margin:6px 0 0;justify-content:center}.hero-grid{grid-template-columns:1fr}.hero-copy-panel{min-height:680px}.system-stage{min-height:760px;border-top:1px solid var(--line);border-left:0}.system-map{width:min(82%,690px)}.service-row{grid-template-columns:70px minmax(180px,.8fr) minmax(0,1.2fr)}.service-row ul{grid-column:2/-1}.process-layout{gap:70px}.project,.project:nth-child(even){grid-template-columns:1fr 1fr}.project:nth-child(even) .project-visual{order:initial}}
+    @media(max-width:760px){.container{width:min(calc(100% - 28px),var(--container))}.section{padding-block:84px}.section-head{grid-template-columns:1fr;gap:24px;margin-bottom:48px}.hero-copy-panel{min-height:calc(100svh - 76px);padding:80px 20px 48px}.hero h1{font-size:clamp(3rem,15.4vw,4.7rem)}.system-stage{min-height:640px}.system-map{width:min(96%,560px);aspect-ratio:1/1.15}.core{width:132px}.core:before{inset:-13px}.core:after{inset:-26px}.core-label{top:calc(100% + 35px)}.system-node{min-height:46px;padding:8px 11px;font-size:.7rem}.node-ai{top:8%;left:2%}.node-automation{top:12%;right:1%}.node-apps{top:57%;right:0}.node-data{bottom:5%;right:5%}.node-platform{bottom:7%;left:0}.system-caption{display:none}.service-row{grid-template-columns:44px minmax(0,1fr);gap:16px;padding:26px 4px}.service-row p,.service-row ul{grid-column:2}.service-row ul{grid-template-columns:1fr}.service-signal{font-size:0}.process-layout{grid-template-columns:1fr;gap:54px}.process-intro{position:static}.process-steps{padding-left:40px}.process-step{min-height:165px;padding-left:14px}.process-step:before{left:-33px}.project,.project:nth-child(even){grid-template-columns:1fr;min-height:0}.project-visual{min-height:340px}.project-content{min-height:340px;padding:32px 24px}.project-content h3{margin-top:76px}.dashboard{width:88%}.dashboard-body{min-height:220px}.stack-row{grid-template-columns:1fr}.stack-label{min-height:auto;padding-bottom:12px;border-right:0}.stack-items{min-height:auto;padding-top:6px;padding-bottom:28px}.about-layout{grid-template-columns:1fr;gap:56px}.contact-form{grid-template-columns:1fr;padding-inline:18px}.field-wide,.form-footer{grid-column:1}.form-footer{align-items:stretch;flex-direction:column}.form-footer .button{width:100%}.footer-inner{align-items:flex-start;flex-direction:column;padding-block:28px}.footer-links{width:100%;justify-content:space-between}}
+    @media(max-width:390px){.brand-wordmark{font-size:.88rem}.brand-wordmark small{font-size:.54rem}.hero-actions .button{width:100%}.system-stage{min-height:580px}.system-node{max-width:120px}.node-automation{top:15%}.dashboard-side{display:none}.dashboard-body{grid-template-columns:1fr}}
+    @media(hover:hover) and (pointer:fine){.system-node:hover{border-color:var(--gold);color:var(--ink);transform:translate3d(0,-3px,var(--depth))}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.system-map,.project-art,.dashboard,.js .reveal{transform:none!important}.js .reveal{opacity:1}.system-lines .signal{stroke-dasharray:none;opacity:.7}.process-progress{transition:none}}
   </style>
+  <link rel="stylesheet" href="assets/reference-layout.css">
+  <link rel="stylesheet" href="assets/stack-and-contact.css">
+  <link rel="stylesheet" href="assets/hero-lights.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" aria-label="Main navigation">
-    <div class="container">
-      <a class="navbar-brand" href="#home" aria-label="Fikey Ingenious home">
-        <img class="brand-mark" src="fikey-ingenious-logo-icon.png" alt="">
-        <span class="brand-name">Fikey Ingenious <small>Technologies</small></span>
-      </a>
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="bi bi-list fs-2"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#insights">Insights</a></li>
-          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn btn-dark-custom btn-sm px-3" href="#contact">Start a conversation</a></li>
-        </ul>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="site-nav" id="siteNav" aria-label="Main navigation"><div class="container nav-inner">
+    <a class="brand" href="#home" aria-label="Fikey Ingenious home"><img class="brand-logo" src="fikey-ingenious-logo.png" width="56" height="56" alt="Original Fikey Ingenious logo"><span class="brand-wordmark">Fikey<small>Ingenious Technologies</small></span></a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation"><i class="bi bi-list" aria-hidden="true"></i></button>
+    <ul class="nav-links" id="navLinks"><li><a href="#home" aria-current="page">Home</a></li><li><a href="#services">Services</a></li><li><a href="#projects">Projects</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li><li><a class="nav-cta" href="#contact">Start a conversation <i class="bi bi-arrow-right" aria-hidden="true"></i></a></li></ul>
+  </div></nav>
+  <main id="main">
+    <section class="hero hero-reference" id="home" aria-labelledby="heroTitle" data-lights="paused">
+      <div class="hero-copy-panel">
+        <p class="hero-categories">AI <span>×</span> AUTOMATION <span>×</span> APPLICATIONS <span>×</span> DATA</p>
+        <h1 id="heroTitle" tabindex="-1">AI-powered solutions for <span>modern businesses.</span></h1>
+        <p class="hero-copy">We build business applications, automate repetitive work, and turn complex data into clear insights and actionable reporting.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#services">Explore services <i class="bi bi-arrow-right" aria-hidden="true"></i></a><a class="intro-link" href="#projects"><span class="play-outline"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>View portfolio</a></div>
       </div>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-shell p-0">
-        <div class="hero-copy-panel">
-          <div>
-            <h1>AI-powered solutions for <em>modern businesses.</em></h1>
-            <p class="hero-copy">We build business applications, automate repetitive work, and turn complex data into clear insights and actionable reporting.</p>
-            <div class="hero-actions">
-              <a class="btn btn-dark-custom" href="#services">Explore services <i class="bi bi-arrow-down-right ms-2"></i></a>
-              <a class="btn btn-outline-custom" href="#portfolio">View portfolio</a>
-            </div>
-          </div>
-
-          <div>
-            <div class="hero-note"><i class="bi bi-geo-alt"></i> Malaysia-based · Supporting businesses and independent professionals</div>
-            <div class="hero-capabilities" aria-label="Core capabilities">
-              <div class="hero-capability"><i class="bi bi-window"></i><span>Business applications</span></div>
-              <div class="hero-capability"><i class="bi bi-stars"></i><span>AI &amp; automation</span></div>
-              <div class="hero-capability"><i class="bi bi-bar-chart-line"></i><span>Data intelligence</span></div>
-            </div>
-          </div>
-        </div>
-
-        <aside class="hero-proof" aria-label="How Fikey Ingenious turns business friction into practical outcomes">
-          <div class="proof-heading">
-            <h2>From daily friction to useful systems.</h2>
-            <div class="proof-tabs" aria-label="Choose a capability">
-              <button class="proof-tab" type="button" aria-pressed="true" data-proof="automation">Automation</button>
-              <button class="proof-tab" type="button" aria-pressed="false" data-proof="applications">Applications</button>
-              <button class="proof-tab" type="button" aria-pressed="false" data-proof="data">Data</button>
-            </div>
-          </div>
-
-          <div class="proof-flow">
-            <div class="proof-row"><span id="proofInputOne">Repetitive work</span><span class="proof-arrow"><i class="bi bi-arrow-right"></i></span><strong id="proofOutputOne">Reliable workflow</strong></div>
-            <div class="proof-row"><span id="proofInputTwo">Manual handoffs</span><span class="proof-arrow"><i class="bi bi-arrow-right"></i></span><strong id="proofOutputTwo">Connected tools</strong></div>
-            <div class="proof-row"><span id="proofInputThree">Hours of admin</span><span class="proof-arrow"><i class="bi bi-arrow-right"></i></span><strong id="proofOutputThree">Time returned</strong></div>
-          </div>
-
-          <div class="proof-footer">
-            <p class="proof-note" id="proofNote">Practical automation shaped around how the business already works.</p>
-          </div>
-        </aside>
-      </div>
+      <div class="hero-scene" id="heroScene"><img src="assets/hero-system-lossless.webp" width="1672" height="941" fetchpriority="high" alt="Four floating dark glass panels for AI and Automation, Applications, Data and BI, and Data Platforms connect through gold circuits to a central processor."><svg class="hero-light-field" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><path id="hero-route-ai" pathLength="1000" d="M1032 294C1089 310 1127 331 1124 357"/><path id="hero-route-ai-return" pathLength="1000" d="M924 407C929 430 942 440 966 450"/><path id="hero-route-applications" pathLength="1000" d="M1273 460C1310 468 1342 448 1357 424"/><path id="hero-route-analytics" pathLength="1000" d="M966 477C932 483 914 497 909 517"/><path id="hero-route-platforms" pathLength="1000" d="M1168 548C1176 571 1203 588 1248 600"/><path id="hero-route-cloud" pathLength="1000" d="M1415 568C1431 557 1450 548 1468 541"/><path id="hero-route-core" pathLength="1000" d="M969 492L1085 557Q1113 572 1136 559L1254 494"/></defs><g class="hero-light-trails"><use href="#hero-route-ai" style="--phase:0s"/><use href="#hero-route-ai-return" style="--phase:-2.4s"/><use href="#hero-route-applications" style="--phase:-1.3s"/><use href="#hero-route-analytics" style="--phase:-3.9s"/><use href="#hero-route-platforms" style="--phase:-2.9s"/><use href="#hero-route-cloud" style="--phase:-4.5s"/><use href="#hero-route-core" style="--phase:-0.8s"/></g><g class="hero-light-cores"><use href="#hero-route-ai" style="--phase:0s"/><use href="#hero-route-ai-return" style="--phase:-2.4s"/><use href="#hero-route-applications" style="--phase:-1.3s"/><use href="#hero-route-analytics" style="--phase:-3.9s"/><use href="#hero-route-platforms" style="--phase:-2.9s"/><use href="#hero-route-cloud" style="--phase:-4.5s"/><use href="#hero-route-core" style="--phase:-0.8s"/></g></svg><div class="hero-original-logo"><img src="fikey-ingenious-logo.png" width="1024" height="1024" alt="Fikey Ingenious original logo"></div></div>
+      <div class="hero-proof-strip original-hero-note"><p>Malaysia-based · Supporting businesses and independent professionals</p><ul><li>Business applications</li><li>AI &amp; automation</li><li>Data intelligence</li></ul></div>
+      <a class="hero-scroll" href="#services">SCROLL<i class="bi bi-arrow-down" aria-hidden="true"></i></a>
     </section>
-
-    <div class="trust-strip">
-      <div class="container">
-        <div class="stack-wrap">
-          <div class="stack-heading">
-            <h2 class="stack-title">Capabilities <span>&amp;</span> technology</h2>
-          </div>
-          <div class="stack-groups">
-            <article class="stack-group">
-              <h3><i class="bi bi-stars" aria-hidden="true"></i>AI &amp; Automation</h3>
-              <p>OpenAI APIs · ChatGPT · Codex-assisted engineering · Python · Workflow automation</p>
-            </article>
-            <article class="stack-group">
-              <h3><i class="bi bi-window-stack" aria-hidden="true"></i>Applications</h3>
-              <p>TypeScript · Angular · Django · Laravel · Java Spring Boot · Bootstrap</p>
-            </article>
-            <article class="stack-group">
-              <h3><i class="bi bi-bar-chart-line" aria-hidden="true"></i>Data &amp; BI</h3>
-              <p>Power BI · Data analytics · KPI dashboards · Automated reporting · Excel</p>
-            </article>
-            <article class="stack-group">
-              <h3><i class="bi bi-database" aria-hidden="true"></i>Data Platforms</h3>
-              <p>PostgreSQL · MySQL · REST APIs · System integration · CSV processing</p>
-            </article>
-          </div>
-        </div>
+    <section class="section services" id="services"><div class="container"><header class="section-head reveal"><h2 class="section-title"><span>What we do:</span> practical expertise for everyday digital challenges.</h2><p class="section-copy">From your first professional website to a workflow that saves hours every week, we shape the right-sized solution around how you actually work.</p></header><div class="service-artwork"><img src="assets/services-system-v2.webp" width="1672" height="941" loading="lazy" alt="Four black glass capability panels connected by gold circuits, continuing the hero system."></div><div class="service-system">
+      <article class="service-row reveal"><div class="service-signal">LIVE</div><h3>Business Applications</h3><p>Responsive websites and scalable applications designed around real operational needs and maintainable technology.</p><ul><li>Business websites</li><li>Web applications</li><li>Dashboards &amp; portals</li><li>API-driven systems</li></ul></article>
+      <article class="service-row reveal"><div class="service-signal">LIVE</div><h3>AI Solutions &amp; Automation</h3><p>Intelligent workflows that reduce manual effort, connect tools, and turn repetitive work into reliable processes.</p><ul><li>AI assistants</li><li>OpenAI integrations</li><li>Document automation</li><li>Codex-assisted delivery</li></ul></article>
+      <article class="service-row reveal"><div class="service-signal">LIVE</div><h3>Data Analytics &amp; BI</h3><p>Clear dashboards, reports, and data workflows that transform operational information into better decisions.</p><ul><li>Power BI reporting</li><li>KPI dashboards</li><li>Data preparation</li><li>Automated reporting</li></ul></article>
+      <article class="service-row reveal"><div class="service-signal">LIVE</div><h3>Systems &amp; Integration</h3><p>Practical technical guidance and integration work that connects applications, databases, and business processes.</p><ul><li>PostgreSQL &amp; MySQL</li><li>REST API integration</li><li>Technology guidance</li><li>Workflow improvement</li></ul></article>
+    </div><div class="original-outcomes"><h3>From daily friction to useful systems.</h3><div class="original-outcome-grid"><article><h4>Automation</h4><ul><li>Repetitive work → Reliable workflow</li><li>Manual handoffs → Connected tools</li><li>Hours of admin → Time returned</li></ul><p>Practical automation shaped around how the business already works.</p></article><article><h4>Applications</h4><ul><li>Disconnected tasks → One clear application</li><li>Generic tools → Purpose-built workflow</li><li>Daily friction → Maintainable system</li></ul><p>Business applications designed around real operational needs.</p></article><article><h4>Data</h4><ul><li>Scattered data → Clear reporting</li><li>Manual updates → Automated reports</li><li>Unclear signals → Decision-ready insight</li></ul><p>Data workflows that turn operational information into useful decisions.</p></article></div></div></div></section>
+    <section class="section process" id="process"><div class="container process-layout"><div class="process-intro reveal"><h2 class="section-title">A clear path from idea to <span>working system.</span></h2><p class="section-copy">We keep the process legible, collaborative, and proportionate to the problem.</p><img class="process-illustration" src="assets/process-system-v2.webp" width="1672" height="941" loading="lazy" alt="Five connected gold-lit processor platforms representing the delivery path."><div class="process-note"><i class="bi bi-mouse" aria-hidden="true"></i>Discover → Plan → Build → Deploy → Support</div></div><div class="process-steps" id="processSteps"><div class="process-track" aria-hidden="true"><div class="process-progress"></div></div>
+      <article class="process-step is-active"><h3>Discover</h3><p>Understand the friction, the people involved, the current workflow, and what a useful outcome must change.</p></article><article class="process-step"><h3>Plan</h3><p>Shape the right-sized architecture, delivery sequence, and decision points before complexity starts to accumulate.</p></article><article class="process-step"><h3>Build</h3><p>Create the application, automation, reporting layer, or integration with clean execution and visible progress.</p></article><article class="process-step"><h3>Deploy</h3><p>Move from a working build to a dependable release with practical validation, documentation, and handover.</p></article><article class="process-step"><h3>Support</h3><p>Improve the system as real use reveals better opportunities, new needs, and smarter ways to work.</p></article>
+    </div></div></section>
+    <section class="section projects" id="projects"><div class="container"><header class="section-head reveal"><h2 class="section-title"><span>Selected projects.</span> A glimpse of what we can build.</h2><p class="section-copy">Explore brand websites, professional portfolios, and demonstration concepts for business workflows.</p></header><div class="project-list">
+      <a class="project reveal" href="nuhateaco/" aria-label="View the Nuha Tea Co. website"><div class="project-visual nuha-project-visual"><img class="project-art nuha-preview" src="assets/nuha-project-v2.webp" width="1672" height="941" loading="lazy" alt="Nuha Tea Co. design preview: Rasa Kaw. Momen Luar Biasa., with a premium iced tea cup, tea and milk splashes, floating ice, and warm gold lighting."></div><div class="project-content"><span class="project-type">Live project</span><div><h3>Nuha Tea Co.</h3><p>A premium, mobile-friendly ordering website for a local iced-tea and event brand.</p><span class="project-link-label">View project <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></div></div></a>
+      <a class="project reveal" href="sayed-fikri-profile/" aria-label="View the Sayed Fikri professional portfolio website"><div class="project-visual arif-project-visual"><img class="project-art arif-preview" src="assets/arif-profile-preview-v2.webp" width="1672" height="941" loading="lazy" alt="Arif Fikri portfolio hero with layered code, system architecture, and production application windows in a dark and gold engineering workspace."></div><div class="project-content"><span class="project-type">Portfolio website</span><div><h3>Sayed Fikri Profile</h3><p>A professional one-page portfolio presenting engineering experience, selected work, and technical expertise.</p><span class="project-link-label">View project <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></div></div></a>
+      <article class="project reveal" aria-label="Automated PDF Workflow demonstration"><div class="project-visual project-data"><div class="original-code-demo"><code>generate_report(data)<br>→ validate records<br>→ calculate totals<br>→ build branded PDF<br>→ deliver automatically<br><br><span>✓ 42 reports completed</span></code></div></div><div class="project-content"><span class="project-type">Demonstration</span><div><h3>Automated PDF Workflow</h3><p>A repeatable process that turns structured data into consistent, branded documents.</p></div></div></article>
+      <article class="project reveal" aria-label="Business Intelligence Dashboard demonstration"><div class="project-visual project-data"><img class="project-art" src="assets/services-system-v2.webp" width="1672" height="941" loading="lazy" alt="Connected analytics and data platforms, illustrating a business intelligence demonstration."></div><div class="project-content"><span class="project-type">Demonstration</span><div><h3>Business Intelligence Dashboard</h3><p>Clean operational data transformed into KPI reporting, trends, and decision-ready insights.</p></div></div></article>
+    </div></div></section>
+    <section class="section stack" id="stack"><div class="container"><header class="section-head reveal"><h2 class="section-title">Capabilities <span>&amp; technology</span></h2><p class="section-copy" hidden></p></header>
+      <div class="stack-band">
+        <div class="stack-row"><h3 class="stack-label">AI &amp; Automation</h3><div class="stack-content"><ul class="tech-list"><li class="tech-item"><img class="tech-logo logo-light" src="assets/tech/openai.svg" width="36" height="36" loading="lazy" alt=""><span>OpenAI APIs<small>ChatGPT</small></span></li><li class="tech-item"><img class="tech-logo" src="assets/tech/python.svg" width="36" height="36" loading="lazy" alt=""><span>Python</span></li></ul><p class="stack-detail">Codex-assisted engineering · Workflow automation</p></div></div>
+        <div class="stack-row"><h3 class="stack-label">Applications</h3><div class="stack-content"><ul class="tech-list"><li class="tech-item"><img class="tech-logo" src="assets/tech/typescript.svg" width="36" height="36" loading="lazy" alt=""><span>TypeScript</span></li><li class="tech-item"><img class="tech-logo" src="assets/tech/angular.svg" width="36" height="36" loading="lazy" alt=""><span>Angular</span></li><li class="tech-item"><img class="tech-logo logo-surface" src="assets/tech/django.svg" width="36" height="36" loading="lazy" alt=""><span>Django</span></li><li class="tech-item"><img class="tech-logo" src="assets/tech/laravel.svg" width="36" height="36" loading="lazy" alt=""><span>Laravel</span></li><li class="tech-item"><img class="tech-logo" src="assets/tech/spring.svg" width="36" height="36" loading="lazy" alt=""><span>Java Spring Boot</span></li><li class="tech-item"><img class="tech-logo" src="assets/tech/bootstrap.svg" width="36" height="36" loading="lazy" alt=""><span>Bootstrap</span></li></ul></div></div>
+        <div class="stack-row"><h3 class="stack-label">Data &amp; BI</h3><div class="stack-content"><ul class="tech-list"><li class="tech-item"><img class="tech-logo logo-powerbi" src="assets/tech/powerbi.svg" width="36" height="36" loading="lazy" alt=""><span>Power BI</span></li><li class="tech-item"><img class="tech-logo logo-excel" src="assets/tech/microsoftexcel.svg" width="36" height="36" loading="lazy" alt=""><span>Excel</span></li></ul><p class="stack-detail">Data analytics · KPI dashboards · Automated reporting</p></div></div>
+        <div class="stack-row"><h3 class="stack-label">Data Platforms</h3><div class="stack-content"><ul class="tech-list"><li class="tech-item"><img class="tech-logo" src="assets/tech/postgresql.svg" width="36" height="36" loading="lazy" alt=""><span>PostgreSQL</span></li><li class="tech-item"><img class="tech-logo logo-surface" src="assets/tech/mysql.svg" width="36" height="36" loading="lazy" alt=""><span>MySQL</span></li></ul><p class="stack-detail">REST APIs · System integration · CSV processing</p></div></div>
       </div>
-    </div>
-
-    <section class="about-section section-space" id="about">
-      <div class="container">
-        <div class="about-editorial">
-          <div class="about-lead">
-            <h2 class="about-title">About us</h2>
-            <p class="statement">Fikey Ingenious Technologies helps businesses work smarter through AI-powered automation, reliable applications, and meaningful data intelligence.</p>
-          </div>
-          <div class="about-detail">
-            <p class="about-philosophy">Our philosophy is straightforward: technology should remove friction, not create more of it. We focus on useful outcomes, clean execution, and solutions that are easy to understand and maintain.</p>
-            <div class="about-values">
-              <h3>What guides our work</h3>
-              <ul class="value-list">
-                <li>Simplicity</li>
-                <li>Innovation</li>
-                <li>Automation</li>
-                <li>Continuous learning</li>
-                <li>Quiet progress</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    </div></section>
+    <section class="section about" id="about"><div class="container"><div class="about-layout"><div class="reveal"><h2 class="about-statement">About <span>us</span></h2><p class="about-detail">Fikey Ingenious Technologies helps businesses work smarter through AI-powered automation, reliable applications, and meaningful data intelligence.</p><p class="about-detail">Our philosophy is straightforward: technology should remove friction, not create more of it. We focus on useful outcomes, clean execution, and solutions that are easy to understand and maintain.</p></div><ul class="values reveal" aria-label="What guides our work"><li class="values-title">What guides our work</li><li>Simplicity</li><li>Innovation</li><li>Automation</li><li>Continuous learning</li><li>Quiet progress</li></ul></div><div class="resources-note original-resources"><article id="insights"><h3>Tech insights. Learning in public, one useful idea at a time.</h3><p>Our technical journal will share practical notes on automation, development, AI, and building a more productive digital workflow.</p><div class="original-insights"><article><span>Automation</span><h4>Where small automations create the biggest time savings</h4><small>Coming soon</small></article><article><span>Web</span><h4>What a useful small-business website really needs</h4><small>Coming soon</small></article><article><span>Data &amp; BI</span><h4>Turning everyday business data into useful decisions</h4><small>Coming soon</small></article></div></article><article id="products"><h3>Digital products. Useful resources are on the way.</h3><p>We’re preparing practical templates, eBooks, automation tools, and downloadable resources designed to simplify everyday digital work.</p><small>Coming soon</small></article></div></div></section>
+    <section class="section contact contact-live" id="contact" data-motion="paused">
+      <div class="contact-energy" aria-hidden="true">
+        <svg class="energy-field" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <radialGradient id="contact-light"><stop stop-color="#e3ad63" stop-opacity=".26"/><stop offset=".5" stop-color="#ad793d" stop-opacity=".08"/><stop offset="1" stop-color="#ad793d" stop-opacity="0"/></radialGradient>
+            <linearGradient id="contact-line"><stop stop-color="#89613a" stop-opacity=".12"/><stop offset=".55" stop-color="#c48d48" stop-opacity=".5"/><stop offset="1" stop-color="#edc38b" stop-opacity=".8"/></linearGradient>
+            <path id="contact-stream-1" pathLength="1000" d="M-40 110H120Q180 110 220 160L390 360Q430 415 510 430L720 480"/>
+            <path id="contact-stream-2" pathLength="1000" d="M-40 370H180Q240 370 290 410L460 535Q500 560 550 540L720 480"/>
+            <path id="contact-stream-3" pathLength="1000" d="M100 720L310 570Q370 530 440 520L720 480"/>
+            <path id="contact-stream-4" pathLength="1000" d="M1480 110H1320Q1260 110 1220 160L1050 360Q1010 415 930 430L720 480"/>
+            <path id="contact-stream-5" pathLength="1000" d="M1480 370H1260Q1200 370 1150 410L980 535Q940 560 890 540L720 480"/>
+            <path id="contact-stream-6" pathLength="1000" d="M1340 720L1130 570Q1070 530 1000 520L720 480"/>
+          </defs>
+          <ellipse class="energy-atmosphere" cx="720" cy="475" rx="570" ry="270" fill="url(#contact-light)"/>
+          <g class="energy-tracks"><use href="#contact-stream-1"/><use href="#contact-stream-2"/><use href="#contact-stream-3"/><use href="#contact-stream-4"/><use href="#contact-stream-5"/><use href="#contact-stream-6"/></g>
+          <g class="energy-signals"><use class="energy-flow" href="#contact-stream-1"/><use class="energy-flow" href="#contact-stream-2" style="--delay:-2.5s"/><use class="energy-flow" href="#contact-stream-3" style="--delay:-5s"/><use class="energy-flow" href="#contact-stream-4" style="--delay:-4s"/><use class="energy-flow" href="#contact-stream-5" style="--delay:-1s"/><use class="energy-flow" href="#contact-stream-6" style="--delay:-6.5s"/></g>
+          <g class="energy-terminals" fill="#d8a357"><circle cx="220" cy="160" r="3"/><circle cx="290" cy="410" r="3"/><circle cx="310" cy="570" r="3"/><circle cx="1220" cy="160" r="3"/><circle cx="1150" cy="410" r="3"/><circle cx="1130" cy="570" r="3"/></g>
+        </svg>
       </div>
-    </section>
-
-    <section class="services section-space" id="services">
-      <div class="container">
-        <header class="services-header">
-          <h2 class="services-title"><span>What we do:</span> practical expertise for everyday digital challenges.</h2>
-          <p class="services-intro">From your first professional website to a workflow that saves hours every week, we shape the right-sized solution around how you actually work.</p>
-        </header>
-        <div class="service-list">
-          <article class="service-row">
-            <div class="service-name"><i class="bi bi-layout-text-window-reverse" aria-hidden="true"></i><h3>Business Applications</h3></div>
-            <p class="service-description">Responsive websites and scalable applications designed around real operational needs and maintainable technology.</p>
-            <ul class="service-items"><li>Business websites</li><li>Web applications</li><li>Dashboards &amp; portals</li><li>API-driven systems</li></ul>
-          </article>
-          <article class="service-row">
-            <div class="service-name"><i class="bi bi-cpu" aria-hidden="true"></i><h3>AI Solutions &amp; Automation</h3></div>
-            <p class="service-description">Intelligent workflows that reduce manual effort, connect tools, and turn repetitive work into reliable processes.</p>
-            <ul class="service-items"><li>AI assistants</li><li>OpenAI integrations</li><li>Document automation</li><li>Codex-assisted delivery</li></ul>
-          </article>
-          <article class="service-row">
-            <div class="service-name"><i class="bi bi-database-check" aria-hidden="true"></i><h3>Data Analytics &amp; BI</h3></div>
-            <p class="service-description">Clear dashboards, reports, and data workflows that transform operational information into better decisions.</p>
-            <ul class="service-items"><li>Power BI reporting</li><li>KPI dashboards</li><li>Data preparation</li><li>Automated reporting</li></ul>
-          </article>
-          <article class="service-row">
-            <div class="service-name"><i class="bi bi-compass" aria-hidden="true"></i><h3>Systems &amp; Integration</h3></div>
-            <p class="service-description">Practical technical guidance and integration work that connects applications, databases, and business processes.</p>
-            <ul class="service-items"><li>PostgreSQL &amp; MySQL</li><li>REST API integration</li><li>Technology guidance</li><li>Workflow improvement</li></ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="portfolio-section section-space" id="portfolio">
-      <div class="container">
-        <header class="portfolio-header">
-          <h2 class="portfolio-title"><span>Selected projects.</span> A glimpse of what we can build.</h2>
-          <p class="portfolio-intro">Explore brand websites, professional portfolios, and demonstration concepts for business workflows.</p>
-        </header>
-        <div class="featured-projects">
-          <a class="project-link" href="/nuhateaco/" aria-label="View the Nuha Tea Co. website">
-            <article class="project-feature">
-              <div class="project-visual nuha-visual"><img src="nuha-logo.png" alt=""></div>
-              <div class="project-body">
-                <div class="project-meta"><span class="project-type">Live project</span><span class="project-open">View project ↗</span></div>
-                <h3>Nuha Tea Co.</h3>
-                <p>A premium, mobile-friendly ordering website for a local iced-tea and event brand.</p>
-              </div>
-            </article>
-          </a>
-          <a class="project-link" href="/sayed-fikri-profile/" aria-label="View the Sayed Fikri professional portfolio website">
-            <article class="project-feature">
-              <div class="project-visual profile-project-visual">
-                <span class="profile-project-name">Sayed Fikri.</span>
-                <span class="profile-project-label">Software engineering &amp; technical leadership</span>
-              </div>
-              <div class="project-body">
-                <div class="project-meta"><span class="project-type">Portfolio website</span><span class="project-open">View project ↗</span></div>
-                <h3>Sayed Fikri Profile</h3>
-                <p>A professional one-page portfolio presenting engineering experience, selected work, and technical expertise.</p>
-              </div>
-            </article>
-          </a>
-        </div>
-        <div class="demo-projects">
-          <article class="demo-project">
-            <div class="demo-visual">
-              <div class="code-window">generate_report(data)<br>&nbsp;&nbsp;→ validate records<br>&nbsp;&nbsp;→ calculate totals<br>&nbsp;&nbsp;→ build branded PDF<br>&nbsp;&nbsp;→ deliver automatically<br><br><span style="color:#7c9b76">✓ 42 reports completed</span></div>
-            </div>
-            <div class="project-body"><span class="project-type">Demonstration</span><h3>Automated PDF Workflow</h3><p>A repeatable process that turns structured data into consistent, branded documents.</p></div>
-          </article>
-          <article class="demo-project">
-            <div class="demo-visual">
-              <div class="sheet-window" aria-hidden="true">
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-              </div>
-            </div>
-            <div class="project-body"><span class="project-type">Demonstration</span><h3>Business Intelligence Dashboard</h3><p>Clean operational data transformed into KPI reporting, trends, and decision-ready insights.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="insights section-space" id="insights">
-      <div class="container">
-        <header class="insights-header">
-          <h2 class="insights-title"><span>Tech insights.</span> Learning in public, one useful idea at a time.</h2>
-          <p class="insights-intro">Our technical journal will share practical notes on automation, development, AI, and building a more productive digital workflow.</p>
-        </header>
-        <div class="insights-list">
-          <article class="insight-row"><span class="insight-category">Automation</span><h3>Where small automations create the biggest time savings</h3><span class="insight-status">Coming soon</span></article>
-          <article class="insight-row"><span class="insight-category">Web</span><h3>What a useful small-business website really needs</h3><span class="insight-status">Coming soon</span></article>
-          <article class="insight-row"><span class="insight-category">Data &amp; BI</span><h3>Turning everyday business data into useful decisions</h3><span class="insight-status">Coming soon</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="products-section section-space" id="products">
-      <div class="container">
-        <div class="products-layout">
-          <div>
-            <h2 class="products-title"><span>Digital products.</span> Useful resources are on the way.</h2>
-            <p class="products-copy">We’re preparing practical templates, eBooks, automation tools, and downloadable resources designed to simplify everyday digital work.</p>
-          </div>
-          <span class="products-status"><i class="bi bi-hourglass-split" aria-hidden="true"></i> Coming soon</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-section section-space pt-0" id="contact">
-      <div class="container">
-        <div class="contact-layout">
-          <div class="contact-intro">
-            <div>
-              <h2 class="contact-title"><span>Let’s talk.</span> Have a digital challenge in mind?</h2>
-              <p class="contact-copy">Tell us what is taking too much time, feels unnecessarily complicated, or needs a more professional digital presence.</p>
-            </div>
-            <div class="contact-methods">
-              <a class="contact-link" href="mailto:fikeyingenious@gmail.com"><i class="bi bi-envelope" aria-hidden="true"></i> fikeyingenious@gmail.com</a>
-              <a class="contact-link" href="https://wa.me/60136801209" target="_blank" rel="noopener" aria-label="Chat with Fikey Ingenious on WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i> Chat with us on WhatsApp</a>
-            </div>
-          </div>
-          <div class="contact-form-wrap">
-            <form id="contactForm">
-              <div class="row g-3">
-                <div class="col-md-6"><label class="form-label" for="name">Your name</label><input class="form-control" id="name" name="name" autocomplete="name" required></div>
-                <div class="col-md-6"><label class="form-label" for="email">Email address</label><input class="form-control" id="email" name="email" type="email" autocomplete="email" required></div>
-                <div class="col-12"><label class="form-label" for="subject">What can we help with?</label><select class="form-control" id="subject" name="subject"><option>AI solutions & automation</option><option>Business applications</option><option>Data analytics & BI</option><option>Systems & integration</option><option>Something else</option></select></div>
-                <div class="col-12"><label class="form-label" for="message">Tell us a little about your project</label><textarea class="form-control" id="message" name="message" rows="5" required></textarea></div>
-                <div class="col-12"><button class="btn btn-dark-custom" type="submit">Prepare email <i class="bi bi-arrow-up-right ms-2" aria-hidden="true"></i></button><p class="form-note">This opens your email app with the message ready to send.</p></div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+      <div class="container contact-inner"><h2 class="section-title reveal"><span>Let’s talk.</span> Have a digital challenge in mind?</h2><p class="section-copy reveal">Tell us what is taking too much time, feels unnecessarily complicated, or needs a more professional digital presence.</p><div class="contact-actions reveal"><a class="button button-primary" href="mailto:fikeyingenious@gmail.com">Email Fikey Ingenious <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a><a class="button" href="https://wa.me/60136801209" target="_blank" rel="noopener">Chat with us on WhatsApp</a></div><div class="contact-methods reveal"><a href="mailto:fikeyingenious@gmail.com">fikeyingenious@gmail.com</a><span>Malaysia</span></div>
+      <form class="contact-form reveal" id="contactForm" novalidate><div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div><div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required></div><div class="field field-wide"><label for="subject">What can we help with?</label><select id="subject" name="subject"><option>AI solutions &amp; automation</option><option>Business applications</option><option>Data analytics &amp; BI</option><option>Systems &amp; integration</option><option>Something else</option></select></div><div class="field field-wide"><label for="message">Tell us a little about your project</label><textarea id="message" name="message" required></textarea></div><div class="form-footer"><div><p class="form-note">This opens your email app with the message ready to send.</p><p class="form-error" id="formError" role="alert" aria-live="polite"></p></div><button class="button button-primary" type="submit">Prepare email <i class="bi bi-arrow-up-right"></i></button></div></form>
+    </div></section>
   </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-layout">
-        <div><div class="footer-brand">Fikey Ingenious Technologies</div><small>© <span id="year"></span> All rights reserved.</small></div>
-        <span class="footer-quote">“Quiet progress is still progress.”</span>
-        <a class="footer-top" href="#home">Back to top <i class="bi bi-arrow-up" aria-hidden="true"></i></a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const nav = document.getElementById("mainNav");
-    const menu = document.getElementById("navMenu");
-    const collapse = bootstrap.Collapse.getOrCreateInstance(menu, { toggle: false });
-    window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 24), { passive: true });
-    document.querySelectorAll("#navMenu a").forEach(link => link.addEventListener("click", () => {
-      if (window.innerWidth < 992) collapse.hide();
-    }));
-    const navLinks = [...document.querySelectorAll("#navMenu .nav-link")];
-    const sectionObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      navLinks.forEach(link => {
-        const isCurrent = link.getAttribute("href") === `#${entry.target.id}`;
-        link.classList.toggle("active", isCurrent);
-        if (isCurrent) link.setAttribute("aria-current", "location");
-        else link.removeAttribute("aria-current");
-      });
-    }), { rootMargin: "-25% 0px -65%", threshold: 0 });
-    navLinks.forEach(link => {
-      const section = document.querySelector(link.getAttribute("href"));
-      if (section) sectionObserver.observe(section);
-    });
-
-    const proofPanel = document.querySelector(".hero-proof");
-    const proofFlow = document.querySelector(".proof-flow");
-    const proofRows = [...document.querySelectorAll(".proof-row")];
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let proofTimers = [];
-    let proofIsVisible = false;
-    const proofContent = {
-      automation: ["Repetitive work", "Reliable workflow", "Manual handoffs", "Connected tools", "Hours of admin", "Time returned", "Practical automation shaped around how the business already works."],
-      applications: ["Disconnected tasks", "One clear application", "Generic tools", "Purpose-built workflow", "Daily friction", "Maintainable system", "Business applications designed around real operational needs."],
-      data: ["Scattered data", "Clear reporting", "Manual updates", "Automated reports", "Unclear signals", "Decision-ready insight", "Data workflows that turn operational information into useful decisions."]
-    };
-    const proofFields = [
-      document.getElementById("proofInputOne"),
-      document.getElementById("proofOutputOne"),
-      document.getElementById("proofInputTwo"),
-      document.getElementById("proofOutputTwo"),
-      document.getElementById("proofInputThree"),
-      document.getElementById("proofOutputThree"),
-      document.getElementById("proofNote")
-    ];
-    const resetProof = () => {
-      proofTimers.forEach(timer => window.clearTimeout(timer));
-      proofTimers = [];
-      proofFlow.classList.remove("is-playing");
-      proofRows.forEach(row => row.classList.remove("is-current", "is-complete"));
-    };
-    const completeProof = () => {
-      proofFlow.classList.remove("is-playing");
-      proofRows.forEach(row => {
-        row.classList.remove("is-current");
-        row.classList.add("is-complete");
-      });
-    };
-    const playProof = () => {
-      resetProof();
-      if (reduceMotion.matches) {
-        completeProof();
-        return;
-      }
-      if (!proofIsVisible || document.hidden) return;
-      proofFlow.classList.add("is-playing");
-      proofRows.forEach((row, index) => {
-        proofTimers.push(window.setTimeout(() => {
-          proofRows.forEach(item => item.classList.remove("is-current"));
-          row.classList.add("is-current");
-        }, index * 720));
-        proofTimers.push(window.setTimeout(() => {
-          row.classList.remove("is-current");
-          row.classList.add("is-complete");
-        }, index * 720 + 560));
-      });
-      proofTimers.push(window.setTimeout(completeProof, proofRows.length * 720));
-      proofTimers.push(window.setTimeout(playProof, proofRows.length * 720 + 1800));
-    };
-    document.querySelectorAll("[data-proof]").forEach(button => button.addEventListener("click", () => {
-      resetProof();
-      document.querySelectorAll("[data-proof]").forEach(item => item.setAttribute("aria-pressed", String(item === button)));
-      proofContent[button.dataset.proof].forEach((value, index) => { proofFields[index].textContent = value; });
-      proofTimers.push(window.setTimeout(playProof, 180));
-    }));
-    const proofObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-      proofIsVisible = entry.isIntersecting;
-      if (proofIsVisible) playProof();
-      else resetProof();
-    }), { threshold: .35 });
-    proofObserver.observe(proofPanel);
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) resetProof();
-      else if (proofIsVisible) playProof();
-    });
-    reduceMotion.addEventListener("change", playProof);
-
-    document.getElementById("contactForm").addEventListener("submit", event => {
-      event.preventDefault();
-      const form = new FormData(event.currentTarget);
-      const subject = encodeURIComponent(`Website enquiry: ${form.get("subject")}`);
-      const body = encodeURIComponent(`Name: ${form.get("name")}\nEmail: ${form.get("email")}\n\n${form.get("message")}`);
-      window.location.href = `mailto:fikeyingenious@gmail.com?subject=${subject}&body=${body}`;
-    });
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <footer><div class="container footer-inner"><div><div class="footer-brand">Fikey Ingenious Technologies</div><div>© <span id="year"></span> All rights reserved. “Quiet progress is still progress.”</div></div><div class="footer-links"><a href="#insights">Insights</a><a href="#products">Products</a><a href="#home">Back to top</a><a href="mailto:fikeyingenious@gmail.com" aria-label="Email Fikey Ingenious"><i class="bi bi-envelope"></i></a></div></div></footer>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Scroll back to top" title="Back to top" hidden><i class="bi bi-arrow-up" aria-hidden="true"></i></button>
+  <script src="assets/site.js" defer></script>
+  <script src="assets/contact-motion.js" defer></script>
+  <script src="assets/hero-lights.js" defer></script>
 </body>
 </html>

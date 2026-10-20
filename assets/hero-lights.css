@@ -1,0 +1,11 @@
+/* Light routes follow exposed circuits in the approved 1672 × 941 artwork. */
+.hero-scene { transform: none; }
+.hero-light-field { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
+.hero-light-trails { fill: none; stroke: #ffbd59; stroke-width: 10; opacity: .65; }
+.hero-light-cores { fill: none; stroke: #fff7dc; stroke-width: 3.5; opacity: 1; }
+.hero-light-field use { stroke-linecap: round; stroke-dasharray: 300 700; stroke-dashoffset: 1000; animation: hero-circuit-travel 3.8s linear infinite; animation-delay: var(--phase,0s); animation-play-state: paused; }
+.hero-reference[data-lights="running"] .hero-light-field use { animation-play-state: running; }
+@keyframes hero-circuit-travel { to { stroke-dashoffset: 0; } }
+@media(prefers-reduced-motion:reduce) {
+  .hero-light-field { display: none; }
+}
