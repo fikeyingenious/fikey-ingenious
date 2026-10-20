@@ -5,10 +5,12 @@ const root = resolve(import.meta.dirname, "..");
 const dist = resolve(root, "dist");
 const server = resolve(dist, "server");
 
-await rm(dist, { recursive: true, force: true });
+await rm(server, { recursive: true, force: true });
 await mkdir(server, { recursive: true });
 
 const textAssets = {
+  "/trinafmoneypocket": await readFile(resolve(root, "trinafmoneypocket/index.html"), "utf8"),
+  "/trinafmoneypocket/index.html": await readFile(resolve(root, "trinafmoneypocket/index.html"), "utf8"),
   "/": await readFile(resolve(root, "index.html"), "utf8"),
   "/index.html": await readFile(resolve(root, "index.html"), "utf8"),
   "/profile": await readFile(resolve(root, "profile.html"), "utf8"),
@@ -22,6 +24,8 @@ const textAssets = {
 };
 
 const binaryFiles = {
+  "/trinafmoneypocket/style.css": ["text/css; charset=utf-8", "trinafmoneypocket/style.css"],
+  "/trinafmoneypocket/app.js": ["text/javascript; charset=utf-8", "trinafmoneypocket/app.js"],
   "/assets/nuha-mobile-cart.webp": ["image/webp", "assets/nuha-mobile-cart.webp"],
   "/assets/nuha-luxury.css": ["text/css; charset=utf-8", "assets/nuha-luxury.css"],
   "/assets/nuha-hero-luxury.webp": ["image/webp", "assets/nuha-hero-luxury.webp"],
@@ -59,6 +63,12 @@ for (const icon of ["openai", "python", "typescript", "angular", "django", "lara
 }
 
 const binaryAssets = {};
+for (const name of ["wash", "nazra", "pasti", "omd", "trinaf-logo", "raya-scene", "trinaf-hero", "trinaf-signature"]) {
+  binaryFiles[`/trinafmoneypocket/assets/${name}.webp`] = ["image/webp", `trinafmoneypocket/assets/${name}.webp`];
+}
+for (const name of ["wash", "nazra", "pasti", "omd"]) {
+  binaryFiles[`/trinafmoneypocket/assets/${name}-original.jpeg`] = ["image/jpeg", `trinafmoneypocket/assets/${name}-original.jpeg`];
+}
 for (const [route, [type, file]] of Object.entries(binaryFiles)) {
   binaryAssets[route] = {
     type,
@@ -81,7 +91,7 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname.length > 1 ? url.pathname.replace(/\\/$/, "") : url.pathname;
     const headers = {
-      "Cache-Control": path === "/" || path === "/index.html" || path.startsWith("/sayed-fikri-profile") || path === "/profile" || path === "/profile.html"
+      "Cache-Control": textAssets[path]
         ? "public, max-age=300"
         : "public, max-age=31536000, immutable",
       "X-Content-Type-Options": "nosniff",
