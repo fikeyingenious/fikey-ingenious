@@ -14,9 +14,9 @@ colors:
 typography:
   display:
     fontFamily: "Manrope, sans-serif"
-    fontSize: "clamp(48px,4.9vw,77px)"
+    fontSize: "clamp(48px,4.65vw,76px)"
     fontWeight: 800
-    lineHeight: 1.01
+    lineHeight: 1.02
     letterSpacing: "-0.04em"
   headline:
     fontFamily: "Playfair Display, Georgia, serif"
@@ -39,7 +39,7 @@ typography:
     fontSize: "11px"
 rounded:
   field: "5px"
-  panel: "9px"
+  panel: "7px"
   pill: "30px"
   button: "100px"
 spacing:
@@ -79,7 +79,7 @@ components:
 
 **Creative North Star: "The Cinematic Gold Studio"**
 
-The user-pinned black and gold studio reference is the visual authority. Dark, image-led atmosphere frames confident typography and warm gold accents. The lighter catalog creates a practical browsing surface within that world.
+The user-pinned black and gold studio reference is the visual authority. Dark, image-led atmosphere frames confident typography and warm gold accents. The lighter catalog creates a practical browsing surface within that world. The user found the earlier screenshot crop inadequate: purpose-made artwork is now required, with live HTML copy and controls kept separate from imagery.
 
 **Key Characteristics:**
 - Cinematic imagery with dark gradient scrims.
@@ -101,19 +101,23 @@ Use Manrope for the hero, wordmark and product titles, Playfair Display for sect
 
 ## Layout
 
-Desktop sections use the section spacing token; the mobile inset is 6%. The hero places copy on the left and crops the supplied studio image behind the right side. Its desktop mask stays strongly dark through 41% to suppress lettering within the source reference. Current desktop hero height is viewport-relative, bounded between 730px and 920px. Work uses a 31%/69% split; catalog products use four columns, three below 1150px and two below 800px. Packages become a single column below 480px. Contact becomes one column below 800px, and its paired fields stack below 480px.
+Desktop sections use the section spacing token; the mobile inset is 6%. The hero uses dedicated artwork at `assets/studio-hero-v2.png`, composed as a complete studio scene with quiet space on the left for live copy. Show the camera, print roll and screens together rather than magnifying a screenshot crop. Desktop uses cover sizing at center 53%, with a light-to-dark readability scrim, and a height of `clamp(640px,49vw,810px)`; intermediate desktop widths (801–1200px) use 650px. The desktop headline follows the display token, with 55px at intermediate widths and 80px from 1700px.
+
+At 800px and below, stack copy above the image: the hero has a 930px minimum height, with 570px artwork at the bottom. Phones below 480px use an 885px minimum hero, 445px artwork and 49px headline. Preserve the scene instead of placing the full paragraph over its focal objects.
+
+Work uses a 31%/69% split. Its dedicated four-quarter source is `assets/creative-mediums-v2.png`, rendered at `400% 100%` with horizontal positions 0%, 33.3333%, 66.6667% and 100%. All four panels remain available on phones through horizontal overflow. Catalog products use four columns, three below 1150px and two below 800px. Packages become a single column below 480px. Contact becomes one column below 800px, and its paired fields stack below 480px.
 
 At 800px the navigation becomes an expandable menu. Service links use seven columns at wide widths, four at intermediate widths, and two below 480px. Honor the later overrides in style.css when inspecting responsive behavior.
 
 ## Elevation & Depth
 
-Depth comes from image cropping, dark scrims, radial lighting and tonal surfaces. Components have no box shadows. Hairline borders separate sections and products. Work panels use skewed geometry and expand on hover.
+Depth comes from purpose-made studio imagery, readability scrims, radial lighting and tonal surfaces. Components have no box shadows. Hairline borders separate sections and products. Work panels use skewed geometry and expand on hover.
 
 **The Atmospheric Depth Rule.** Let imagery and tonal layering create depth; keep catalog controls and product rows flat.
 
 ## Shapes
 
-Actions and search are pill-shaped; enquiry fields have modest corners. Work panels use gently rounded corners with a negative nine-degree skew, counter-skewing their captions. Product rows remain open with top rules rather than enclosing borders.
+Actions and search are pill-shaped; enquiry fields have modest corners. Work panels use gently rounded corners with a negative ten-degree skew, counter-skewing their captions. Product rows remain open with top rules rather than enclosing borders.
 
 ## Components
 
@@ -125,12 +129,13 @@ Search is a transparent rounded field on catalog paper. Enquiry fields use a dar
 
 Navigation is quiet text with a gold underline on hover and the current item. The mobile Menu control exposes the navigation and updates its expanded state. Product and package selection fill the enquiry field and move focus there. Enquiry submission reveals a bordered status message; this remains a demo preview and sends or saves nothing.
 
-Motion uses short color and background transitions, a slower expanding work panel, and smooth section navigation. CSS removes transitions and smooth page scrolling for reduced-motion preferences; the selection script currently requests smooth scrolling explicitly.
+Motion uses short color and background transitions and a 0.6-second work-panel expansion with brightness feedback. Only when reduced motion is not requested, `studio-reveal` introduces the artwork over 1.8 seconds from brightness 0.7 and scale 1.025, while `copy-reveal` resolves a 3px blur and 8px vertical offset over one second. Both use `cubic-bezier(.16,1,.3,1)`. Reduced-motion CSS omits these entrance animations, removes transitions and disables smooth page scrolling; the selection script currently requests smooth scrolling explicitly.
 
 ## Do's and Don'ts
 
 ### Do:
 - **Do** preserve the supplied cinematic black and gold direction.
+- **Do** use purpose-made, interface-free artwork with live HTML typography.
 - **Do** keep visible copy in English.
 - **Do** keep keyboard focus visible and selection states distinguishable.
 - **Do** retain the indicative-price and demo-enquiry disclosures.

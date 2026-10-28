@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-28T05:55:18.541474+00:00",
+  "generatedAt": "2026-10-28T06:06:54.639252+00:00",
   "title": "Design System: triNAF Creative",
   "extensions": {
     "colorMeta": {
@@ -143,7 +143,7 @@
     "typographyMeta": {
       "display": {
         "displayName": "Confident Display",
-        "purpose": "Hero headline and brand character."
+        "purpose": "Hero headline: clamp(48px,4.65vw,76px), weight 800, line-height 1.02; responsive overrides documented in DESIGN.md."
       },
       "headline": {
         "displayName": "Editorial Headline",
@@ -167,17 +167,31 @@
       },
       {
         "name": "work-expansion",
-        "value": "flex .5s cubic-bezier(.16,1,.3,1)",
+        "value": "flex .6s cubic-bezier(.16,1,.3,1), filter .6s",
         "purpose": "Work panel hover emphasis."
+      },
+      {
+        "name": "studio-reveal",
+        "value": "1.8s cubic-bezier(.16,1,.3,1) both; brightness(.7) scale(1.025) to brightness(1) scale(1)",
+        "purpose": "Artwork entrance only under prefers-reduced-motion: no-preference."
+      },
+      {
+        "name": "copy-reveal",
+        "value": "1s cubic-bezier(.16,1,.3,1) both; blur(3px) translateY(8px) to blur(0) translateY(0)",
+        "purpose": "Copy entrance only under prefers-reduced-motion: no-preference."
       }
     ],
     "breakpoints": [
       {
-        "name": "large-display",
-        "value": "1600px"
+        "name": "large-hero",
+        "value": "1700px"
       },
       {
-        "name": "compact-desktop",
+        "name": "intermediate-hero",
+        "value": "1200px"
+      },
+      {
+        "name": "catalog-three-columns",
         "value": "1150px"
       },
       {
@@ -188,7 +202,30 @@
         "name": "mobile",
         "value": "480px"
       }
-    ]
+    ],
+    "artwork": {
+      "hero": {
+        "source": "assets/studio-hero-v2.png",
+        "provenance": "assets/studio-hero-v2.png.json",
+        "role": "Purpose-made studio concept artwork without website UI; full scene behind live HTML.",
+        "desktopSize": "cover",
+        "desktopPosition": "center 53%",
+        "desktopHeight": "clamp(640px,49vw,810px)",
+        "phoneLayout": "Copy above bottom artwork; 885px minimum hero and 445px artwork below 480px."
+      },
+      "showcase": {
+        "source": "assets/creative-mediums-v2.png",
+        "provenance": "assets/creative-mediums-v2.png.json",
+        "role": "Four photographic concept directions, not verified client projects.",
+        "backgroundSize": "400% 100%",
+        "positions": [
+          "0% center",
+          "33.3333% center",
+          "66.6667% center",
+          "100% center"
+        ]
+      }
+    }
   },
   "components": [
     {
@@ -230,7 +267,7 @@
   ],
   "narrative": {
     "northStar": "The Cinematic Gold Studio",
-    "overview": "The user-pinned black and gold studio reference is the visual authority. Dark, image-led atmosphere frames confident typography and warm gold accents. The lighter catalog creates a practical browsing surface within that world.",
+    "overview": "The user-pinned black and gold studio reference is the visual authority. Dark, image-led atmosphere frames confident typography and warm gold accents. The lighter catalog creates a practical browsing surface within that world. The user found the earlier screenshot crop inadequate: purpose-made artwork is now required, with live HTML copy and controls kept separate from imagery.",
     "keyCharacteristics": [
       "Cinematic imagery with dark gradient scrims.",
       "Warm gold signals emphasis and action.",
@@ -256,6 +293,7 @@
     ],
     "dos": [
       "**Do** preserve the supplied cinematic black and gold direction.",
+      "**Do** use purpose-made, interface-free artwork with live HTML typography.",
       "**Do** keep visible copy in English.",
       "**Do** keep keyboard focus visible and selection states distinguishable.",
       "**Do** retain the indicative-price and demo-enquiry disclosures."

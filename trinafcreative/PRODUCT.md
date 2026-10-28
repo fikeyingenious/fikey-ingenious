@@ -9,4 +9,4 @@ Static HTML, CSS and JavaScript. Preserve catalog search, category and type filt
 ## Brand Commitments
 User supplied cinematic black and gold hero reference, triNAF Creative name. User confirmed English throughout.
 ## Evidence on Hand
-Original pasted HTML and supplied Luxury Creative Studio Hero Showcase.png. Showcase visuals are concept directions, not verified client projects.
+Original pasted HTML and supplied Luxury Creative Studio Hero Showcase.png. Purpose-made generated artwork `assets/studio-hero-v2.png` and `assets/creative-mediums-v2.png` now expresses that reference; adjacent JSON files record the prompts and roles. The user found the earlier screenshot crop inadequate and requires dedicated artwork with live HTML interface elements. Showcase visuals are concept directions, not verified client projects.
