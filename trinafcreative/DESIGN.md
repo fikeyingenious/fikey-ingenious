@@ -111,7 +111,7 @@ At 800px the navigation becomes an expandable menu. Service links use seven colu
 
 ## Elevation & Depth
 
-Depth comes from purpose-made studio imagery, readability scrims, radial lighting and tonal surfaces. Components have no box shadows. Hairline borders separate sections and products. Work panels use skewed geometry and expand on hover.
+Depth comes from purpose-made studio imagery, readability scrims, radial lighting and tonal surfaces. Catalog components have no box shadows; primary-action hover may use a restrained local glow. Hairline borders separate sections and products. Work panels use skewed geometry and expand on hover.
 
 **The Atmospheric Depth Rule.** Let imagery and tonal layering create depth; keep catalog controls and product rows flat.
 
@@ -127,9 +127,19 @@ Category chips use a dark selected pill on the light catalog. Filter changes upd
 
 Search is a transparent rounded field on catalog paper. Enquiry fields use a dark fill and warm fine border. The shared keyboard focus treatment is a two-pixel gold outline with five-pixel offset. Disabled buttons lower opacity to 0.4.
 
-Navigation is quiet text with a gold underline on hover and the current item. The mobile Menu control exposes the navigation and updates its expanded state. Product and package selection fill the enquiry field and move focus there. Enquiry submission reveals a bordered status message; this remains a demo preview and sends or saves nothing.
+Navigation is quiet text with a gold underline on hover and the current item. Intersection observation updates the current section and its accessible location state as visitors move through the page. The mobile Menu control exposes the navigation and updates its expanded state. Product and package selection fill the enquiry field and move focus there. Enquiry submission reveals a bordered status message; this remains a demo preview and sends or saves nothing.
 
-Motion uses short color and background transitions and a 0.6-second work-panel expansion with brightness feedback. Only when reduced motion is not requested, `studio-reveal` introduces the artwork over 1.8 seconds from brightness 0.7 and scale 1.025, while `copy-reveal` resolves a 3px blur and 8px vertical offset over one second. Both use `cubic-bezier(.16,1,.3,1)`. Reduced-motion CSS omits these entrance animations, removes transitions and disables smooth page scrolling; the selection script currently requests smooth scrolling explicitly.
+Motion follows a “creative current”: an original triNAF adaptation of the user's requested smoother, expressive experience, inspired by Lusion, ET Sileent and Codrops. Native CSS, SVG and the Web Animations API provide the effect without GIFs, video downloads or an animation-library dependency. The timings below describe the implementation; they are not a measured frame-rate guarantee.
+
+The hero's gold ribbon travels over nine seconds, its camera scene drifts between scale 1.015 and 1.045 over 18 seconds in alternating directions, and the primary action receives a nine-second reflected-light sweep. Headline lines reveal over 800ms each with an initial 100ms delay and 100ms stagger. The intro resolves over 650ms after 350ms. The gallery reveals once on entering view: 700ms panels staggered by 65ms. Catalog updates fade and resolve a one-pixel blur over 220ms. Entrance begins during setup, with backwards fill holding delayed lines at their initial frame to avoid a visible-to-masked jump. These replace the earlier `studio-reveal` and `copy-reveal` entrances.
+
+A visible Pause motion / Play motion control updates its pressed state and accessible label. Hero loops pause when the user pauses, the hero leaves view, or the document becomes hidden; authored hero entrance animations pause with them. The control does not stop unrelated catalog feedback. Desktop depth responds only to a fine hover pointer above 800px, with a total nine-pixel horizontal and six-pixel vertical range, eased over 900ms. Leaving the hero resets that offset. The ribbon is hidden at tablet and phone widths.
+
+Phone navigation uses 180ms opacity and 300ms transform/visibility transitions. Work interaction uses 650ms geometry, 450ms brightness, 350ms borders and 400ms caption movement. Primary actions use 220ms state transitions and 300ms arrow movement; service icons use a 450ms lift. A restrained primary-action hover shadow is local feedback, not a catalog elevation system.
+
+**The Visitor Control Rule.** Respect reduced motion and explicit pause; decorative movement must not block browsing or enquiry selection.
+
+Reduced-motion preferences remove spatial loops, pointer depth, ribbon, entrance animations and the motion control. Motion preference changes cancel authored Web Animations API effects. CSS removes interaction transitions, while product selection uses instant scrolling and immediate focus instead of the usual smooth scroll and 500ms delay. Gallery labels retain their static counter-skew, while hover movement is suppressed. Navigation remains an ordinary document flow with no scroll interception.
 
 ## Do's and Don'ts
 

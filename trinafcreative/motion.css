@@ -1,0 +1,41 @@
+/* The creative current: one light-led studio sequence, then quiet feedback. */
+:root{--motion-ease:cubic-bezier(.16,1,.3,1)}
+.hero-art{animation:none!important;overflow:hidden;translate:var(--scene-x,0px) var(--scene-y,0px);transition:translate 900ms var(--motion-ease);transform:scale(1.015)}
+.hero-content{animation:none!important}
+.headline-line{display:block}
+.creative-current{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;opacity:0}
+.current-beam,.current-aura{fill:none;stroke:url(#current-gold);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:65 935;stroke-dashoffset:1000}
+.current-beam{stroke-width:1.6}.current-aura{stroke-width:7;filter:url(#current-soft);opacity:.45}
+.motion-toggle{position:absolute;z-index:2;right:6.25%;bottom:24px;display:flex;align-items:center;gap:9px;border:1px solid #b08a5277;border-radius:30px;color:#e0c7a3;background:#080b0ca6;padding:9px 14px;font-size:11px;line-height:1.5;transition:color .2s,background .2s}
+.motion-toggle[hidden]{display:none}.motion-toggle:hover{background:#171a16;color:#fff0d4}.motion-toggle svg{width:12px;height:12px;stroke-width:1.5}.motion-play{display:none}.motion-toggle[aria-pressed="true"] .motion-pause{display:none}.motion-toggle[aria-pressed="true"] .motion-play{display:block}
+.button{position:relative;isolation:isolate;overflow:hidden;transition:background 220ms,color 220ms,border-color 220ms,box-shadow 220ms}
+.button>span{transition:translate 300ms var(--motion-ease)}.button:hover>span,.button:focus-visible>span{translate:3px -2px}.button.solid:hover{box-shadow:0 6px 22px #b78e4528}
+.hero-actions .solid:after{content:'';position:absolute;inset:-80% auto -80% -45%;width:24%;background:linear-gradient(90deg,transparent,#fff8dc80,transparent);transform:rotate(20deg);pointer-events:none;translate:-100% 0}
+.service-strip a svg{transition:stroke 200ms,transform 450ms var(--motion-ease)}.service-strip a:hover svg{transform:translateY(-3px);stroke:#fff0c5}
+.work-panel{transition:flex 650ms var(--motion-ease),filter 450ms,transform 650ms var(--motion-ease),border-color 350ms}.work-panel:hover,.work-panel:focus-visible{transform:skew(-10deg) translateY(-3px);border-color:#e6b879}.work-panel span{transition:translate 400ms var(--motion-ease)}.work-panel:hover span{translate:0 -3px}
+.work-gallery::-webkit-scrollbar{height:3px}.work-gallery::-webkit-scrollbar-track{background:#28241b}.work-gallery::-webkit-scrollbar-thumb{background:#b28d58;border-radius:4px}
+.categories button,.filters button,.product-bottom button,.package button{transition:color 180ms,background 180ms,border-color 180ms,box-shadow 180ms}.categories button:active,.package button:active,.button:active{filter:brightness(.94)}
+#formResult{animation:result-appear 350ms var(--motion-ease)}
+@keyframes result-appear{from{opacity:.5}to{opacity:1}}
+@media(prefers-reduced-motion:no-preference){
+ .motion-active .hero-art{animation:camera-drift 18s ease-in-out infinite alternate!important}
+ .motion-active .creative-current{opacity:1}
+ .motion-active .current-beam,.motion-active .current-aura{animation:creative-current 9s linear infinite}
+ .motion-active .hero-actions .solid:after{animation:gold-reflection 9s ease-in-out infinite}
+ .motion-paused .hero-art,.motion-paused .current-beam,.motion-paused .current-aura,.motion-paused .hero-actions .solid:after{animation-play-state:paused!important}
+ @keyframes camera-drift{from{transform:scale(1.015)}to{transform:scale(1.045)}}
+ @keyframes creative-current{0%{stroke-dashoffset:1000;opacity:0}5%{opacity:1}80%{opacity:1}92%,100%{stroke-dashoffset:0;opacity:0}}
+ @keyframes gold-reflection{0%,62%{translate:-100% 0}76%,100%{translate:850% 0}}
+}
+@media(max-width:800px){.motion-toggle{right:6%;bottom:26px}.creative-current{opacity:0!important}.motion-active .current-beam,.motion-active .current-aura{animation:none}.hero-art{translate:0 0}}
+@media(max-width:800px) and (prefers-reduced-motion:no-preference){
+ .header nav{display:flex;visibility:hidden;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity 180ms,transform 300ms var(--motion-ease),visibility 300ms}
+ .header.nav-open nav{visibility:visible;opacity:1;transform:none;pointer-events:auto}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}.hero-art{transform:none;translate:0 0;animation:none!important}.creative-current{display:none}.motion-toggle{display:none}.button>span,.work-panel,.work-panel span,.service-strip a svg{transform:none;translate:0 0;transition:none}.work-panel{transform:skew(-10deg)}
+ .work-panel:hover,.work-panel:focus-visible{transform:skew(-10deg)}
+ .work-panel span{transform:skew(10deg)}
+ .work-panel:hover span,.button:hover>span,.button:focus-visible>span{translate:0 0}
+ .service-strip a:hover svg{transform:none}
+}

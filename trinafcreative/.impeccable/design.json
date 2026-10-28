@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-28T06:06:54.639252+00:00",
+  "generatedAt": "2026-10-28T06:19:58.933790+00:00",
   "title": "Design System: triNAF Creative",
   "extensions": {
     "colorMeta": {
@@ -158,27 +158,78 @@
         "purpose": "Uppercase discipline line and small tracked section labels retained as explicit pinned-reference aesthetic overrides."
       }
     },
-    "shadows": [],
+    "shadows": [
+      {
+        "name": "primary-hover-glow",
+        "value": "0 6px 22px #b78e4528",
+        "purpose": "Local solid-button hover feedback only; catalog remains flat."
+      }
+    ],
     "motion": [
       {
-        "name": "action-transition",
-        "value": "background .25s, color .25s",
+        "name": "motion-ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Shared expressive easing."
+      },
+      {
+        "name": "creative-current",
+        "value": "9s linear infinite",
+        "purpose": "SVG gold ribbon; desktop, pausable."
+      },
+      {
+        "name": "camera-drift",
+        "value": "18s ease-in-out infinite alternate; scale(1.015) to scale(1.045)",
+        "purpose": "Pausable hero scene drift."
+      },
+      {
+        "name": "gold-reflection",
+        "value": "9s ease-in-out infinite",
+        "purpose": "Pausable primary hero action sheen."
+      },
+      {
+        "name": "headline-reveal",
+        "value": "800ms; delay 100ms + index × 100ms",
+        "purpose": "Native WAAPI line clip, 14px rise and 2px blur reveal."
+      },
+      {
+        "name": "intro-reveal",
+        "value": "650ms; delay 350ms",
+        "purpose": "Intro opacity .65 to 1."
+      },
+      {
+        "name": "gallery-reveal",
+        "value": "700ms; index × 65ms delay",
+        "purpose": "One-time quarter-panel clip reveal on entry."
+      },
+      {
+        "name": "catalog-update",
+        "value": "220ms",
+        "purpose": "Opacity .5 and blur(1px) to clear; previous update cancelled."
+      },
+      {
+        "name": "pointer-depth",
+        "value": "900ms easing; total range 9px × 6px",
+        "purpose": "Fine hover pointer only, min-width 801px; reset on leave."
+      },
+      {
+        "name": "phone-menu",
+        "value": "opacity 180ms; transform 300ms; visibility 300ms",
+        "purpose": "Accessible expanding navigation."
+      },
+      {
+        "name": "work-interaction",
+        "value": "flex/transform 650ms; filter 450ms; border 350ms; caption 400ms",
+        "purpose": "Panel focus and hover feedback."
+      },
+      {
+        "name": "action-feedback",
+        "value": "220ms states; 300ms arrow",
         "purpose": "Primary action feedback."
       },
       {
-        "name": "work-expansion",
-        "value": "flex .6s cubic-bezier(.16,1,.3,1), filter .6s",
-        "purpose": "Work panel hover emphasis."
-      },
-      {
-        "name": "studio-reveal",
-        "value": "1.8s cubic-bezier(.16,1,.3,1) both; brightness(.7) scale(1.025) to brightness(1) scale(1)",
-        "purpose": "Artwork entrance only under prefers-reduced-motion: no-preference."
-      },
-      {
-        "name": "copy-reveal",
-        "value": "1s cubic-bezier(.16,1,.3,1) both; blur(3px) translateY(8px) to blur(0) translateY(0)",
-        "purpose": "Copy entrance only under prefers-reduced-motion: no-preference."
+        "name": "enquiry-feedback",
+        "value": "250ms WAAPI opacity; 350ms CSS opacity",
+        "purpose": "Demo result appearance."
       }
     ],
     "breakpoints": [
@@ -225,19 +276,36 @@
           "100% center"
         ]
       }
+    },
+    "motionPolicy": {
+      "sources": [
+        "motion.css",
+        "motion.js",
+        "app.js"
+      ],
+      "implementation": "Native CSS, SVG and Web Animations API; no GIF, video download or animation dependency.",
+      "inspiration": "User requested smoother expressive transitions inspired by Lusion, ET Sileent and Codrops; adaptation is original to triNAF.",
+      "control": "Pause motion / Play motion; aria-pressed and accessible label.",
+      "heroPauseConditions": [
+        "userPaused",
+        "hero offscreen",
+        "document.hidden"
+      ],
+      "reducedMotion": "No spatial loops, pointer depth, ribbon or entrance animations. Authored WAAPI effects cancel on preference change. Product selection scrolls instantly and focuses immediately.",
+      "measurement": "Timing values from source; no measured 60fps claim."
     }
   },
   "components": [
     {
       "name": "Primary Button",
       "kind": "button",
-      "html": "<button class=\"ds-primary\">Start a Project \u2197</button>",
-      "css": ".ds-primary{font-family:'DM Sans',sans-serif;font-size:14px;background:var(--gold,#e6b879);color:#14110d;border:1px solid var(--gold,#e6b879);border-radius:100px;padding:13px 26px;font-weight:600;cursor:pointer;transition:background .25s}.ds-primary:hover{background:#f2cd9b}.ds-primary:focus-visible,.ds-outline:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-chip:focus-visible,.ds-card button:focus-visible{outline:2px solid var(--gold,#e6b879);outline-offset:5px}"
+      "html": "<button class=\"ds-primary\">Start a Project ↗</button>",
+      "css": ".ds-primary{font-family:'DM Sans',sans-serif;font-size:14px;background:var(--gold,#e6b879);color:#14110d;border:1px solid var(--gold,#e6b879);border-radius:100px;padding:13px 26px;font-weight:600;cursor:pointer;transition:background 220ms,color 220ms,border-color 220ms,box-shadow 220ms}.ds-primary:hover{background:#f2cd9b;box-shadow:0 6px 22px #b78e4528}.ds-primary:focus-visible,.ds-outline:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-chip:focus-visible,.ds-card button:focus-visible{outline:2px solid var(--gold,#e6b879);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
     },
     {
       "name": "Outline Button",
       "kind": "button",
-      "html": "<button class=\"ds-outline\">Explore Our Work \u2197</button>",
+      "html": "<button class=\"ds-outline\">Explore Our Work ↗</button>",
       "css": ".ds-outline{font-family:'DM Sans',sans-serif;font-size:14px;background:#090b0b60;color:var(--paper,#f5f1e9);border:1px solid #d6a55f;border-radius:100px;padding:13px 26px;cursor:pointer}.ds-outline:hover{background:#e6b87925}.ds-primary:focus-visible,.ds-outline:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-chip:focus-visible,.ds-card button:focus-visible{outline:2px solid var(--gold,#e6b879);outline-offset:5px}"
     },
     {
@@ -261,7 +329,7 @@
     {
       "name": "Product Row",
       "kind": "card",
-      "html": "<article class=\"ds-card\"><span>PRINT</span><h3>Wedding Invitations</h3><div>RM99 <button>Select \u2197</button></div></article>",
+      "html": "<article class=\"ds-card\"><span>PRINT</span><h3>Wedding Invitations</h3><div>RM99 <button>Select ↗</button></div></article>",
       "css": ".ds-card{font-family:'DM Sans',sans-serif;font-size:14px;background:#efebe3;color:#28241e;border-top:1px solid #bfb4a0;padding:22px 0 25px;max-width:280px}.ds-card>span{font-size:11px;letter-spacing:.13em;color:#756b5d}.ds-card h3{font:600 17px/1.3 Manrope,sans-serif;margin:20px 0}.ds-card div{color:#75501f;display:flex;justify-content:space-between}.ds-card button{background:none;color:#342b20;border:0;border-bottom:1px solid #9c8666;padding:5px 0;cursor:pointer}.ds-card button:hover{color:#9a692c}.ds-primary:focus-visible,.ds-outline:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-chip:focus-visible,.ds-card button:focus-visible{outline:2px solid var(--gold,#e6b879);outline-offset:5px}"
     }
   ],
@@ -289,6 +357,11 @@
         "section": "Elevation & Depth",
         "name": "The Atmospheric Depth Rule",
         "body": "Let imagery and tonal layering create depth; keep catalog controls and product rows flat."
+      },
+      {
+        "section": "Components",
+        "name": "The Visitor Control Rule",
+        "body": "Respect reduced motion and explicit pause; decorative movement must not block browsing or enquiry selection."
       }
     ],
     "dos": [
