@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-28T05:55:18.541474+00:00",
+  "title": "Design System: triNAF Creative",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Studio Ink",
+        "canonical": "#0b0c0c",
+        "tonalRamp": [
+          "oklch(15% 0.003 190)",
+          "oklch(26% 0.003 190)",
+          "oklch(37% 0.003 190)",
+          "oklch(49% 0.003 190)",
+          "oklch(61% 0.003 190)",
+          "oklch(73% 0.003 190)",
+          "oklch(85% 0.003 190)",
+          "oklch(95% 0.003 190)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Studio Surface",
+        "canonical": "#111313",
+        "tonalRamp": [
+          "oklch(15% 0.004 190)",
+          "oklch(26% 0.004 190)",
+          "oklch(37% 0.004 190)",
+          "oklch(49% 0.004 190)",
+          "oklch(61% 0.004 190)",
+          "oklch(73% 0.004 190)",
+          "oklch(85% 0.004 190)",
+          "oklch(95% 0.004 190)"
+        ]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Warm Studio Gold",
+        "canonical": "#e6b879",
+        "tonalRamp": [
+          "oklch(15% 0.1 75)",
+          "oklch(26% 0.1 75)",
+          "oklch(37% 0.1 75)",
+          "oklch(49% 0.1 75)",
+          "oklch(61% 0.1 75)",
+          "oklch(73% 0.1 75)",
+          "oklch(85% 0.1 75)",
+          "oklch(95% 0.1 75)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f5f1e9",
+        "tonalRamp": [
+          "oklch(15% 0.012 85)",
+          "oklch(26% 0.012 85)",
+          "oklch(37% 0.012 85)",
+          "oklch(49% 0.012 85)",
+          "oklch(61% 0.012 85)",
+          "oklch(73% 0.012 85)",
+          "oklch(85% 0.012 85)",
+          "oklch(95% 0.012 85)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Paper",
+        "canonical": "#bbb7af",
+        "tonalRamp": [
+          "oklch(15% 0.012 85)",
+          "oklch(26% 0.012 85)",
+          "oklch(37% 0.012 85)",
+          "oklch(49% 0.012 85)",
+          "oklch(61% 0.012 85)",
+          "oklch(73% 0.012 85)",
+          "oklch(85% 0.012 85)",
+          "oklch(95% 0.012 85)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Warm Divider",
+        "canonical": "#3d3429",
+        "tonalRamp": [
+          "oklch(15% 0.02 70)",
+          "oklch(26% 0.02 70)",
+          "oklch(37% 0.02 70)",
+          "oklch(49% 0.02 70)",
+          "oklch(61% 0.02 70)",
+          "oklch(73% 0.02 70)",
+          "oklch(85% 0.02 70)",
+          "oklch(95% 0.02 70)"
+        ]
+      },
+      "catalog-paper": {
+        "role": "neutral",
+        "displayName": "Catalog Paper",
+        "canonical": "#efebe3",
+        "tonalRamp": [
+          "oklch(15% 0.015 85)",
+          "oklch(26% 0.015 85)",
+          "oklch(37% 0.015 85)",
+          "oklch(49% 0.015 85)",
+          "oklch(61% 0.015 85)",
+          "oklch(73% 0.015 85)",
+          "oklch(85% 0.015 85)",
+          "oklch(95% 0.015 85)"
+        ]
+      },
+      "catalog-ink": {
+        "role": "neutral",
+        "displayName": "Catalog Ink",
+        "canonical": "#28241e",
+        "tonalRamp": [
+          "oklch(15% 0.012 75)",
+          "oklch(26% 0.012 75)",
+          "oklch(37% 0.012 75)",
+          "oklch(49% 0.012 75)",
+          "oklch(61% 0.012 75)",
+          "oklch(73% 0.012 75)",
+          "oklch(85% 0.012 75)",
+          "oklch(95% 0.012 75)"
+        ]
+      },
+      "gold-hover": {
+        "role": "primary",
+        "displayName": "Light Studio Gold",
+        "canonical": "#f2cd9b",
+        "tonalRamp": [
+          "oklch(15% 0.08 75)",
+          "oklch(26% 0.08 75)",
+          "oklch(37% 0.08 75)",
+          "oklch(49% 0.08 75)",
+          "oklch(61% 0.08 75)",
+          "oklch(73% 0.08 75)",
+          "oklch(85% 0.08 75)",
+          "oklch(95% 0.08 75)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Confident Display",
+        "purpose": "Hero headline and brand character."
+      },
+      "headline": {
+        "displayName": "Editorial Headline",
+        "purpose": "Section and package headings."
+      },
+      "body": {
+        "displayName": "Reading and Controls",
+        "purpose": "Body copy, navigation and controls."
+      },
+      "label": {
+        "displayName": "Reference Labels",
+        "purpose": "Uppercase discipline line and small tracked section labels retained as explicit pinned-reference aesthetic overrides."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "action-transition",
+        "value": "background .25s, color .25s",
+        "purpose": "Primary action feedback."
+      },
+      {
+        "name": "work-expansion",
+        "value": "flex .5s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Work panel hover emphasis."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "large-display",
+        "value": "1600px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1150px"
+      },
+      {
+        "name": "tablet",
+        "value": "800px"
+      },
+      {
+        "name": "mobile",
+        "value": "480px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "html": "<button class=\"ds-primary\">Start a Project \u2197</button>",
+      "css": ".ds-primary{font-family:'DM Sans',sans-serif;font-size:14px;background:var(--gold,#e6b879);color:#14110d;border:1px solid var(--gold,#e6b879);border-radius:100px;padding:13px 26px;font-weight:600;cursor:pointer;transition:background .25s}.ds-primary:hover{background:#f2cd9b}.ds-primary:focus-visible,.ds-outline:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-chip:focus-visible,.ds-card button:focus-visible{outline:2px solid var(--gold,#e6b879);outline-offset:5px}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "html": "<button class=\"ds-outline\">Explore Our Work \u2197</button>",
+      "css": ".ds-outline{font-family:'DM Sans',sans-serif;font-size:14px;background:#090b0b60;color:var(--paper,#f5f1e9);border:1px solid #d6a55f;border-radius:100px;padding:13px 26px;cursor:pointer}.ds-outline:hover{background:#e6b87925}.ds-primary:focus-visible,.ds-outline:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-chip:focus-visible,.ds-card button:focus-visible{outline:2px solid var(--gold,#e6b879);outline-offset:5px}"
+    },
+    {
+      "name": "Enquiry Field",
+      "kind": "input",
+      "html": "<label class=\"ds-label\">Your name<input class=\"ds-field\" placeholder=\"How should we address you?\"></label>",
+      "css": ".ds-label{font-family:'DM Sans',sans-serif;font-size:14px;display:block;color:#d3c7b5}.ds-field{font-family:'DM Sans',sans-serif;font-size:14px;display:block;background:#161713;border:1px solid #5b5141;border-radius:5px;color:#f0e9dc;padding:12px 14px;margin-top:8px}.ds-field::placeholder{color:#a59c8e}.ds-primary:focus-visible,.ds-outline:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-chip:focus-visible,.ds-card button:focus-visible{outline:2px solid var(--gold,#e6b879);outline-offset:5px}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "html": "<nav class=\"ds-nav\"><a href=\"#home\" aria-current=\"page\">Home</a><a href=\"#services\">Services</a><a href=\"#work\">Our Work</a></nav>",
+      "css": ".ds-nav{font-family:'DM Sans',sans-serif;font-size:14px;display:flex;gap:33px}.ds-nav a{color:var(--paper,#f5f1e9);text-decoration:none;padding:9px 0;border-bottom:1px solid transparent}.ds-nav a:hover,.ds-nav a[aria-current]{color:var(--gold,#e6b879);border-color:var(--gold,#e6b879)}.ds-primary:focus-visible,.ds-outline:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-chip:focus-visible,.ds-card button:focus-visible{outline:2px solid var(--gold,#e6b879);outline-offset:5px}"
+    },
+    {
+      "name": "Category Chip",
+      "kind": "chip",
+      "html": "<button class=\"ds-chip\" aria-pressed=\"true\">All Projects</button>",
+      "css": ".ds-chip{font-family:'DM Sans',sans-serif;font-size:14px;font-size:12px;background:#29251f;color:#f5eee4;border:0;border-radius:30px;padding:8px 12px;cursor:pointer}.ds-chip:hover{color:#9a692c}.ds-primary:focus-visible,.ds-outline:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-chip:focus-visible,.ds-card button:focus-visible{outline:2px solid var(--gold,#e6b879);outline-offset:5px}"
+    },
+    {
+      "name": "Product Row",
+      "kind": "card",
+      "html": "<article class=\"ds-card\"><span>PRINT</span><h3>Wedding Invitations</h3><div>RM99 <button>Select \u2197</button></div></article>",
+      "css": ".ds-card{font-family:'DM Sans',sans-serif;font-size:14px;background:#efebe3;color:#28241e;border-top:1px solid #bfb4a0;padding:22px 0 25px;max-width:280px}.ds-card>span{font-size:11px;letter-spacing:.13em;color:#756b5d}.ds-card h3{font:600 17px/1.3 Manrope,sans-serif;margin:20px 0}.ds-card div{color:#75501f;display:flex;justify-content:space-between}.ds-card button{background:none;color:#342b20;border:0;border-bottom:1px solid #9c8666;padding:5px 0;cursor:pointer}.ds-card button:hover{color:#9a692c}.ds-primary:focus-visible,.ds-outline:focus-visible,.ds-field:focus-visible,.ds-nav a:focus-visible,.ds-chip:focus-visible,.ds-card button:focus-visible{outline:2px solid var(--gold,#e6b879);outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Cinematic Gold Studio",
+    "overview": "The user-pinned black and gold studio reference is the visual authority. Dark, image-led atmosphere frames confident typography and warm gold accents. The lighter catalog creates a practical browsing surface within that world.",
+    "keyCharacteristics": [
+      "Cinematic imagery with dark gradient scrims.",
+      "Warm gold signals emphasis and action.",
+      "Confident sans-serif display paired with editorial serif section headings.",
+      "Open, ruled catalog rows rather than raised cards."
+    ],
+    "rules": [
+      {
+        "section": "Colors",
+        "name": "The Gold Signal Rule",
+        "body": "Use gold for emphasis and action; preserve large quiet dark areas around it."
+      },
+      {
+        "section": "Typography",
+        "name": "The Two Voices Rule",
+        "body": "Preserve the contrast between confident sans-serif display and editorial serif section headings."
+      },
+      {
+        "section": "Elevation & Depth",
+        "name": "The Atmospheric Depth Rule",
+        "body": "Let imagery and tonal layering create depth; keep catalog controls and product rows flat."
+      }
+    ],
+    "dos": [
+      "**Do** preserve the supplied cinematic black and gold direction.",
+      "**Do** keep visible copy in English.",
+      "**Do** keep keyboard focus visible and selection states distinguishable.",
+      "**Do** retain the indicative-price and demo-enquiry disclosures."
+    ],
+    "donts": [
+      "**Don't** represent concept imagery as verified client work.",
+      "**Don't** add business claims, credentials or customer proof without evidence.",
+      "**Don't** imply that the demo enquiry is sent or saved.",
+      "**Don't** introduce raised card shadows into the flat catalog."
+    ]
+  }
+}
