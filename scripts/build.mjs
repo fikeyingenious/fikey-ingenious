@@ -24,6 +24,8 @@ const textAssets = {
 };
 
 const binaryFiles = {
+  "/assets/service-explorer.css": ["text/css; charset=utf-8", "assets/service-explorer.css"],
+  "/assets/service-explorer.js": ["text/javascript; charset=utf-8", "assets/service-explorer.js"],
   "/trinafmoneypocket/style.css": ["text/css; charset=utf-8", "trinafmoneypocket/style.css"],
   "/trinafmoneypocket/app.js": ["text/javascript; charset=utf-8", "trinafmoneypocket/app.js"],
   "/assets/nuha-mobile-cart.webp": ["image/webp", "assets/nuha-mobile-cart.webp"],
@@ -60,6 +62,10 @@ const binaryFiles = {
 
 for (const icon of ["openai", "python", "typescript", "angular", "django", "laravel", "spring", "bootstrap", "powerbi", "microsoftexcel", "postgresql", "mysql"]) {
   binaryFiles[`/assets/tech/${icon}.svg`] = ["image/svg+xml", `assets/tech/${icon}.svg`];
+}
+
+for (const service of ["landing-v2", "email", "assistant", "systems", "improvements", "reporting"]) {
+  binaryFiles[`/assets/services/${service}.webp`] = ["image/webp", `assets/services/${service}.webp`];
 }
 
 const binaryAssets = {};

@@ -77,18 +77,36 @@ document.querySelectorAll('.service-row').forEach(item => {
   item.addEventListener('pointerleave', () => item.classList.remove('is-connected'));
 });
 
-document.getElementById('contactForm').addEventListener('submit', event => {
+const enquiryForm = document.getElementById('contactForm');
+const enquiryReview = document.getElementById('enquiryReview');
+function clearEnquiryReview() {
+  enquiryReview.hidden = true;
+  document.getElementById('enquiryWhatsApp').removeAttribute('href');
+  document.getElementById('enquiryEmail').removeAttribute('href');
+}
+enquiryForm.addEventListener('input', clearEnquiryReview);
+enquiryForm.addEventListener('change', clearEnquiryReview);
+enquiryForm.addEventListener('submit', event => {
   event.preventDefault();
-  const form = event.currentTarget;
   const error = document.getElementById('formError');
-  if (!form.checkValidity()) {
-    error.textContent = 'Please complete your name, a valid email address, and a short project description.';
-    form.reportValidity();
+  ['name', 'message'].forEach(id => {
+    const field = document.getElementById(id);
+    field.setCustomValidity(field.value.trim() ? '' : 'Please complete this field.');
+  });
+  if (!enquiryForm.checkValidity()) {
+    clearEnquiryReview();
+    error.textContent = 'Please enter your name and project description, and check your email address if provided.';
+    enquiryForm.reportValidity();
     return;
   }
   error.textContent = '';
-  const data = new FormData(form);
+  const data = new FormData(enquiryForm);
   const subject = `Project enquiry: ${data.get('subject')}`;
-  const body = `Name: ${data.get('name')}\nEmail: ${data.get('email')}\n\nProject: ${data.get('message')}`;
-  location.href = `mailto:fikeyingenious@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const body = `Name: ${data.get('name').trim()}\nEmail: ${data.get('email').trim() || 'Not provided'}\nService: ${data.get('subject')}\n\n${data.get('message').trim()}`;
+  document.getElementById('enquirySummary').textContent = body;
+  document.getElementById('enquiryWhatsApp').href = `https://wa.me/60136801209?text=${encodeURIComponent(body)}`;
+  document.getElementById('enquiryEmail').href = `mailto:fikeyingenious@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  enquiryReview.hidden = false;
+  enquiryReview.focus();
 });
+['name', 'message'].forEach(id => document.getElementById(id).addEventListener('input', event => event.target.setCustomValidity('')));

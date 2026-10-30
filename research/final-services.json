@@ -1,0 +1,170 @@
+[
+  {
+    "key": "website",
+    "nav": "Website Design & Development",
+    "title": "A website that introduces you properly.",
+    "price": "1,200",
+    "price_label": "One-page websites from",
+    "navprice": "From RM1,200",
+    "asset": "landing-v2",
+    "desc": "From a focused landing page or personal portfolio to a multi-page company website, give visitors a clear picture of what you do and an easy way to contact you.",
+    "items": [
+      "One page, up to six sections",
+      "Mobile-friendly design",
+      "WhatsApp + enquiry contact flow",
+      "Basic search setup",
+      "Two revision rounds",
+      "Deployment + handover"
+    ],
+    "boundary": "One language, using supplied branding and content with light editing. Multi-page websites start from RM2,500 for up to five pages. Need to update your own content? A CMS editor can be added to the website scope. CMS setup, copywriting, domain and hosting are quoted separately.",
+    "action": "Discuss my website",
+    "service": "Website Design & Development",
+    "note": "Landing pages · Personal portfolios · Company websites",
+    "alt": "Concept illustration of a professional website and matching mobile screen in black glass and gold.",
+    "delivery": {
+      "Indicative delivery": "7–10 working days for one page; 10–15 for up to five pages.",
+      "Ongoing provider costs": "Domain and hosting renewals; CMS subscriptions where needed.",
+      "Your handover": "Website files and deployment guidance. Optional CMS editing training."
+    }
+  },
+  {
+    "key": "email",
+    "nav": "Business Email Setup",
+    "title": "Your business. Your own email address.",
+    "price": "350",
+    "price_label": "Setup from",
+    "navprice": "Setup from RM350",
+    "asset": "email",
+    "desc": "Make your everyday communication look professional with email at your own domain, such as hello@yourcompany.com. We help connect your domain and get your accounts ready to use.",
+    "items": [
+      "One domain connection",
+      "Up to three new mailboxes",
+      "Email authentication setup",
+      "Send-and-receive checks",
+      "Device-setup guidance",
+      "Admin access + handover"
+    ],
+    "boundary": "Setup for one supported email provider, such as Google Workspace or Microsoft 365. Domain registration and mailbox subscriptions are separate. Moving old emails, complex DNS repairs and ongoing administration require an additional scope.",
+    "action": "Set up my business email",
+    "service": "Business Email Setup",
+    "note": "A practical addition to your new website",
+    "alt": "Concept illustration of a business inbox, gold envelope and connected domain panel.",
+    "delivery": {
+      "Indicative delivery": "1–3 working days once domain and provider access are ready. DNS verification may take longer.",
+      "Ongoing provider costs": "Your domain renewal and email provider’s mailbox subscriptions.",
+      "Your handover": "You retain domain and email admin ownership, with setup guidance."
+    }
+  },
+  {
+    "key": "assistant",
+    "nav": "AI Website Assistant",
+    "title": "Help visitors find the answers they need.",
+    "price": "2,500",
+    "price_label": "Pilot setup from",
+    "navprice": "Pilot setup from RM2,500",
+    "asset": "assistant",
+    "desc": "Start with a scoped AI assistant pilot that answers common questions using approved business information, collects enquiries and directs visitors to your team when human help is needed.",
+    "items": [
+      "One website chat widget",
+      "One language",
+      "Up to 30 approved FAQs",
+      "One enquiry destination",
+      "Contact or WhatsApp handoff",
+      "Agreed answer tests + handover"
+    ],
+    "boundary": "Pilot availability and scope are confirmed after assessment. Hosting, AI usage and platform subscriptions are separate. The assistant may make mistakes; bookings, payments, WhatsApp chatbot deployment and autonomous actions are outside this entry scope.",
+    "action": "Discuss an AI assistant pilot",
+    "service": "AI Website Assistant — pilot",
+    "note": "Pilot offer · Validate a focused use case first",
+    "alt": "Concept illustration of a website chat assistant connected to approved business documents; interface content is illustrative.",
+    "delivery": {
+      "Indicative delivery": "2–3 weeks for the agreed pilot after FAQs and website access are ready.",
+      "Ongoing provider costs": "AI usage, hosting and any chat platform subscription.",
+      "Your handover": "Widget setup, approved FAQ source and admin guidance for the agreed platform."
+    }
+  },
+  {
+    "key": "systems",
+    "nav": "Custom Business Systems & Portals",
+    "title": "Build around the way your team works.",
+    "price": "8,000",
+    "price_label": "Focused systems from",
+    "navprice": "From RM8,000",
+    "asset": "systems",
+    "desc": "Manage records, requests or approvals in a focused business application. Replace scattered spreadsheets and manual follow-ups with a staff portal built around one agreed workflow.",
+    "items": [
+      "One agreed core module",
+      "One defined business workflow",
+      "Staff login + up to two roles",
+      "Basic search",
+      "One agreed export",
+      "Deployment + handover"
+    ],
+    "boundary": "The starting scope covers one focused business application. Multiple modules, integrations, migration and larger platforms are quoted separately.",
+    "action": "Discuss my business system",
+    "service": "Custom Business Systems & Portals",
+    "note": "Business applications · Staff portals · Approvals",
+    "alt": "Concept illustration of a custom records application with connected approval and database panels.",
+    "delivery": {
+      "Indicative delivery": "4–8 weeks for one focused module after requirements and access are agreed.",
+      "Ongoing provider costs": "Hosting, database and any third-party licences or integrations.",
+      "Your handover": "Agreed source code, deployment notes and a staff walkthrough."
+    }
+  },
+  {
+    "key": "improvements",
+    "nav": "System Improvements & Bug Fixes",
+    "title": "Make your existing software work better.",
+    "price": "500",
+    "price_label": "Assessment from",
+    "navprice": "Assessment from RM500",
+    "asset": "improvements",
+    "desc": "Get help with broken features, slow pages or changes your existing application needs. We investigate the issue, explain what we find and agree on the repair or improvement before implementation.",
+    "items": [
+      "Review one reported issue",
+      "Reproduce the agreed problem",
+      "Relevant code or log review",
+      "Written findings",
+      "Recommended repair scope",
+      "Separate implementation quote"
+    ],
+    "boundary": "RM500 is the starting assessment fee, not a guaranteed repair price. Repairs, feature development, upgrades and integrations are quoted after review. Requires suitable code, logs and access; larger investigations may need a separate assessment scope. Start with a no-obligation fit discussion; a paid assessment begins only after you agree the fee and scope.",
+    "action": "Discuss my existing system",
+    "service": "System Improvements & Bug Fixes",
+    "note": "Bug fixes · Feature updates · Performance investigations",
+    "alt": "Concept illustration of an existing application code editor with a focused correction, gold check and maintenance tool.",
+    "delivery": {
+      "Indicative delivery": "2–5 working days for the assessment after access is ready. Repair timing follows the findings.",
+      "Ongoing provider costs": "Any hosting or software costs needed for the agreed repair.",
+      "Your handover": "A written findings report and walkthrough, yours to keep whether or not you proceed with repairs."
+    }
+  },
+  {
+    "key": "reporting",
+    "nav": "Business Dashboards & Reports",
+    "title": "Turn business data into a clearer picture.",
+    "price": "2,500",
+    "price_label": "Starting from",
+    "navprice": "From RM2,500",
+    "asset": "reporting",
+    "desc": "Understand your business data through Power BI dashboards, custom reporting screens and Excel or PDF reports. We agree the right format for the information your team needs.",
+    "items": [
+      "One prepared data source",
+      "Up to five agreed KPIs",
+      "Up to two report pages",
+      "Useful filters",
+      "Two revision rounds",
+      "Handover session"
+    ],
+    "boundary": "The entry scope covers one agreed dashboard or report format. Data cleaning, additional connections, software licences, scheduled delivery and extra export formats are quoted separately.",
+    "action": "Discuss my reporting needs",
+    "service": "Business Dashboards & Reports",
+    "note": "Power BI · Custom reporting · Excel / PDF outputs",
+    "alt": "Concept illustration of business reporting with gold charts and a supporting report sheet; all data is illustrative.",
+    "delivery": {
+      "Indicative delivery": "1–3 weeks once your prepared data and KPIs are agreed.",
+      "Ongoing provider costs": "Power BI licences, hosting or paid data connections where needed.",
+      "Your handover": "Agreed editable report files or source, refresh instructions and a walkthrough."
+    }
+  }
+]
