@@ -4,6 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs",
+    "build:cloudflare": "node scripts/build-cloudflare.mjs",
+    "check:cloudflare": "node scripts/check-cloudflare-build.mjs",
+    "preview:cloudflare": "npm run build:cloudflare && wrangler preview",
+    "deploy:cloudflare": "npm run build:cloudflare && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.156.0"
   }
 }
